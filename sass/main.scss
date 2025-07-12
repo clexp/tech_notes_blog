@@ -1,0 +1,220 @@
+// =============================================================================
+// MAIN SASS ENTRY POINT
+// =============================================================================
+// This file imports all our SASS partials and compiles them into CSS
+// Zola will automatically compile this to public/main.css
+
+// 1. Import variables first (they're used by other files)
+@import "variables";
+
+// 2. Import base styles (resets, typography, etc.)
+@import "base";
+
+// 3. Import layout components (header, footer, containers)
+@import "layout";
+
+// 4. Add any page-specific styles here
+// =============================================================================
+
+// Hero section styles
+.hero {
+  text-align: center;
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+  background: linear-gradient(
+    135deg,
+    lighten($primary-color, 45%) 0%,
+    lighten($primary-color, 50%) 100%
+  );
+  border-radius: 8px;
+
+  &-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: $text-color;
+
+    // Responsive design using SASS nesting
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+
+  &-subtitle {
+    font-size: 1.25rem;
+    color: $secondary-color;
+    margin: 0;
+  }
+}
+
+// Blog post cards
+.posts {
+  display: grid;
+  gap: $spacing-lg;
+  margin: $spacing-lg 0;
+}
+
+.post-card {
+  background: $background-color;
+  border: 1px solid lighten($secondary-color, 30%);
+  border-radius: 8px;
+  padding: $spacing-lg;
+  transition: all 0.2s ease;
+
+  // SASS nesting - & refers to parent selector
+  &:hover {
+    border-color: $primary-color;
+    box-shadow: 0 4px 12px rgba($primary-color, 0.1);
+    transform: translateY(-2px);
+  }
+
+  // Nested elements using SASS
+  .post-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 $spacing-md 0;
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .post-excerpt {
+    color: $secondary-color;
+    margin: 0 0 $spacing-md 0;
+    line-height: $line-height;
+  }
+
+  .post-meta {
+    font-size: 0.875rem;
+    color: lighten($secondary-color, 10%);
+    margin-bottom: $spacing-sm;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+  }
+
+  .post-tags {
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    display: inline-block;
+    background: lighten($primary-color, 45%);
+    color: $primary-color;
+    padding: 0.125rem 0.375rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: lighten($primary-color, 35%);
+      color: darken($primary-color, 10%);
+      transform: translateY(-1px);
+    }
+  }
+
+  .read-more {
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: darken($primary-color, 10%);
+      text-decoration: underline;
+    }
+  }
+}
+
+// Code block styling
+pre {
+  background: lighten($secondary-color, 45%);
+  padding: $spacing-md;
+  border-radius: 4px;
+  overflow-x: auto;
+
+  code {
+    background: none;
+    padding: 0;
+  }
+}
+
+code {
+  background: lighten($secondary-color, 45%);
+  padding: 0.125rem 0.25rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+// Search Dropdown - proper implementation
+.search-container {
+  position: relative;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: $background-color;
+  border: 1px solid lighten($secondary-color, 30%);
+  border-top: none; // Connect to search box
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  // Remove all overlay/modal styling
+
+  &.hidden {
+    display: none;
+  }
+
+  &-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+.search-result-item {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid lighten($secondary-color, 40%);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 0.875rem; // Match search input size
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: lighten($primary-color, 48%);
+  }
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+    display: block;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.no-results {
+  padding: 0.75rem;
+  text-align: center;
+  color: $secondary-color;
+  font-size: 0.875rem;
+  font-style: italic;
+}

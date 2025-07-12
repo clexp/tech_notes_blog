@@ -1,0 +1,57 @@
+// =============================================================================
+// BASE STYLES - Simple Examples
+// =============================================================================
+
+// Import variables
+@import "variables";
+
+// Reset
+* {
+  box-sizing: border-box;
+}
+
+// Body styles
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: $line-height;
+  color: $text-color;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 $spacing-md 0;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin: 0 0 $spacing-md 0;
+}
+
+// Links
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
+}

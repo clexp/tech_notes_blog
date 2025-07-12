@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Categories - {{ config.title | default(value="Clexp Explores Technology")
+      }}
+    </title>
+    <meta name="description" content="Browse posts by categories" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ get_url(path="main.css") }}">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav">
+          <div class="nav-brand">
+            <a href="{{ config.base_url }}"
+              >{{ config.title | default(value="Clexp Explores Technology")
+              }}</a
+            >
+          </div>
+          <div class="nav-menu">
+            <a href="{{ config.base_url }}" class="nav-link">Home</a>
+            <a href="{{ config.base_url }}/tags" class="nav-link">Tags</a>
+            <a href="{{ config.base_url }}/categories" class="nav-link"
+              >Categories</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <div class="container">
+        <h1 class="section-title">All Categories</h1>
+
+        <div class="categories-grid">
+          {% for category in terms %}
+          <div class="category-card">
+            <h2 class="category-name">
+              <a href="{{ category.permalink }}">{{ category.name }}</a>
+            </h2>
+            <p class="category-count">
+              {{ category.pages | length }} post{{ category.pages | length |
+              pluralize }}
+            </p>
+
+            <div class="category-posts">
+              {% for page in category.pages | slice(end=3) %}
+              <div class="category-post">
+                <a href="{{ page.permalink }}">{{ page.title }}</a>
+                <span class="post-date"
+                  >{{ page.date | date(format="%B %d, %Y") }}</span
+                >
+              </div>
+              {% endfor %} {% if category.pages | length > 3 %}
+              <div class="category-more">
+                <a href="{{ category.permalink }}"
+                  >View all {{ category.pages | length }} posts →</a
+                >
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          &copy; {{ now() | date(format="%Y") }} {{ config.title |
+          default(value="Clexp Explores Technology") }}. Built with
+          <a href="https://www.getzola.org/">Zola</a>.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
