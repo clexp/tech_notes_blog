@@ -1,3 +1,11 @@
++++
+title = "Port Forwarding"
+date = "2025-07-09"
+description = "When setting up my home lab, one of my goals was to be able to SSH into a FreeBSD test machine (tb02) on a private subnet, even though it’s not directly reachable from my main production network. To d..."
+tags = ['bsd', 'firewall', 'freebsd', 'iptables', 'linux', 'nat', 'networking', 'security', 'ssh', 'ubuntu', 'unix']
+categories = ["technical"]
++++
+
 ## **🔧 Port Forwarding vs Masquerading: Routing SSH into My FreeBSD Lab Box**
 
 When setting up my home lab, one of my goals was to be able to SSH into a FreeBSD test machine (tb02) on a private subnet, even though it’s not directly reachable from my main production network. To do this, I had already built a custom Linux router (rtr02) that connects the production LAN to two test subnets: 192.168.0.0/24 and 10.0.0.0/24.

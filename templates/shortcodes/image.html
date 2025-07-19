@@ -1,0 +1,21 @@
+{% set image_path = path %} {% set alt_text = alt | default(value="") %} {% set
+caption = caption | default(value="") %} {% set width = width |
+default(value=800) %} {% set height = height | default(value=600) %} {% set op =
+op | default(value="fit_width") %} {% set format = format |
+default(value="webp") %} {% set quality = quality | default(value=85) %} {% set
+class = class | default(value="") %} {% set processed_image =
+resize_image(path=image_path, width=width, height=height, op=op, format=format,
+quality=quality) %}
+
+<figure class="image-container {{ class }}">
+  <img
+    src="{{ processed_image.url }}"
+    alt="{{ alt_text }}"
+    width="{{ processed_image.width }}"
+    height="{{ processed_image.height }}"
+    loading="lazy"
+  />
+  {% if caption %}
+  <figcaption>{{ caption }}</figcaption>
+  {% endif %}
+</figure>

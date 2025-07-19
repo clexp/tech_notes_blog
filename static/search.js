@@ -79,6 +79,29 @@
       return slug.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
     }
 
+    // Convert absolute URL to relative for local development
+    function convertToRelativeUrl(url) {
+      // Handle both production URLs and ensure relative paths
+      if (url.startsWith("https://blog.clexp.net")) {
+        url = url.replace("https://blog.clexp.net", "");
+      } else if (url.startsWith("http://127.0.0.1:")) {
+        // Remove any localhost URL prefix
+        url = url.replace(/^https?:\/\/127\.0\.0\.1:\d+/, "");
+      } else if (url.startsWith("http://localhost")) {
+        url = url.replace(/http:\/\/localhost:\d+/, "");
+      }
+
+      // Ensure URL starts with / for relative paths
+      if (!url.startsWith("/")) {
+        url = "/" + url;
+      }
+
+      // Remove any trailing /index.html if present
+      url = url.replace(/\/index\.html$/, "/");
+
+      return url;
+    }
+
     // Display results
     function displayResults(results) {
       searchResultsList.innerHTML = "";
@@ -93,7 +116,10 @@
         const item = document.createElement("div");
         item.className = "search-result-item";
         const title = getTitle(result.ref);
-        const url = result.ref;
+
+        // Convert absolute URL to relative for local development
+        let url = convertToRelativeUrl(result.ref);
+
         item.innerHTML = `<a href="${url}">${title}</a>`;
         searchResultsList.appendChild(item);
       });
@@ -102,11 +128,9 @@
     // Input event
     searchInput.addEventListener("input", function (e) {
       const query = e.target.value.trim();
-      console.log("Search input:", query);
 
       if (query.length >= 2) {
         const results = performSearch(query);
-        console.log("Search results:", results.length);
         displayResults(results);
         searchResults.classList.remove("hidden");
       } else {
@@ -120,13 +144,12 @@
 
       if (e.key === "Enter" && query.length >= 2) {
         e.preventDefault();
-        console.log("Enter pressed, searching for:", query);
 
         const results = performSearch(query);
         if (results.length > 0) {
-          console.log("Navigating to:", results[0].ref);
+          const url = convertToRelativeUrl(results[0].ref);
           searchResults.classList.add("hidden");
-          window.location.href = results[0].ref;
+          window.location.href = url;
         }
       }
 

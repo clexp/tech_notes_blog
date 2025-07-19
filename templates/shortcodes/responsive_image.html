@@ -1,0 +1,27 @@
+{% set image_path = path %} {% set alt_text = alt | default(value="") %} {% set
+caption = caption | default(value="") %} {% set sizes = sizes |
+default(value="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw") %} {%
+set format = format | default(value="webp") %} {% set quality = quality |
+default(value=85) %} {% set class = class | default(value="") %}
+
+<!-- Generate multiple sizes -->
+{% set small = resize_image(path=image_path, width=400, op="fit_width",
+format=format, quality=quality) %} {% set medium = resize_image(path=image_path,
+width=800, op="fit_width", format=format, quality=quality) %} {% set large =
+resize_image(path=image_path, width=1200, op="fit_width", format=format,
+quality=quality) %}
+
+<figure class="responsive-image-container {{ class }}">
+  <img
+    src="{{ medium.url }}"
+    srcset="{{ small.url }} 400w, {{ medium.url }} 800w, {{ large.url }} 1200w"
+    sizes="{{ sizes }}"
+    alt="{{ alt_text }}"
+    width="{{ medium.width }}"
+    height="{{ medium.height }}"
+    loading="lazy"
+  />
+  {% if caption %}
+  <figcaption>{{ caption }}</figcaption>
+  {% endif %}
+</figure>

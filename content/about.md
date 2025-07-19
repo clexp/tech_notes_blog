@@ -6,7 +6,7 @@ description = "About this technical blog and its focus on networking, system adm
 nav_order = 1
 +++
 
-# About This Blog
+## About This Blog
 
 Welcome to my technical blog where I document my journey through networking, system administration, and home lab experiments. This space serves as both a personal knowledge base and a resource for fellow enthusiasts exploring similar technical challenges.
 

@@ -128,6 +128,15 @@ class BlogConverter:
         toml_lines.append('categories = ["technical"]')
         return "\n".join(toml_lines)
 
+    def is_draft(self, content: str) -> bool:
+        """Check if content is marked as draft."""
+        # Check for draft indicators in the first few lines
+        lines = content.split('\n')[:5]
+        for line in lines:
+            if re.search(r'#\s*DRAFT', line, re.IGNORECASE):
+                return True
+        return False
+
     def convert_file(self, filename: str) -> None:
         """Convert a single blog post file."""
         input_path = self.raw_dir / filename
@@ -141,6 +150,10 @@ class BlogConverter:
         # Skip empty files
         if not content.strip():
             print(f"Skipping empty file: {filename}")
+            return
+        # Skip draft files
+        if self.is_draft(content):
+            print(f"Skipping draft file: {filename}")
             return
         # Create front matter
         front_matter = self.create_front_matter(filename, content)

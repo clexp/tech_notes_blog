@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ config.title | default(value="Clexp Explores Technology") }}</title>
+    <title>{{ config.title | default(value="Tech Blog") }}</title>
     <meta name="description" content="{{ config.description | default(value="Technical blog about networking, system administration, and home lab adventures") }}">
     
     <!-- CSS -->
@@ -24,6 +24,7 @@
                 <div class="nav-menu">
                     <a href="{{ config.base_url }}" class="nav-link">Home</a>
                     <a href="{{ get_url(path="about") }}" class="nav-link">About</a>
+                    <a href="{{ get_url(path="contact") }}" class="nav-link">Contact</a>
                     <div class="search-container">
                         <input type="search" id="search" placeholder="Search posts..." class="search-input">
                         <div id="search-results" class="search-results hidden">
@@ -37,42 +38,117 @@
 
     <main class="site-main">
         <div class="container">
-            <section class="hero">
-                <h1 class="hero-title">Technical Adventures</h1>
-                <p class="hero-subtitle">Exploring networking, system administration, and home lab experiments</p>
-            </section>
+            <div class="main-content">
+                <!-- Sidebar Navigation -->
+                <aside class="sidebar">
+                    <nav class="sidebar-nav">
+                        <h3 class="sidebar-title">Browse by Topic</h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="{{ get_url(path="networking") }}" class="sidebar-link">
+                                <span class="sidebar-icon">🌐</span>
+                                <span class="sidebar-text">Networking</span>
+                            </a></li>
+                            <li><a href="{{ get_url(path="system-admin") }}" class="sidebar-link">
+                                <span class="sidebar-icon">⚙️</span>
+                                <span class="sidebar-text">System Admin</span>
+                            </a></li>
+                            <li><a href="{{ get_url(path="security") }}" class="sidebar-link">
+                                <span class="sidebar-icon">🔒</span>
+                                <span class="sidebar-text">Security</span>
+                            </a></li>
+                            <li><a href="{{ get_url(path="home-lab") }}" class="sidebar-link">
+                                <span class="sidebar-icon">🏠</span>
+                                <span class="sidebar-text">Home Lab</span>
+                            </a></li>
+                            <li><a href="{{ get_url(path="web-dev") }}" class="sidebar-link">
+                                <span class="sidebar-icon">💻</span>
+                                <span class="sidebar-text">Web Dev</span>
+                            </a></li>
+                        </ul>
+                    </nav>
+                </aside>
 
-            <section class="posts">
-                <h2 class="section-title">Latest Posts</h2>
-                
-                {% for page in section.pages | sort(attribute="date") | reverse %}
-                <article class="post-card">
-                    <div class="post-meta">
-                        <time datetime="{{ page.date }}" class="post-date">{{ page.date | date(format="%B %d, %Y") }}</time>
-                        {% if page.taxonomies.tags %}
-                        <div class="post-tags">
-                            {% for tag in page.taxonomies.tags | slice(end=5) %}
-                            <span class="tag">{{ tag }}</span>
-                            {% endfor %}
-                            {% if page.taxonomies.tags | length > 5 %}
-                            <span class="tag">+{{ page.taxonomies.tags | length | minus(n=5) }} more</span>
-                            {% endif %}
+                <!-- Main Content Area -->
+                <div class="content">
+                    <section class="hero">
+                        <h1 class="hero-title">Technical Adventures</h1>
+                        <p class="hero-subtitle">Exploring networking, system administration, home lab experiments, and web development</p>
+                    </section>
+
+                    <section class="sections-overview">
+                        <h2 class="section-title">Browse by Topic</h2>
+                        <div class="sections-grid">
+                            <div class="section-card">
+                                <div class="section-card-header">
+                                    <span class="section-icon">🌐</span>
+                                    <h3><a href="{{ get_url(path="networking") }}">Networking</a></h3>
+                                </div>
+                                <p>Deep dives into network infrastructure, protocols, and configuration. From DNS and DHCP to VLANs and IPv6 deployment.</p>
+                            </div>
+                            <div class="section-card">
+                                <div class="section-card-header">
+                                    <span class="section-icon">⚙️</span>
+                                    <h3><a href="{{ get_url(path="system-admin") }}">System Administration</a></h3>
+                                </div>
+                                <p>Server management, OS configuration, and deployment strategies across BSD and Linux systems.</p>
+                            </div>
+                            <div class="section-card">
+                                <div class="section-card-header">
+                                    <span class="section-icon">🔒</span>
+                                    <h3><a href="{{ get_url(path="security") }}">Security</a></h3>
+                                </div>
+                                <p>Network security, VPN implementation, and firewall configuration for secure infrastructure.</p>
+                            </div>
+                            <div class="section-card">
+                                <div class="section-card-header">
+                                    <span class="section-icon">🏠</span>
+                                    <h3><a href="{{ get_url(path="home-lab") }}">Home Lab</a></h3>
+                                </div>
+                                <p>Infrastructure projects, automation, and containerization in real home lab environments.</p>
+                            </div>
+                            <div class="section-card">
+                                <div class="section-card-header">
+                                    <span class="section-icon">💻</span>
+                                    <h3><a href="{{ get_url(path="web-dev") }}">Web Development</a></h3>
+                                </div>
+                                <p>Building modern web applications, static sites, and exploring web development technologies.</p>
+                            </div>
                         </div>
-                        {% endif %}
-                    </div>
-                    
-                    <h3 class="post-title">
-                        <a href="{{ page.permalink }}">{{ page.title }}</a>
-                    </h3>
-                    
-                    {% if page.description %}
-                    <p class="post-excerpt">{{ page.description }}</p>
-                    {% endif %}
-                    
-                    <a href="{{ page.permalink }}" class="read-more">Read more →</a>
-                </article>
-                {% endfor %}
-            </section>
+                    </section>
+
+                    <section class="posts">
+                        <h2 class="section-title">Latest Posts</h2>
+                        
+                        {% for page in section.pages | sort(attribute="date") | reverse %}
+                        <article class="post-card">
+                            <div class="post-meta">
+                                <time datetime="{{ page.date }}" class="post-date">{{ page.date | date(format="%B %d, %Y") }}</time>
+                                {% if page.taxonomies.tags %}
+                                <div class="post-tags">
+                                    {% for tag in page.taxonomies.tags | slice(end=5) %}
+                                    <span class="tag">{{ tag }}</span>
+                                    {% endfor %}
+                                    {% if page.taxonomies.tags | length > 5 %}
+                                    <span class="tag">+{{ page.taxonomies.tags | length | minus(n=5) }} more</span>
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+                            </div>
+                            
+                            <h3 class="post-title">
+                                <a href="{{ page.permalink }}">{{ page.title }}</a>
+                            </h3>
+                            
+                            {% if page.description %}
+                            <p class="post-excerpt">{{ page.description }}</p>
+                            {% endif %}
+                            
+                            <a href="{{ page.permalink }}" class="read-more">Read more →</a>
+                        </article>
+                        {% endfor %}
+                    </section>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -82,139 +158,9 @@
         </div>
     </footer>
 
-    <!-- Search Results Dropdown -->
-    <div id="search-results" class="search-results hidden">
-        <div class="search-results-content">
-            <div class="search-results-header">
-                <h3>Search Results</h3>
-                <button id="close-search" class="close-search">&times;</button>
-            </div>
-            <div id="search-results-list"></div>
-        </div>
-    </div>
-
-    <!-- Simple Working Zola Search -->
+    <!-- Search functionality -->
     <script src="{{ get_url(path="elasticlunr.min.js") }}"></script>
     <script src="{{ get_url(path="search_index.en.js") }}"></script>
-    <script>
-        (function() {
-            'use strict';
-            
-            let searchIndex;
-            
-            document.addEventListener('DOMContentLoaded', function() {
-                const searchInput = document.getElementById('search');
-                const searchResults = document.getElementById('search-results');
-                const searchResultsList = document.getElementById('search-results-list');
-                
-                if (!searchInput || !searchResults || !searchResultsList) {
-                    console.warn('Search elements not found');
-                    return;
-                }
-                
-                // Initialize search index
-                if (typeof window.searchIndex !== 'undefined') {
-                    searchIndex = elasticlunr.Index.load(window.searchIndex);
-                } else {
-                    console.error('Search index not available');
-                    return;
-                }
-                
-                // Simple search function
-                function performSearch(query) {
-                    if (!query || query.length < 2) {
-                        return [];
-                    }
-                    
-                    try {
-                        return searchIndex.search(query, {
-                            fields: {
-                                title: {boost: 2},
-                                body: {boost: 1}
-                            },
-                            bool: "OR"
-                        }).slice(0, 8); // Limit results
-                    } catch (e) {
-                        console.error('Search error:', e);
-                        return [];
-                    }
-                }
-                
-                // Create clean title from URL
-                function getTitle(url) {
-                    const parts = url.split('/').filter(Boolean);
-                    const slug = parts[parts.length - 1] || 'Home';
-                    return slug.replace(/-/g, ' ')
-                              .replace(/\b\w/g, l => l.toUpperCase());
-                }
-                
-                // Display results in dropdown
-                function displayResults(results) {
-                    searchResultsList.innerHTML = '';
-                    
-                    if (results.length === 0) {
-                        searchResultsList.innerHTML = '<div class="no-results">No results found</div>';
-                        return;
-                    }
-                    
-                    results.forEach(result => {
-                        const item = document.createElement('div');
-                        item.className = 'search-result-item';
-                        
-                        const title = getTitle(result.ref);
-                        const url = result.ref;
-                        
-                        // Only show title, no URL
-                        item.innerHTML = `<a href="${url}">${title}</a>`;
-                        
-                        searchResultsList.appendChild(item);
-                    });
-                }
-                
-                // Input event - show dropdown
-                searchInput.addEventListener('input', function(e) {
-                    const query = e.target.value.trim();
-                    
-                    if (query.length >= 2) {
-                        const results = performSearch(query);
-                        displayResults(results);
-                        searchResults.classList.remove('hidden');
-                    } else {
-                        searchResults.classList.add('hidden');
-                    }
-                });
-                
-                // Enter key - go to first result
-                searchInput.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' && e.target.value.trim().length >= 2) {
-                        e.preventDefault();
-                        const results = performSearch(e.target.value.trim());
-                        if (results.length > 0) {
-                            window.location.href = results[0].ref;
-                        }
-                    }
-                    
-                    if (e.key === 'Escape') {
-                        searchResults.classList.add('hidden');
-                        searchInput.blur();
-                    }
-                });
-                
-                // Hide on click outside
-                document.addEventListener('click', function(e) {
-                    if (!e.target.closest('.search-container')) {
-                        searchResults.classList.add('hidden');
-                    }
-                });
-                
-                // Show on focus if there's content
-                searchInput.addEventListener('focus', function() {
-                    if (searchInput.value.trim().length >= 2) {
-                        searchResults.classList.remove('hidden');
-                    }
-                });
-            });
-        })();
-    </script>
+    <script src="{{ get_url(path="search.js") }}"></script>
 </body>
 </html> 

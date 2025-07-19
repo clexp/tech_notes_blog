@@ -32,10 +32,14 @@
           </div>
           <div class="nav-menu">
             <a href="{{ config.base_url }}" class="nav-link">Home</a>
-            <a href="{{ config.base_url }}/tags" class="nav-link">Tags</a>
-            <a href="{{ config.base_url }}/categories" class="nav-link"
-              >Categories</a
-            >
+            <a href="{{ get_url(path="about") }}" class="nav-link">About</a>
+            <a href="{{ get_url(path="contact") }}" class="nav-link">Contact</a>
+            <div class="search-container">
+              <input type="search" id="search" placeholder="Search posts..." class="search-input">
+              <div id="search-results" class="search-results hidden">
+                <div id="search-results-list" class="search-results-list"></div>
+              </div>
+            </div>
           </div>
         </nav>
       </div>
@@ -43,37 +47,71 @@
 
     <main class="site-main">
       <div class="container">
-        <h1 class="section-title">All Categories</h1>
+        <div class="main-content">
+          <!-- Sidebar Navigation -->
+          <aside class="sidebar">
+            <nav class="sidebar-nav">
+              <h3 class="sidebar-title">Browse by Topic</h3>
+              <ul class="sidebar-menu">
+                <li><a href="{{ get_url(path="networking") }}" class="sidebar-link">
+                  <span class="sidebar-icon">🌐</span>
+                  <span class="sidebar-text">Networking</span>
+                </a></li>
+                <li><a href="{{ get_url(path="system-admin") }}" class="sidebar-link">
+                  <span class="sidebar-icon">⚙️</span>
+                  <span class="sidebar-text">System Admin</span>
+                </a></li>
+                <li><a href="{{ get_url(path="security") }}" class="sidebar-link">
+                  <span class="sidebar-icon">🔒</span>
+                  <span class="sidebar-text">Security</span>
+                </a></li>
+                <li><a href="{{ get_url(path="home-lab") }}" class="sidebar-link">
+                  <span class="sidebar-icon">🏠</span>
+                  <span class="sidebar-text">Home Lab</span>
+                </a></li>
+                <li><a href="{{ get_url(path="web-dev") }}" class="sidebar-link">
+                  <span class="sidebar-icon">💻</span>
+                  <span class="sidebar-text">Web Dev</span>
+                </a></li>
+              </ul>
+            </nav>
+          </aside>
 
-        <div class="categories-grid">
-          {% for category in terms %}
-          <div class="category-card">
-            <h2 class="category-name">
-              <a href="{{ category.permalink }}">{{ category.name }}</a>
-            </h2>
-            <p class="category-count">
-              {{ category.pages | length }} post{{ category.pages | length |
-              pluralize }}
-            </p>
+          <!-- Main Content Area -->
+          <div class="content">
+            <h1 class="section-title">All Categories</h1>
 
-            <div class="category-posts">
-              {% for page in category.pages | slice(end=3) %}
-              <div class="category-post">
-                <a href="{{ page.permalink }}">{{ page.title }}</a>
-                <span class="post-date"
-                  >{{ page.date | date(format="%B %d, %Y") }}</span
-                >
+            <div class="categories-grid">
+              {% for category in terms %}
+              <div class="category-card">
+                <h2 class="category-name">
+                  <a href="{{ category.permalink }}">{{ category.name }}</a>
+                </h2>
+                <p class="category-count">
+                  {{ category.pages | length }} post{{ category.pages | length |
+                  pluralize }}
+                </p>
+
+                <div class="category-posts">
+                  {% for page in category.pages | slice(end=3) %}
+                  <div class="category-post">
+                    <a href="{{ page.permalink }}">{{ page.title }}</a>
+                    <span class="post-date"
+                      >{{ page.date | date(format="%B %d, %Y") }}</span
+                    >
+                  </div>
+                  {% endfor %} {% if category.pages | length > 3 %}
+                  <div class="category-more">
+                    <a href="{{ category.permalink }}"
+                      >View all {{ category.pages | length }} posts →</a
+                    >
+                  </div>
+                  {% endif %}
+                </div>
               </div>
-              {% endfor %} {% if category.pages | length > 3 %}
-              <div class="category-more">
-                <a href="{{ category.permalink }}"
-                  >View all {{ category.pages | length }} posts →</a
-                >
-              </div>
-              {% endif %}
+              {% endfor %}
             </div>
           </div>
-          {% endfor %}
         </div>
       </div>
     </main>
@@ -87,5 +125,10 @@
         </p>
       </div>
     </footer>
+
+    <!-- Search functionality -->
+    <script src="{{ get_url(path="elasticlunr.min.js") }}"></script>
+    <script src="{{ get_url(path="search_index.en.js") }}"></script>
+    <script src="{{ get_url(path="search.js") }}"></script>
   </body>
 </html>

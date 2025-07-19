@@ -42,36 +42,70 @@
 
     <main class="site-main">
       <div class="container">
-        <h1 class="section-title">All Tags</h1>
+        <div class="main-content">
+          <!-- Sidebar Navigation -->
+          <aside class="sidebar">
+            <nav class="sidebar-nav">
+              <h3 class="sidebar-title">Browse by Topic</h3>
+              <ul class="sidebar-menu">
+                <li><a href="{{ get_url(path="networking") }}" class="sidebar-link">
+                  <span class="sidebar-icon">🌐</span>
+                  <span class="sidebar-text">Networking</span>
+                </a></li>
+                <li><a href="{{ get_url(path="system-admin") }}" class="sidebar-link">
+                  <span class="sidebar-icon">⚙️</span>
+                  <span class="sidebar-text">System Admin</span>
+                </a></li>
+                <li><a href="{{ get_url(path="security") }}" class="sidebar-link">
+                  <span class="sidebar-icon">🔒</span>
+                  <span class="sidebar-text">Security</span>
+                </a></li>
+                <li><a href="{{ get_url(path="home-lab") }}" class="sidebar-link">
+                  <span class="sidebar-icon">🏠</span>
+                  <span class="sidebar-text">Home Lab</span>
+                </a></li>
+                <li><a href="{{ get_url(path="web-dev") }}" class="sidebar-link">
+                  <span class="sidebar-icon">💻</span>
+                  <span class="sidebar-text">Web Dev</span>
+                </a></li>
+              </ul>
+            </nav>
+          </aside>
 
-        <div class="tags-grid">
-          {% for tag in terms %}
-          <div class="tag-card">
-            <h2 class="tag-name">
-              <a href="{{ tag.permalink }}">{{ tag.name }}</a>
-            </h2>
-            <p class="tag-count">
-              {{ tag.pages | length }} post{{ tag.pages | length | pluralize }}
-            </p>
+          <!-- Main Content Area -->
+          <div class="content">
+            <h1 class="section-title">All Tags</h1>
 
-            <div class="tag-posts">
-              {% for page in tag.pages | slice(end=3) %}
-              <div class="tag-post">
-                <a href="{{ page.permalink }}">{{ page.title }}</a>
-                <span class="post-date"
-                  >{{ page.date | date(format="%B %d, %Y") }}</span
-                >
+            <div class="tags-grid">
+              {% for tag in terms %}
+              <div class="tag-card">
+                <h2 class="tag-name">
+                  <a href="{{ tag.permalink }}">{{ tag.name }}</a>
+                </h2>
+                <p class="tag-count">
+                  {{ tag.pages | length }} post{{ tag.pages | length | pluralize }}
+                </p>
+
+                <div class="tag-posts">
+                  {% for page in tag.pages | slice(end=3) %}
+                  <div class="tag-post">
+                    <a href="{{ page.permalink }}">{{ page.title }}</a>
+                    <span class="post-date"
+                      >{{ page.date | date(format="%B %d, %Y") }}</span
+                    >
+                  </div>
+                  {% endfor %} {% if tag.pages | length > 3 %}
+                  <div class="tag-more">
+                    <a href="{{ tag.permalink }}"
+                      >View all {{ tag.pages | length }} posts →</a
+                    >
+                  </div>
+                  {% endif %}
+                </div>
               </div>
-              {% endfor %} {% if tag.pages | length > 3 %}
-              <div class="tag-more">
-                <a href="{{ tag.permalink }}"
-                  >View all {{ tag.pages | length }} posts →</a
-                >
-              </div>
-              {% endif %}
+              {% endfor %}
             </div>
           </div>
-          {% endfor %}
         </div>
       </div>
     </main>
@@ -85,5 +119,10 @@
         </p>
       </div>
     </footer>
+
+    <!-- Search functionality -->
+    <script src="{{ get_url(path="elasticlunr.min.js") }}"></script>
+    <script src="{{ get_url(path="search_index.en.js") }}"></script>
+    <script src="{{ get_url(path="search.js") }}"></script>
   </body>
 </html>

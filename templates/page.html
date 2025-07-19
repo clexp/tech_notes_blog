@@ -24,6 +24,7 @@
                 <div class="nav-menu">
                     <a href="{{ config.base_url }}" class="nav-link">Home</a>
                     <a href="{{ get_url(path="about") }}" class="nav-link">About</a>
+                    <a href="{{ get_url(path="contact") }}" class="nav-link">Contact</a>
                     <div class="search-container">
                         <input type="search" id="search" placeholder="Search posts..." class="search-input">
                         <div id="search-results" class="search-results hidden">
@@ -37,21 +38,55 @@
 
     <main class="site-main">
         <div class="container">
-            <article class="page-content">
-                <h1>{{ page.title }}</h1>
-                
-                {% if page.taxonomies.tags %}
-                <div class="post-meta">
-                    <div class="post-tags">
-                        {% for tag in page.taxonomies.tags %}
-                        <span class="tag">{{ tag }}</span>
-                        {% endfor %}
-                    </div>
+            <div class="main-content">
+                <!-- Sidebar Navigation -->
+                <aside class="sidebar">
+                    <nav class="sidebar-nav">
+                        <h3 class="sidebar-title">Browse by Topic</h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="{{ get_url(path="networking") }}" class="sidebar-link">
+                                <span class="sidebar-icon">🌐</span>
+                                <span class="sidebar-text">Networking</span>
+                            </a></li>
+                            <li><a href="{{ get_url(path="system-admin") }}" class="sidebar-link">
+                                <span class="sidebar-icon">⚙️</span>
+                                <span class="sidebar-text">System Admin</span>
+                            </a></li>
+                            <li><a href="{{ get_url(path="security") }}" class="sidebar-link">
+                                <span class="sidebar-icon">🔒</span>
+                                <span class="sidebar-text">Security</span>
+                            </a></li>
+                            <li><a href="{{ get_url(path="home-lab") }}" class="sidebar-link">
+                                <span class="sidebar-icon">🏠</span>
+                                <span class="sidebar-text">Home Lab</span>
+                            </a></li>
+                            <li><a href="{{ get_url(path="web-dev") }}" class="sidebar-link">
+                                <span class="sidebar-icon">💻</span>
+                                <span class="sidebar-text">Web Dev</span>
+                            </a></li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <!-- Main Content Area -->
+                <div class="content">
+                    <article class="page-content">
+                        <h1>{{ page.title }}</h1>
+                        
+                        {% if page.taxonomies.tags %}
+                        <div class="post-meta">
+                            <div class="post-tags">
+                                {% for tag in page.taxonomies.tags %}
+                                <span class="tag">{{ tag }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        
+                        {{ page.content | safe }}
+                    </article>
                 </div>
-                {% endif %}
-                
-                {{ page.content | safe }}
-            </article>
+            </div>
         </div>
     </main>
 
@@ -61,128 +96,9 @@
         </div>
     </footer>
 
-    <!-- Simple Working Zola Search -->
+    <!-- Search functionality -->
     <script src="{{ get_url(path="elasticlunr.min.js") }}"></script>
     <script src="{{ get_url(path="search_index.en.js") }}"></script>
-    <script>
-        (function() {
-            'use strict';
-            
-            let searchIndex;
-            
-            document.addEventListener('DOMContentLoaded', function() {
-                const searchInput = document.getElementById('search');
-                const searchResults = document.getElementById('search-results');
-                const searchResultsList = document.getElementById('search-results-list');
-                
-                if (!searchInput || !searchResults || !searchResultsList) {
-                    console.warn('Search elements not found');
-                    return;
-                }
-                
-                // Initialize search index
-                if (typeof window.searchIndex !== 'undefined') {
-                    searchIndex = elasticlunr.Index.load(window.searchIndex);
-                } else {
-                    console.error('Search index not available');
-                    return;
-                }
-                
-                // Simple search function
-                function performSearch(query) {
-                    if (!query || query.length < 2) {
-                        return [];
-                    }
-                    
-                    try {
-                        return searchIndex.search(query, {
-                            fields: {
-                                title: {boost: 2},
-                                body: {boost: 1}
-                            },
-                            bool: "OR"
-                        }).slice(0, 8); // Limit results
-                    } catch (e) {
-                        console.error('Search error:', e);
-                        return [];
-                    }
-                }
-                
-                // Create clean title from URL
-                function getTitle(url) {
-                    const parts = url.split('/').filter(Boolean);
-                    const slug = parts[parts.length - 1] || 'Home';
-                    return slug.replace(/-/g, ' ')
-                              .replace(/\b\w/g, l => l.toUpperCase());
-                }
-                
-                // Display results in dropdown
-                function displayResults(results) {
-                    searchResultsList.innerHTML = '';
-                    
-                    if (results.length === 0) {
-                        searchResultsList.innerHTML = '<div class="no-results">No results found</div>';
-                        return;
-                    }
-                    
-                    results.forEach(result => {
-                        const item = document.createElement('div');
-                        item.className = 'search-result-item';
-                        
-                        const title = getTitle(result.ref);
-                        const url = result.ref;
-                        
-                        // Only show title, no URL
-                        item.innerHTML = `<a href="${url}">${title}</a>`;
-                        
-                        searchResultsList.appendChild(item);
-                    });
-                }
-                
-                // Input event - show dropdown
-                searchInput.addEventListener('input', function(e) {
-                    const query = e.target.value.trim();
-                    
-                    if (query.length >= 2) {
-                        const results = performSearch(query);
-                        displayResults(results);
-                        searchResults.classList.remove('hidden');
-                    } else {
-                        searchResults.classList.add('hidden');
-                    }
-                });
-                
-                // Enter key - go to first result
-                searchInput.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' && e.target.value.trim().length >= 2) {
-                        e.preventDefault();
-                        const results = performSearch(e.target.value.trim());
-                        if (results.length > 0) {
-                            window.location.href = results[0].ref;
-                        }
-                    }
-                    
-                    if (e.key === 'Escape') {
-                        searchResults.classList.add('hidden');
-                        searchInput.blur();
-                    }
-                });
-                
-                // Hide on click outside
-                document.addEventListener('click', function(e) {
-                    if (!e.target.closest('.search-container')) {
-                        searchResults.classList.add('hidden');
-                    }
-                });
-                
-                // Show on focus if there's content
-                searchInput.addEventListener('focus', function() {
-                    if (searchInput.value.trim().length >= 2) {
-                        searchResults.classList.remove('hidden');
-                    }
-                });
-            });
-        })();
-    </script>
+    <script src="{{ get_url(path="search.js") }}"></script>
 </body>
 </html> 

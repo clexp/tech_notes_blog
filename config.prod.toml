@@ -1,8 +1,5 @@
-# Development Configuration
-# Use this for local development with: zola serve --config config.dev.toml
-
-# The URL the site will be built for (localhost for development)
-base_url = "/"
+# The URL the site will be built for
+base_url = "https://blog.clexp.net"
 
 # Site title and description
 title = "Clexp Explores Technology"
@@ -24,4 +21,4 @@ index_format = "elasticlunr_javascript"
 highlight_code = true
 
 [extra]
-# Put all your custom variables here 
+# Put all your custom variables here

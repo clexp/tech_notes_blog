@@ -1,0 +1,27 @@
+{% set gallery_path = path %} {% set columns = columns | default(value=3) %} {%
+set thumb_width = thumb_width | default(value=300) %} {% set thumb_height =
+thumb_height | default(value=200) %} {% set full_width = full_width |
+default(value=1200) %} {% set format = format | default(value="webp") %} {% set
+quality = quality | default(value=85) %}
+
+<!-- Gallery container -->
+<div class="gallery" style="--columns: {{ columns }}">
+  {% for image in page.assets %} {% if image.name is containing(gallery_path) %}
+  {% set thumbnail = resize_image(path=image.path, width=thumb_width,
+  height=thumb_height, op="fill", format=format, quality=quality) %} {% set
+  full_image = resize_image(path=image.path, width=full_width, op="fit_width",
+  format=format, quality=quality) %}
+
+  <div class="gallery-item">
+    <a href="{{ full_image.url }}" class="gallery-link">
+      <img
+        src="{{ thumbnail.url }}"
+        alt="{{ image.name }}"
+        width="{{ thumbnail.width }}"
+        height="{{ thumbnail.height }}"
+        loading="lazy"
+      />
+    </a>
+  </div>
+  {% endif %} {% endfor %}
+</div>

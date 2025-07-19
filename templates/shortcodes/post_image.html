@@ -1,0 +1,26 @@
+{% set image_path = path %} {% set image_type = type | default(value="hero") %}
+{% set alt_text = alt | default(value=page.title) %} {% set caption = caption |
+default(value="") %}
+
+<!-- Set dimensions based on image type -->
+{% if image_type == "hero" %} {% set width = 1200 %} {% set height = 600 %} {%
+set op = "fill" %} {% elif image_type == "thumbnail" %} {% set width = 400 %} {%
+set height = 300 %} {% set op = "fill" %} {% else %} {% set width = 800 %} {%
+set height = 600 %} {% set op = "fit_width" %} {% endif %}
+
+<!-- Process the image -->
+{% set processed_image = resize_image(path=image_path, width=width,
+height=height, op=op, format="webp", quality=85) %}
+
+<figure class="post-image post-image-{{ image_type }}">
+  <img
+    src="{{ processed_image.url }}"
+    alt="{{ alt_text }}"
+    width="{{ processed_image.width }}"
+    height="{{ processed_image.height }}"
+    loading="lazy"
+  />
+  {% if caption %}
+  <figcaption>{{ caption }}</figcaption>
+  {% endif %}
+</figure>
