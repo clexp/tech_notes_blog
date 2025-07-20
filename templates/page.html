@@ -84,6 +84,34 @@
                         {% endif %}
                         
                         {{ page.content | safe }}
+                        
+                        <!-- Comments Section - Only show on blog posts, not static pages -->
+                        {% if page.extra.show_comments != false and page.section %}
+                        <div class="comments-section">
+                            <h2>Comments & Discussion</h2>
+                            <p class="comments-intro">
+                                Have questions about this post? Found an issue or have suggestions? 
+                                Join the discussion below or <a href="/contact">contact me directly</a>.
+                            </p>
+                            <div class="giscus-container">
+                                <script src="https://giscus.app/client.js"
+                                        data-repo="clexp/blog-comments"
+                                        data-repo-id="R_kgDOHj1234"
+                                        data-category="Announcements"
+                                        data-category-id="DIC_kwDOHj1234"
+                                        data-mapping="pathname"
+                                        data-strict="0"
+                                        data-reactions-enabled="1"
+                                        data-emit-metadata="0"
+                                        data-input-position="bottom"
+                                        data-theme="preferred_color_scheme"
+                                        data-lang="en"
+                                        crossorigin="anonymous"
+                                        async>
+                                </script>
+                            </div>
+                        </div>
+                        {% endif %}
                     </article>
                 </div>
             </div>

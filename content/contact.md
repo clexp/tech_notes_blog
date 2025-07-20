@@ -34,13 +34,17 @@ I welcome connections with fellow technical enthusiasts, potential collaborators
 
 ### Primary Contact
 
-- **Email**: [Contact through GitHub profile](https://github.com/YOUR_USERNAME)
+- **Email**: [clexp@clexp.net](mailto:clexp@clexp.net)
 - **Website**: [blog.clexp.net](https://blog.clexp.net)
+
+### Send a Message
+
+{{ contact_form() }}
 
 ### Professional Networks
 
-- **GitHub**: [@YOUR_USERNAME](https://github.com/YOUR_USERNAME) - View my code and projects
-- **LinkedIn**: [Connect professionally](https://linkedin.com/in/YOUR_PROFILE) - For career-related discussions
+- **GitHub**: [@clexp](https://github.com/clexp) - View my code and projects
+- **LinkedIn**: [Connect professionally](https://linkedin.com/in/clexp) - For career-related discussions
 
 ## What to Expect
 
@@ -118,7 +122,7 @@ _Looking forward to connecting with fellow technical enthusiasts and professiona
 
 - **[About](/about)**: Learn more about this blog and its focus
 - **[Home](/)**: Browse recent posts and technical content
-- **[GitHub](https://github.com/YOUR_USERNAME)**: View source code and projects
+- **[GitHub](https://github.com/clexp)**: View source code and projects
 - **[Blog Archive](/)**: Explore all posts by topic and date
 
 _This contact page is part of a professional technical blog showcasing real-world system administration and network engineering implementations._
