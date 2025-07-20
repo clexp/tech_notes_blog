@@ -240,7 +240,7 @@ ssh clexp@10.0.0.50
 **Step 1: Build locally**
 
 ```bash
-cd /Users/clexp/Sync/Tech_Blog
+cd /Users/clexp/Sync/Work_Pieces/Tech_Blog
 zola build
 ```
 

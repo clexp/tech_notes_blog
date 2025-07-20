@@ -55,6 +55,11 @@
 - [ ] **Create content images** - 2-3 inline images per post (diagrams, screenshots)
 - [ ] **Optimize existing content** - Update post descriptions and formatting
 - [ ] **Add more Web Dev content** - Document more site-building processes
+- [ ] Add a C++ section
+- [ ] add an arduino section
+- [ ] add an ESP32 section
+- [ ] add a rust section
+- [ ] add a hardware and hard disks section
 
 ### Phase 3: Advanced Features (Next 1-2 months)
 
