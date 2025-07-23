@@ -86,7 +86,7 @@
                         {{ page.content | safe }}
                         
                         <!-- Comments Section - Only show on blog posts, not static pages -->
-                        {% if page.extra.show_comments != false and page.section %}
+                        {% if page.section and (page.extra.show_comments is not defined or page.extra.show_comments != false) %}
                         <div class="comments-section">
                             <h2>Comments & Discussion</h2>
                             <p class="comments-intro">
