@@ -2,26 +2,40 @@
 <div class="contact-form-container">
   <form
     class="contact-form"
-    action="mailto:clexp@clexp.net"
-    method="GET"
-    enctype="text/plain"
+    action="https://formspree.io/f/myzpeoeo"
+    method="POST"
   >
     <div class="form-group">
-      <label for="subject">Subject *</label>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="your.email@example.com"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject</label>
       <input
         type="text"
         id="subject"
         name="subject"
-        required
         placeholder="What's this about?"
       />
     </div>
 
     <div class="form-group">
-      <label for="body">Message *</label>
+      <label for="message">Message *</label>
       <textarea
-        id="body"
-        name="body"
+        id="message"
+        name="message"
         rows="8"
         required
         placeholder="Tell me about your project, question, or collaboration idea..."
