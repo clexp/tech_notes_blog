@@ -34,7 +34,7 @@ I welcome connections with fellow technical enthusiasts, potential collaborators
 
 ### Primary Contact
 
-- **Email**: [clexp@clexp.net](mailto:clexp@clexp.net)
+- **Email**: [📧](mailto:clexp@clexp.net) _(Email address hidden to prevent scraping)_
 - **Website**: [blog.clexp.net](https://blog.clexp.net)
 
 ### Send a Message

@@ -24,9 +24,4 @@ index_format = "elasticlunr_javascript"
 highlight_code = true
 
 [extra]
-# Put all your custom variables here
-
-# Enable taxonomies (tags and categories)
-[taxonomies]
-tags = "tags"
-categories = "categories" 
+# Put all your custom variables here 

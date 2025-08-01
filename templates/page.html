@@ -121,9 +121,14 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; {{ now() | date(format="%Y") }} {{ config.title | default(value="Clexp Explores Technology") }}. Built with <a href="https://www.getzola.org/">Zola</a>.</p>
+            <p>&copy; <span id="current-year"></span> {{ config.title | default(value="Clexp Explores Technology") }}. Built with <a href="https://www.getzola.org/">Zola</a>.</p>
         </div>
     </footer>
+
+    <script>
+        // Auto-update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 
     <!-- Search functionality -->
     <script src="{{ get_url(path="elasticlunr.min.js") }}"></script>

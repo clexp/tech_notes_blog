@@ -76,51 +76,10 @@
                         <p class="hero-subtitle">Exploring networking, system administration, home lab experiments, and web development</p>
                     </section>
 
-                    <section class="sections-overview">
-                        <h2 class="section-title">Browse by Topic</h2>
-                        <div class="sections-grid">
-                            <div class="section-card">
-                                <div class="section-card-header">
-                                    <span class="section-icon">🌐</span>
-                                    <h3><a href="{{ get_url(path="networking") }}">Networking</a></h3>
-                                </div>
-                                <p>Deep dives into network infrastructure, protocols, and configuration. From DNS and DHCP to VLANs and IPv6 deployment.</p>
-                            </div>
-                            <div class="section-card">
-                                <div class="section-card-header">
-                                    <span class="section-icon">⚙️</span>
-                                    <h3><a href="{{ get_url(path="system-admin") }}">System Administration</a></h3>
-                                </div>
-                                <p>Server management, OS configuration, and deployment strategies across BSD and Linux systems.</p>
-                            </div>
-                            <div class="section-card">
-                                <div class="section-card-header">
-                                    <span class="section-icon">🔒</span>
-                                    <h3><a href="{{ get_url(path="security") }}">Security</a></h3>
-                                </div>
-                                <p>Network security, VPN implementation, and firewall configuration for secure infrastructure.</p>
-                            </div>
-                            <div class="section-card">
-                                <div class="section-card-header">
-                                    <span class="section-icon">🏠</span>
-                                    <h3><a href="{{ get_url(path="home-lab") }}">Home Lab</a></h3>
-                                </div>
-                                <p>Infrastructure projects, automation, and containerization in real home lab environments.</p>
-                            </div>
-                            <div class="section-card">
-                                <div class="section-card-header">
-                                    <span class="section-icon">💻</span>
-                                    <h3><a href="{{ get_url(path="web-dev") }}">Web Development</a></h3>
-                                </div>
-                                <p>Building modern web applications, static sites, and exploring web development technologies.</p>
-                            </div>
-                        </div>
-                    </section>
-
                     <section class="posts">
                         <h2 class="section-title">Latest Posts</h2>
                         
-                        {% for page in section.pages | sort(attribute="date") | reverse %}
+                        {% for page in section.pages | sort(attribute="date") | reverse | slice(end=3) %}
                         <article class="post-card">
                             <div class="post-meta">
                                 <time datetime="{{ page.date }}" class="post-date">{{ page.date | date(format="%B %d, %Y") }}</time>
@@ -155,9 +114,14 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; {{ now() | date(format="%Y") }} {{ config.title | default(value="Clexp Explores Technology") }}. Built with <a href="https://www.getzola.org/">Zola</a>.</p>
+            <p>&copy; <span id="current-year"></span> {{ config.title | default(value="Clexp Explores Technology") }}. Built with <a href="https://www.getzola.org/">Zola</a>.</p>
         </div>
     </footer>
+
+    <script>
+        // Auto-update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 
     <!-- Search functionality -->
     <script src="{{ get_url(path="elasticlunr.min.js") }}"></script>
