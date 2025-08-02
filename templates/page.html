@@ -44,28 +44,63 @@
                 <aside class="sidebar">
                     <nav class="sidebar-nav">
                         <h3 class="sidebar-title">Browse by Topic</h3>
-                        <ul class="sidebar-menu">
-                            <li><a href="{{ get_url(path="networking") }}" class="sidebar-link">
-                                <span class="sidebar-icon">🌐</span>
-                                <span class="sidebar-text">Networking</span>
-                            </a></li>
-                            <li><a href="{{ get_url(path="system-admin") }}" class="sidebar-link">
-                                <span class="sidebar-icon">⚙️</span>
-                                <span class="sidebar-text">System Admin</span>
-                            </a></li>
-                            <li><a href="{{ get_url(path="security") }}" class="sidebar-link">
-                                <span class="sidebar-icon">🔒</span>
-                                <span class="sidebar-text">Security</span>
-                            </a></li>
-                            <li><a href="{{ get_url(path="home-lab") }}" class="sidebar-link">
-                                <span class="sidebar-icon">🏠</span>
-                                <span class="sidebar-text">Home Lab</span>
-                            </a></li>
-                            <li><a href="{{ get_url(path="web-dev") }}" class="sidebar-link">
-                                <span class="sidebar-icon">💻</span>
-                                <span class="sidebar-text">Web Dev</span>
-                            </a></li>
-                        </ul>
+                        
+                        <!-- Infrastructure & Systems -->
+                        <div class="sidebar-group">
+                            <button class="sidebar-group-toggle" data-group="infrastructure">
+                                <span class="group-icon">🏗️</span>
+                                <span class="group-title">Infrastructure</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                            <ul class="sidebar-menu sidebar-submenu" data-group="infrastructure">
+                                <li><a href="{{ get_url(path="networking") }}" class="sidebar-link">
+                                    <span class="sidebar-icon">🌐</span>
+                                    <span class="sidebar-text">Networking</span>
+                                </a></li>
+                                <li><a href="{{ get_url(path="system-admin") }}" class="sidebar-link">
+                                    <span class="sidebar-icon">⚙️</span>
+                                    <span class="sidebar-text">System Admin</span>
+                                </a></li>
+                                <li><a href="{{ get_url(path="security") }}" class="sidebar-link">
+                                    <span class="sidebar-icon">🔒</span>
+                                    <span class="sidebar-text">Security</span>
+                                </a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Development & Projects -->
+                        <div class="sidebar-group">
+                            <button class="sidebar-group-toggle" data-group="development">
+                                <span class="group-icon">🛠️</span>
+                                <span class="group-title">Development</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                            <ul class="sidebar-menu sidebar-submenu" data-group="development">
+                                <li><a href="{{ get_url(path="web-dev") }}" class="sidebar-link">
+                                    <span class="sidebar-icon">💻</span>
+                                    <span class="sidebar-text">Web Dev</span>
+                                </a></li>
+                                <li><a href="{{ get_url(path="electronics") }}" class="sidebar-link">
+                                    <span class="sidebar-icon">🔌</span>
+                                    <span class="sidebar-text">Electronics</span>
+                                </a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Home & Lab -->
+                        <div class="sidebar-group">
+                            <button class="sidebar-group-toggle" data-group="homelab">
+                                <span class="group-icon">🏠</span>
+                                <span class="group-title">Home & Lab</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                            <ul class="sidebar-menu sidebar-submenu" data-group="homelab">
+                                <li><a href="{{ get_url(path="home-lab") }}" class="sidebar-link">
+                                    <span class="sidebar-icon">🏠</span>
+                                    <span class="sidebar-text">Home Lab</span>
+                                </a></li>
+                            </ul>
+                        </div>
                     </nav>
                 </aside>
 
@@ -73,6 +108,11 @@
                 <div class="content">
                     <article class="page-content">
                         <h1>{{ page.title }}</h1>
+                        
+                        <!-- AI Transparency Disclaimer -->
+                        <div class="ai-disclaimer">
+                            <p>🤖 <strong>AI Transparency:</strong> This content represents real human projects and experiences. AI assisted with initial drafting, but all content has been personally reviewed and edited by the site author.</p>
+                        </div>
                         
                         {% if page.taxonomies.tags %}
                         <div class="post-meta">
@@ -128,6 +168,27 @@
     <script>
         // Auto-update copyright year
         document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Collapsible sidebar functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const groupToggles = document.querySelectorAll('.sidebar-group-toggle');
+            
+            groupToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const group = this.getAttribute('data-group');
+                    const submenu = document.querySelector(`.sidebar-submenu[data-group="${group}"]`);
+                    const isCollapsed = this.classList.contains('collapsed');
+                    
+                    if (isCollapsed) {
+                        this.classList.remove('collapsed');
+                        submenu.classList.remove('collapsed');
+                    } else {
+                        this.classList.add('collapsed');
+                        submenu.classList.add('collapsed');
+                    }
+                });
+            });
+        });
     </script>
 
     <!-- Search functionality -->

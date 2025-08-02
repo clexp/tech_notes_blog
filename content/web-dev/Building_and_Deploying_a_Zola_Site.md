@@ -1,6 +1,6 @@
 +++
 title = "Building and Deploying a Zola Site"
-date = "2024-12-19"
+date = "2025-01-19"
 description = "Static site generators promise simplicity: write markdown, get a website. But building a professional blog with modern styling, search functionality, and deploying it through a complex home lab infrastructure proved to be anything but simple..."
 tags = ["zola", "sass", "css", "web-development", "freebsd", "openbsd", "nginx", "wireguard", "networking", "deployment", "debugging", "tutorial", "architecture"]
 categories = ["technical"]

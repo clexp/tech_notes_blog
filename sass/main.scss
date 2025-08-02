@@ -628,8 +628,132 @@ code {
   font-weight: 500;
 }
 
+// Collapsible sidebar groups
+.sidebar-group {
+  margin-bottom: 1rem;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+
+  .sidebar-group-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: rgba($primary-color, 0.05);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: $text-color;
+
+    &:hover {
+      background: rgba($primary-color, 0.1);
+    }
+
+    .group-icon {
+      margin-right: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .group-title {
+      flex: 1;
+      text-align: left;
+    }
+
+    .toggle-icon {
+      font-size: 0.8rem;
+      transition: transform 0.2s ease;
+    }
+
+    &.collapsed .toggle-icon {
+      transform: rotate(-90deg);
+    }
+
+    &.collapsed {
+      background: rgba($primary-color, 0.02);
+    }
+  }
+
+  .sidebar-submenu {
+    display: block;
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+    padding-left: 1rem; // Indent submenu items
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    opacity: 1;
+
+    &.collapsed {
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      color: $text-color;
+      transition: all 0.2s ease;
+      background: transparent;
+      font-size: 0.9rem;
+      border-left: 2px solid transparent; // Add left border for visual separation
+
+      &:hover {
+        background: rgba($primary-color, 0.1);
+        color: $primary-color;
+        border-left-color: $primary-color;
+      }
+
+      .sidebar-icon {
+        margin-right: 0.5rem;
+        font-size: 1rem;
+      }
+
+      .sidebar-text {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
 .content {
   min-width: 0; // Prevent flex overflow
+}
+
+// =============================================================================
+// AI TRANSPARENCY DISCLAIMER
+// =============================================================================
+
+.ai-disclaimer {
+  background: rgba($primary-color, 0.05);
+  border-left: 3px solid $primary-color;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0 1.5rem 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.9rem;
+  color: $secondary-color;
+  line-height: 1.4;
+
+  p {
+    margin: 0;
+  }
+
+  strong {
+    color: $text-color;
+  }
 }
 
 // =============================================================================

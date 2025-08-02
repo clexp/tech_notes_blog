@@ -1,11 +1,10 @@
 +++
 title = "Image Processing with Zola: A Complete Guide"
-date = "2024-12-19"
+date = "2025-01-17"
 description = "Learn how to process images efficiently in Zola using built-in functions and custom shortcodes for professional web development."
 tags = ["zola", "image-processing", "web-development", "performance", "webp", "responsive-images"]
 categories = ["technical"]
 +++
-
 
 Zola provides powerful built-in image processing capabilities that automatically optimize images for web delivery. This guide demonstrates how to use these features effectively in your technical blog.
 

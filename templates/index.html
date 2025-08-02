@@ -44,28 +44,63 @@
                 <aside class="sidebar">
                     <nav class="sidebar-nav">
                         <h3 class="sidebar-title">Browse by Topic</h3>
-                        <ul class="sidebar-menu">
-                            <li><a href="{{ get_url(path="networking") }}" class="sidebar-link">
-                                <span class="sidebar-icon">🌐</span>
-                                <span class="sidebar-text">Networking</span>
-                            </a></li>
-                            <li><a href="{{ get_url(path="system-admin") }}" class="sidebar-link">
-                                <span class="sidebar-icon">⚙️</span>
-                                <span class="sidebar-text">System Admin</span>
-                            </a></li>
-                            <li><a href="{{ get_url(path="security") }}" class="sidebar-link">
-                                <span class="sidebar-icon">🔒</span>
-                                <span class="sidebar-text">Security</span>
-                            </a></li>
-                            <li><a href="{{ get_url(path="home-lab") }}" class="sidebar-link">
-                                <span class="sidebar-icon">🏠</span>
-                                <span class="sidebar-text">Home Lab</span>
-                            </a></li>
-                            <li><a href="{{ get_url(path="web-dev") }}" class="sidebar-link">
-                                <span class="sidebar-icon">💻</span>
-                                <span class="sidebar-text">Web Dev</span>
-                            </a></li>
-                        </ul>
+                        
+                        <!-- Infrastructure & Systems -->
+                        <div class="sidebar-group">
+                            <button class="sidebar-group-toggle" data-group="infrastructure">
+                                <span class="group-icon">🏗️</span>
+                                <span class="group-title">Infrastructure</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                            <ul class="sidebar-menu sidebar-submenu" data-group="infrastructure">
+                                <li><a href="{{ get_url(path="networking") }}" class="sidebar-link">
+                                    <span class="sidebar-icon">🌐</span>
+                                    <span class="sidebar-text">Networking</span>
+                                </a></li>
+                                <li><a href="{{ get_url(path="system-admin") }}" class="sidebar-link">
+                                    <span class="sidebar-icon">⚙️</span>
+                                    <span class="sidebar-text">System Admin</span>
+                                </a></li>
+                                <li><a href="{{ get_url(path="security") }}" class="sidebar-link">
+                                    <span class="sidebar-icon">🔒</span>
+                                    <span class="sidebar-text">Security</span>
+                                </a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Development & Projects -->
+                        <div class="sidebar-group">
+                            <button class="sidebar-group-toggle" data-group="development">
+                                <span class="group-icon">🛠️</span>
+                                <span class="group-title">Development</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                            <ul class="sidebar-menu sidebar-submenu" data-group="development">
+                                <li><a href="{{ get_url(path="web-dev") }}" class="sidebar-link">
+                                    <span class="sidebar-icon">💻</span>
+                                    <span class="sidebar-text">Web Dev</span>
+                                </a></li>
+                                <li><a href="{{ get_url(path="electronics") }}" class="sidebar-link">
+                                    <span class="sidebar-icon">🔌</span>
+                                    <span class="sidebar-text">Electronics</span>
+                                </a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Home & Lab -->
+                        <div class="sidebar-group">
+                            <button class="sidebar-group-toggle" data-group="homelab">
+                                <span class="group-icon">🏠</span>
+                                <span class="group-title">Home & Lab</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                            <ul class="sidebar-menu sidebar-submenu" data-group="homelab">
+                                <li><a href="{{ get_url(path="home-lab") }}" class="sidebar-link">
+                                    <span class="sidebar-icon">🏠</span>
+                                    <span class="sidebar-text">Home Lab</span>
+                                </a></li>
+                            </ul>
+                        </div>
                     </nav>
                 </aside>
 
@@ -76,36 +111,71 @@
                         <p class="hero-subtitle">Exploring networking, system administration, home lab experiments, and web development</p>
                     </section>
 
+                    <!-- AI Transparency Disclaimer -->
+                    <div class="ai-disclaimer">
+                        <p>🤖 <strong>AI Transparency:</strong> This content represents real human projects and experiences. AI assisted with initial drafting, but all content has been personally reviewed and edited by the site author.</p>
+                    </div>
+
                     <section class="posts">
                         <h2 class="section-title">Latest Posts</h2>
                         
-                        {% for page in section.pages | sort(attribute="date") | reverse | slice(end=3) %}
+                        <!-- Manual list of 3 most recent posts -->
                         <article class="post-card">
                             <div class="post-meta">
-                                <time datetime="{{ page.date }}" class="post-date">{{ page.date | date(format="%B %d, %Y") }}</time>
-                                {% if page.taxonomies.tags %}
+                                <time datetime="2025-01-19" class="post-date">January 19, 2025</time>
                                 <div class="post-tags">
-                                    {% for tag in page.taxonomies.tags | slice(end=5) %}
-                                    <span class="tag">{{ tag }}</span>
-                                    {% endfor %}
-                                    {% if page.taxonomies.tags | length > 5 %}
-                                    <span class="tag">+{{ page.taxonomies.tags | length | minus(n=5) }} more</span>
-                                    {% endif %}
+                                    <span class="tag">zola</span>
+                                    <span class="tag">web-development</span>
+                                    <span class="tag">deployment</span>
                                 </div>
-                                {% endif %}
                             </div>
                             
                             <h3 class="post-title">
-                                <a href="{{ page.permalink }}">{{ page.title }}</a>
+                                <a href="{{ get_url(path='web-dev/building-and-deploying-a-zola-site') }}">Building and Deploying a Zola Site</a>
                             </h3>
                             
-                            {% if page.description %}
-                            <p class="post-excerpt">{{ page.description }}</p>
-                            {% endif %}
+                            <p class="post-excerpt">Static site generators promise simplicity: write markdown, get a website. But building a professional blog with modern styling, search functionality, and deploying it through a complex home lab infrastructure proved to be anything but simple...</p>
                             
-                            <a href="{{ page.permalink }}" class="read-more">Read more →</a>
+                            <a href="{{ get_url(path='web-dev/building-and-deploying-a-zola-site') }}" class="read-more">Read more →</a>
                         </article>
-                        {% endfor %}
+
+                        <article class="post-card">
+                            <div class="post-meta">
+                                <time datetime="2025-01-18" class="post-date">January 18, 2025</time>
+                                <div class="post-tags">
+                                    <span class="tag">web-development</span>
+                                    <span class="tag">image-processing</span>
+                                    <span class="tag">performance</span>
+                                </div>
+                            </div>
+                            
+                            <h3 class="post-title">
+                                <a href="{{ get_url(path='web-dev/professional-image-processing-for-web') }}">Professional Image Processing for Web Development</a>
+                            </h3>
+                            
+                            <p class="post-excerpt">Implementing a complete image processing pipeline for modern web applications using Zola's built-in capabilities, custom shortcodes, and professional optimization strategies.</p>
+                            
+                            <a href="{{ get_url(path='web-dev/professional-image-processing-for-web') }}" class="read-more">Read more →</a>
+                        </article>
+
+                        <article class="post-card">
+                            <div class="post-meta">
+                                <time datetime="2025-07-18" class="post-date">July 18, 2025</time>
+                                <div class="post-tags">
+                                    <span class="tag">dhcp</span>
+                                    <span class="tag">dns</span>
+                                    <span class="tag">networking</span>
+                                </div>
+                            </div>
+                            
+                            <h3 class="post-title">
+                                <a href="{{ get_url(path='the-day-my-dns-died-dhcp-and-dns-debugging') }}">The Day My DNS Died - DHCP and DNS Debugging</a>
+                            </h3>
+                            
+                            <p class="post-excerpt">_May 2025 — Somewhere between coffee and chaos._ So there I was, deep in the bowels of my home lab, configuring `BIND9` for local DNS and `ISC DHCP Server` for dynamic IP leases...</p>
+                            
+                            <a href="{{ get_url(path='the-day-my-dns-died-dhcp-and-dns-debugging') }}" class="read-more">Read more →</a>
+                        </article>
                     </section>
                 </div>
             </div>
@@ -121,6 +191,27 @@
     <script>
         // Auto-update copyright year
         document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Collapsible sidebar functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const groupToggles = document.querySelectorAll('.sidebar-group-toggle');
+            
+            groupToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const group = this.getAttribute('data-group');
+                    const submenu = document.querySelector(`.sidebar-submenu[data-group="${group}"]`);
+                    const isCollapsed = this.classList.contains('collapsed');
+                    
+                    if (isCollapsed) {
+                        this.classList.remove('collapsed');
+                        submenu.classList.remove('collapsed');
+                    } else {
+                        this.classList.add('collapsed');
+                        submenu.classList.add('collapsed');
+                    }
+                });
+            });
+        });
     </script>
 
     <!-- Search functionality -->
