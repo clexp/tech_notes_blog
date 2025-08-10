@@ -35,6 +35,13 @@
             <a href="{{ config.base_url }}/categories" class="nav-link"
               >Categories</a
             >
+            
+            <!-- Night Mode Toggle -->
+            <button class="night-mode-toggle" id="night-mode-toggle" title="Toggle Night Mode">
+                <span class="day-icon">🌙</span>
+                <span class="night-icon" style="display: none;">☀️</span>
+            </button>
+            
           </div>
         </nav>
       </div>
@@ -176,6 +183,40 @@
                         submenu.classList.add('collapsed');
                     }
                 });
+            });
+
+            // Night mode toggle functionality
+            const nightModeToggle = document.getElementById('night-mode-toggle');
+            const dayIcon = nightModeToggle.querySelector('.day-icon');
+            const nightIcon = nightModeToggle.querySelector('.night-icon');
+            
+            // Check for saved theme preference or default to light mode
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            if (currentTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                nightModeToggle.classList.add('active');
+                dayIcon.style.display = 'none';
+                nightIcon.style.display = 'block';
+            }
+            
+            nightModeToggle.addEventListener('click', function() {
+                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                
+                if (isDark) {
+                    // Switch to light mode
+                    document.documentElement.removeAttribute('data-theme');
+                    nightModeToggle.classList.remove('active');
+                    dayIcon.style.display = 'block';
+                    nightIcon.style.display = 'none';
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    // Switch to dark mode
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    nightModeToggle.classList.add('active');
+                    dayIcon.style.display = 'none';
+                    nightIcon.style.display = 'block';
+                    localStorage.setItem('theme', 'dark');
+                }
             });
         });
     </script>

@@ -19,13 +19,9 @@ But, like all good engineering stories, this one quickly detoured into a lesson-
 ### The Setup
 
 - **Primary server:** `nas04` (Ubuntu) — hosts the live data on various ZFS datasets like `reflect/Pictures`, `reflect/paperless`, etc.
-    
 - **Backup target:** `bub03` (FreeBSD) — a ZFS mirror, set to receive replicated snapshots.
-    
 - **Networking:** `nas04` connects to `bub03` over a private interface (192.168.177.0/24).
-    
 - **Access:** Passwordless SSH from `nas04` (user `infra`) to `bub03`.
-    
 
 The goal: Have `bub03` wake up on LAN, receive ZFS snapshots, and then power down once the job is done.
 
@@ -163,13 +159,9 @@ shutdown -p now
 ### Learnings Along the Way
 
 - **`cron` runs in minimal environments.** Make sure scripts have full paths and expected environment.
-    
 - **Ownership matters.** If a script is owned by another user, `cron` may fail silently.
-    
 - **Filesystem state in single-user mode defaults to read-only.** Use `mount -u /` to fix.
-    
 - **Preventing irreversible automation is key.** Build in override controls for safety.
-    
 
 ---
 
@@ -178,3 +170,94 @@ shutdown -p now
 Today, `bub03` wakes on LAN, receives its snapshots, then waits a polite 5 minutes before going back to sleep — unless told otherwise. Cron runs like clockwork, logs are clear, and the system respects a simple file as a veto.
 
 Backup isn’t just about copying data. It's about designing resilience — for systems _and_ for sysadmins who might just need one more minute to fix something.
+
+## 🎨 **Technical/Industrial Design Direction**
+
+### **Typography Options:**
+
+**Sans Serif Technical Choices:**
+
+- **Inter** (current) - Modern, clean, highly readable
+- **Roboto Mono** - Technical, monospace feel
+- **Source Sans Pro** - Professional, technical
+- **IBM Plex Sans** - Corporate technical aesthetic
+- **Fira Sans** - Mozilla's technical font
+
+### **Color Palette Suggestions:**
+
+**Option 1: Industrial Blue-Gray**
+
+```scss
+<code_block_to_apply_changes_from>
+```
+
+**Option 2: Technical Dark**
+
+```scss
+$primary-color: #34495e; // Dark slate
+$secondary-color: #95a5a6; // Light gray
+$accent-color: #e74c3c; // Technical red
+$background-color: #f8f9fa; // Off-white
+$text-color: #2c3e50; // Dark text
+```
+
+**Option 3: Engineering Green**
+
+```scss
+$primary-color: #27ae60; // Engineering green
+$secondary-color: #7f8c8d; // Medium gray
+$accent-color: #f39c12; // Warning orange
+$background-color: #ecf0f1; // Light gray
+$text-color: #2c3e50; // Dark text
+```
+
+### **Backdrop Implementation Strategy:**
+
+**A. Section-Specific Backdrops:**
+
+```scss
+.networking-section {
+  background-image: url("/static/images/network-diagrams.svg");
+  background-attachment: fixed;
+  background-size: 300px;
+  opacity: 0.02;
+}
+
+.electronics-section {
+  background-image: url("/static/images/pcb-layouts.svg");
+  background-attachment: fixed;
+  background-size: 250px;
+  opacity: 0.03;
+}
+```
+
+**B. Global Technical Pattern:**
+
+```scss
+body {
+  background-image: url("/static/images/technical-drawings.svg");
+  background-attachment: fixed;
+  background-size: 400px;
+  background-position: center;
+  opacity: 0.015;
+}
+```
+
+### **Image Types to Collect:**
+
+- **Circuit diagrams** (old-school hand-drawn style)
+- **PCB layouts** (green boards with traces)
+- **Mechanical assembly drawings** (ISO standard style)
+- **Network topology diagrams** (hand-drawn feel)
+- **Component datasheets** (technical specifications)
+- **Manufacturing blueprints** (engineering drawings)
+
+### **Technical Aesthetic Elements:**
+
+- **Sharp corners** instead of rounded
+- **Grid-based layouts** (technical precision)
+- **Monospace code blocks** (technical feel)
+- **Technical icons** (gears, circuits, tools)
+- **Minimal shadows** (clean, precise)
+
+Which color palette appeals to you? And would you prefer section-specific backdrops or a global technical pattern?

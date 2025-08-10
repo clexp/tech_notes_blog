@@ -42,6 +42,14 @@
 
 - [x] **site is live, edit to minimize security risks** - Enhanced 4 high-impact posts with professional polish, consistent sanitization, and authentic learning reflections while maintaining technical depth. Added RFC references, security considerations, and honest "What I Learned" sections. _(2025-07-16)_
 - [x] Fix left sidebar navigation to appear on all pages
+- [x] **Implement collapsible sidebar** - Added organized sidebar with Infrastructure, Development, and Home & Lab groups _(2025-08-02)_
+- [x] **Add AI transparency disclaimer** - Implemented honest disclaimer about AI assistance on all pages _(2025-08-02)_
+- [x] **Create dynamic color palette system** - Built 3 professional palettes (Industrial Blue-Gray, Technical Dark, Engineering Green) with real-time switching _(2025-08-02)_
+- [x] **Fix text contrast issues** - Resolved readability problems across all palettes _(2025-08-02)_
+- [x] **Implement night mode with blueprint transformation** - Added dark mode toggle with CSS filters for blueprint effect on technical drawings _(2025-01-19)_
+- [x] **Remove palette toggles, keep night mode** - Simplified to single P7 palette with night mode functionality _(2025-01-19)_
+- [x] **Add light color fills to post cards** - Applied secondary color backgrounds to post cards, category cards, and tag cards _(2025-01-19)_
+- [x] **Fix night mode sidebar text contrast** - Maintained dark text in sidebar for proper contrast in both day and night modes _(2025-01-19)_
 - [ ] **Create default section images** - Design 10 default images (5 heroes + 5 thumbnails)
 - [ ] **Add page header images** - Create banners for About, Contact, and main pages
 - [ ] **Design site logo and favicon** - Professional branding elements
@@ -55,6 +63,7 @@
 - [ ] **Create content images** - 2-3 inline images per post (diagrams, screenshots)
 - [ ] **Optimize existing content** - Update post descriptions and formatting
 - [ ] **Add more Web Dev content** - Document more site-building processes
+- [x] **Add Electronics section** - Created new section for Arduino, ESP32, and hardware projects _(2025-08-02)_
 - [ ] Add a C++ section
 - [ ] add an arduino section
 - [ ] add an ESP32 section
@@ -63,9 +72,10 @@
 
 ### Phase 3: Advanced Features (Next 1-2 months)
 
-- [ ] **Implement comment system** - Add Giscus or similar for engagement
-- [ ] **Convert contact to form** - Functional contact form with validation
-- [ ] **Add tags page** - Organize content by tags in addition to sections
+- [x] **Implement comment system** - Giscus integration ready, requires GitHub repo setup _(2025-08-02)_
+- [x] **Convert contact to form** - Formspree integration with email delivery _(2025-08-02)_
+- [x] **Add tags page** - Manual tags page implemented with popular tags and section links _(2025-08-02)_
+- [x] **Implement night mode system** - Complete dark mode with blueprint transformation and localStorage persistence _(2025-01-19)_
 - [ ] **Create post series** - Link related posts together
 - [ ] **Add reading time estimates** - Improve user experience
 
@@ -81,7 +91,7 @@
 ### Technical Enhancements
 
 - [ ] **Add syntax highlighting themes** - Dark/light mode code blocks
-- [ ] **Implement dark mode** - User preference for dark/light themes
+- [x] **Implement dark mode** - User preference for dark/light themes with blueprint transformation _(2025-01-19)_
 - [ ] **Add table of contents** - Auto-generated TOC for long posts
 - [ ] **Create related posts** - Suggest similar content
 - [ ] **Add print stylesheets** - Professional printing layout
@@ -118,8 +128,8 @@
 
 ---
 
-_Last updated: 2024-12-19_
-_Status: Active development - Blog foundation complete, focusing on visual enhancement_
+_Last updated: 2025-01-19_
+_Status: Night mode system complete with blueprint transformation. P7 palette selected as winner. All templates updated with night mode toggle. Ready for backdrop image integration and content images._
 
 ## 🔍 **Comment System Options for Static Sites**
 
@@ -403,3 +413,27 @@ _Status: Ready for production deployment and LinkedIn integration_
 - 🔄 Optimize for each platform
 
 Would you like me to help you implement any of these elements for your blog first? We could start with favicons and social media meta tags, then move to creating thumbnail templates for your technical content.
+
+## 🎯 **Summary: Zola Color Palette Best Practices**
+
+### **What Zola Expects (Standard Web Development):**
+
+1. **SASS Variables** - For static colors and SASS functions
+2. **CSS Variables** - For dynamic switching (JavaScript)
+3. **Hex Colors** - Standard web color format
+4. **No Special Requirements** - Just good web development practice
+
+### **The Correct Approach:**
+
+```scss
+<code_block_to_apply_changes_from>
+```
+
+### **Why This Works:**
+
+- **SASS Variables**: Work with SASS functions like `darken()`, `lighten()`, `mix()`
+- **CSS Variables**: Enable real-time switching via JavaScript
+- **Hex Colors**: Standard web format, universally supported
+- **No Zola Magic**: Just standard web development practices
+
+The palette switcher should now work perfectly! The key was separating SASS variables (for build-time processing) from CSS variables (for runtime switching).

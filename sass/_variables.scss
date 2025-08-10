@@ -2,16 +2,92 @@
 // SASS VARIABLES - Simple Examples
 // =============================================================================
 
-// Colors
-$primary-color: #2563eb;
-$secondary-color: #64748b;
-$background-color: #ffffff;
-$text-color: #1e293b;
-$text-muted: #64748b;
-$border-color: #e2e8f0;
+// =============================================================================
+// COLOR PALETTES - Technical/Industrial Theme
+// =============================================================================
+
+// PALETTE 1: Thistle/Pink Theme
+$primary-color: #98473e; // Chestnut - headers, sidebar
+$secondary-color: #b49082; // Beaver - card backgrounds
+$accent-color: #a37c40; // Copper - links, highlights
+$background-color: #ffffff; // White - main background
+$text-color: #07090f; // Rich Black - main text
+$text-muted: #98473e; // Chestnut - muted text
+$border-color: #d6c3c9; // Thistle - borders, dividers
+$sidebar-bg: #d6c3c9; // Thistle - light sidebar
+
+// PALETTE 2: Blue Theme (UNACCEPTED - Poor Contrast)
+$palette-2-primary: #94778b; // Mount Batten - headers, sidebar
+$palette-2-secondary: #82c09a; // Cambridge Blue - card backgrounds
+$palette-2-accent: #82d4bb; // Tiffany Blue - links, highlights
+$palette-2-background: #ffffff; // White - main background
+$palette-2-text: #829298; // Cadet Grey - main text
+$palette-2-text-muted: #94778b; // Mount Batten - muted text
+$palette-2-border: #82ac9f; // Cambridge Blue Dark - borders
+$palette-2-sidebar: #82c09a; // Cambridge Blue - light sidebar
+
+// PALETTE 3: Mint/Lavender Theme (UNACCEPTED - Poor Contrast)
+$palette-3-primary: #4a051c; // Chocolate Cosmos - headers, sidebar
+$palette-3-secondary: #d0fef5; // Mint Green - card backgrounds
+$palette-3-accent: #52ffb8; // Aquamarine - links, highlights
+$palette-3-background: #ffffff; // White - main background
+$palette-3-text: #4a051c; // Chocolate Cosmos - main text
+$palette-3-text-muted: #830a48; // Marray - muted text
+$palette-3-border: #fab2ea; // Lavender Pink - borders
+$palette-3-sidebar: #d0fef5; // Mint Green - light sidebar
+
+// PALETTE 4: Green/Purple Theme (UNACCEPTED - Poor Contrast)
+$palette-4-primary: #501537; // Tyrian Purple - headers, sidebar
+$palette-4-secondary: #d4e79e; // Mindaro - card backgrounds
+$palette-4-accent: #b8c480; // Olivene - links, highlights
+$palette-4-background: #ffffff; // White - main background
+$palette-4-text: #3c1b43; // Dark Purple - main text
+$palette-4-text-muted: #922d50; // Magenta - muted text
+$palette-4-border: #b8c480; // Olivene - borders
+$palette-4-sidebar: #d4e79e; // Mindaro - light sidebar
+
+// PALETTE 5: Pink/Light Theme (UNACCEPTED - Poor Contrast)
+$palette-5-primary: #e4b4c2; // Orchid Pink - headers, sidebar
+$palette-5-secondary: #ddfdfe; // Light Cyan - card backgrounds
+$palette-5-accent: #ffb8d1; // Lavender Pink - links, highlights
+$palette-5-background: #ffffff; // White - main background
+$palette-5-text: #07090f; // Rich Black - main text
+$palette-5-text-muted: #e4b4c2; // Orchid Pink - muted text
+$palette-5-border: #e7cee3; // Cecil - borders
+$palette-5-sidebar: #e0e1e9; // Ghost White - light sidebar
+
+// PALETTE 6: Vibrant Theme (Review 2) - ACCEPTED
+$palette-6-primary: #8f2c55; // Magenta - headers, sidebar
+$palette-6-secondary: #ffafbd; // Pink - card backgrounds
+$palette-6-accent: #ffbc42; // Yellow - links, highlights
+$palette-6-background: #ffffff; // White - main background
+$palette-6-text: #005b59; // Green - main text
+$palette-6-text-muted: #8f2c55; // Magenta - muted text
+$palette-6-border: #73d2de; // Cyan - borders
+$palette-6-sidebar: #ffafbd; // Pink - light sidebar
+
+// PALETTE 7: Blue/Orange Theme - ACCEPTED
+$palette-7-primary: #32658a; // Dark Blue - headers, sidebar
+$palette-7-secondary: #bbe1f8; // Light Blue - card backgrounds
+$palette-7-accent: #ffd4a7; // Light Orange - links, highlights
+$palette-7-background: #ffffff; // White - main background
+$palette-7-text: #a73f00; // Dark Orange - main text
+$palette-7-text-muted: #32658a; // Dark Blue - muted text
+$palette-7-border: #d3e0c4; // Light Green - borders
+$palette-7-sidebar: #bbe1f8; // Light Blue - light sidebar
+
+// PALETTE 8: Licorice/Cream Theme - ACCEPTED
+$palette-8-primary: #1c110a; // Licorice - headers, sidebar
+$palette-8-secondary: #e4d6a7; // Cream - card backgrounds
+$palette-8-accent: #e9b44c; // Orange - links, highlights
+$palette-8-background: #ffffff; // White - main background
+$palette-8-text: #941f00; // Maroon - main text
+$palette-8-text-muted: #1c110a; // Licorice - muted text
+$palette-8-border: #91c6ca; // Light Blue - borders
+$palette-8-sidebar: #e4d6a7; // Cream - light sidebar
 
 // Typography
-$font-family: "Inter", sans-serif;
+$font-family: "IBM Plex Sans", "Inter", sans-serif;
 $font-size-base: 16px;
 $line-height: 1.6;
 

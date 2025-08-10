@@ -236,16 +236,16 @@
 }
 
 .post-card {
-  background: $background-color;
-  border: 1px solid lighten($secondary-color, 30%);
+  background: var(--secondary-color);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: $spacing-lg;
   transition: all 0.2s ease;
 
   // SASS nesting - & refers to parent selector
   &:hover {
-    border-color: $primary-color;
-    box-shadow: 0 4px 12px rgba($primary-color, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transform: translateY(-2px);
   }
 
@@ -306,14 +306,31 @@
   }
 
   .read-more {
-    color: $primary-color;
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
 
     &:hover {
-      color: darken($primary-color, 10%);
+      color: var(--primary-color);
       text-decoration: underline;
     }
+  }
+}
+
+// Category and tag cards with light color fill
+.category-card,
+.tag-card {
+  background: var(--secondary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -731,6 +748,311 @@ code {
 
 .content {
   min-width: 0; // Prevent flex overflow
+}
+
+// =============================================================================
+// CSS VARIABLES FOR PALETTE SWITCHING
+// =============================================================================
+
+:root {
+  // PALETTE 1: Thistle/Pink Theme (Default)
+  --primary-color: #98473e; // Chestnut - headers, sidebar
+  --secondary-color: #b49082; // Beaver - card backgrounds
+  --accent-color: #a37c40; // Copper - links, highlights
+  --background-color: #ffffff; // White - main background
+  --text-color: #07090f; // Rich Black - main text
+  --text-muted: #98473e; // Chestnut - muted text
+  --border-color: #d6c3c9; // Thistle - borders, dividers
+  --sidebar-bg: #d6c3c9; // Thistle - light sidebar
+}
+
+// PALETTE 2: Blue Theme
+[data-palette="2"] {
+  --primary-color: #94778b; // Mount Batten - headers, sidebar
+  --secondary-color: #82c09a; // Cambridge Blue - card backgrounds
+  --accent-color: #82d4bb; // Tiffany Blue - links, highlights
+  --background-color: #ffffff; // White - main background
+  --text-color: #829298; // Cadet Grey - main text
+  --text-muted: #94778b; // Mount Batten - muted text
+  --border-color: #82ac9f; // Cambridge Blue Dark - borders
+  --sidebar-bg: #82c09a; // Cambridge Blue - light sidebar
+}
+
+// PALETTE 3: Mint/Lavender Theme
+[data-palette="3"] {
+  --primary-color: #4a051c; // Chocolate Cosmos - headers, sidebar
+  --secondary-color: #d0fef5; // Mint Green - card backgrounds
+  --accent-color: #52ffb8; // Aquamarine - links, highlights
+  --background-color: #ffffff; // White - main background
+  --text-color: #4a051c; // Chocolate Cosmos - main text
+  --text-muted: #830a48; // Marray - muted text
+  --border-color: #fab2ea; // Lavender Pink - borders
+  --sidebar-bg: #d0fef5; // Mint Green - light sidebar
+}
+
+// PALETTE 4: Green/Purple Theme
+[data-palette="4"] {
+  --primary-color: #501537; // Tyrian Purple - headers, sidebar
+  --secondary-color: #d4e79e; // Mindaro - card backgrounds
+  --accent-color: #b8c480; // Olivene - links, highlights
+  --background-color: #ffffff; // White - main background
+  --text-color: #3c1b43; // Dark Purple - main text
+  --text-muted: #922d50; // Magenta - muted text
+  --border-color: #b8c480; // Olivene - borders
+  --sidebar-bg: #d4e79e; // Mindaro - light sidebar
+}
+
+// PALETTE 5: Pink/Light Theme
+[data-palette="5"] {
+  --primary-color: #e4b4c2; // Orchid Pink - headers, sidebar
+  --secondary-color: #ddfdfe; // Light Cyan - card backgrounds
+  --accent-color: #ffb8d1; // Lavender Pink - links, highlights
+  --background-color: #ffffff; // White - main background
+  --text-color: #07090f; // Rich Black - main text
+  --text-muted: #e4b4c2; // Orchid Pink - muted text
+  --border-color: #e7cee3; // Cecil - borders
+  --sidebar-bg: #e0e1e9; // Ghost White - light sidebar
+}
+
+// PALETTE 6: Vibrant Theme (Review 2)
+[data-palette="6"] {
+  --primary-color: #8f2c55; // Magenta - headers, sidebar
+  --secondary-color: #ffafbd; // Pink - card backgrounds
+  --accent-color: #ffbc42; // Yellow - links, highlights
+  --background-color: #ffffff; // White - main background
+  --text-color: #005b59; // Green - main text
+  --text-muted: #8f2c55; // Magenta - muted text
+  --border-color: #73d2de; // Cyan - borders
+  --sidebar-bg: #ffafbd; // Pink - light sidebar
+}
+
+// PALETTE 7: Blue/Orange Theme
+[data-palette="7"] {
+  --primary-color: #32658a; // Dark Blue - headers
+  --secondary-color: #bbe1f8; // Light Blue - card backgrounds
+  --accent-color: #ffd4a7; // Light Orange - links, highlights
+  --background-color: #ffffff; // White - main background
+  --text-color: #a73f00; // Dark Orange - main text
+  --text-muted: #32658a; // Dark Blue - muted text
+  --border-color: #d3e0c4; // Light Green - borders
+}
+
+// PALETTE 8: Licorice/Cream Theme
+[data-palette="8"] {
+  --primary-color: #1c110a; // Licorice - headers, sidebar
+  --secondary-color: #e4d6a7; // Cream - card backgrounds
+  --accent-color: #e9b44c; // Orange - links, highlights
+  --background-color: #ffffff; // White - main background
+  --text-color: #941f00; // Maroon - main text
+  --text-muted: #1c110a; // Licorice - muted text
+  --border-color: #91c6ca; // Light Blue - borders
+  --sidebar-bg: #e4d6a7; // Cream - light sidebar
+}
+
+// =============================================================================
+// NIGHT MODE - Blueprint Transformation
+// =============================================================================
+
+[data-theme="dark"] {
+  // Dark mode overrides for all palettes
+  --background-color: #1e3a8a; // Midnight blue background
+  --text-color: #93c5fd; // Light blue text
+  --text-muted: #bfdbfe; // Lighter blue muted text
+  --border-color: #3b82f6; // Blue borders
+
+  // Blueprint image transformation
+  .technical-drawing {
+    filter: invert(1) /* Flip black/white */ hue-rotate(210deg)
+      /* Shift to blue spectrum */ saturate(0.8) /* Adjust saturation */
+      brightness(0.9); /* Fine-tune brightness */
+  }
+
+  // Adjust UI elements for dark mode
+  .site-header {
+    background-color: #1e3a8a; // Midnight blue header
+  }
+
+  .post-card {
+    background-color: rgba(30, 58, 138, 0.9); // Semi-transparent midnight blue
+  }
+
+  .ai-disclaimer {
+    background-color: rgba(30, 58, 138, 0.1); // Very light midnight blue
+  }
+}
+
+// =============================================================================
+// PALETTE SWITCHER
+// =============================================================================
+
+.palette-switcher {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.palette-btn {
+  width: 32px;
+  height: 32px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+
+  &:hover {
+    border-color: currentColor;
+    transform: scale(1.1);
+  }
+
+  &.active {
+    border-color: var(--primary-color);
+    background: rgba(44, 62, 80, 0.1); // Using the actual color value for rgba
+    color: var(--primary-color);
+  }
+}
+
+// Night mode toggle button
+.night-mode-toggle {
+  width: 32px;
+  height: 32px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  margin-left: 0.5rem;
+
+  &:hover {
+    border-color: currentColor;
+    transform: scale(1.1);
+  }
+
+  &.active {
+    border-color: var(--accent-color);
+    background: rgba(44, 62, 80, 0.1);
+    color: var(--accent-color);
+  }
+}
+
+// =============================================================================
+// DYNAMIC COLOR OVERRIDES
+// =============================================================================
+
+// Override SASS variables with CSS variables for dynamic switching
+body {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.site-header {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.nav-link {
+  color: white;
+
+  &:hover {
+    color: var(--accent-color);
+  }
+}
+
+// Main content area - ensure good contrast
+.content {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.page-content {
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color);
+}
+
+p,
+li,
+blockquote {
+  color: var(--text-color);
+}
+
+a {
+  color: var(--accent-color);
+
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+
+// Sidebar with dark background for both day and night modes
+.sidebar {
+  background-color: #1e3a8a; // Dark blue background for both modes
+  color: #93c5fd; // Light blue text for both modes
+
+  .sidebar-group-toggle {
+    color: #93c5fd;
+    background: rgba(255, 255, 255, 0.1);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    &.collapsed {
+      background: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  .sidebar-link {
+    color: #93c5fd;
+
+    &:hover {
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+      border-left-color: var(--accent-color);
+    }
+  }
+
+  .sidebar-text {
+    color: #93c5fd;
+  }
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+
+  &:hover {
+    background-color: #1a252f; // Darkened version of primary color
+  }
+}
+
+.ai-disclaimer {
+  background: rgba(44, 62, 80, 0.05); // Using the actual color value for rgba
+  border-left-color: var(--primary-color);
+  color: var(--text-muted);
+
+  strong {
+    color: var(--text-color);
+  }
 }
 
 // =============================================================================

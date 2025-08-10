@@ -52,6 +52,6 @@ a {
   text-decoration: none;
 
   &:hover {
-    color: darken($primary-color, 10%);
+    color: #1a252f; // Darkened version of primary color
   }
 }
