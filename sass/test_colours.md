@@ -121,33 +121,45 @@ can pair with: #1c110a, #941f00
 - **Sidebar subcategory text**: Too light, hard to read in some palettes
 - **Font contrast**: Some palettes have too light fonts in certain areas
 - **Palette 5**: Too pink overall
+- **Emotional palettes**: Marketing-focused colors inappropriate for technical blog
 
-### WINNING PALETTES:
+### WINNING PALETTE:
 
-- **Palette 2**: Blue theme - works well but relies on unchanged black text
-- **Palette 4**: Green/Purple theme - good balance
+- **Classic Skunk Works**: Emotionally neutral, information-focused, technically precise
 
 ### BACKGROUND STRATEGY:
 
-- **Overall backdrop**: Manufacturing drawings/photo scans (white base)
+- **Overall backdrop**: Manufacturing drawings/photo scans (white base) - functional 6th color
 - **UI Elements**: Light colors with partial transparency to show underlying images
 - **Affected areas**: Left sidebar, title, navbar, footer, post cards
 
-### PALETTE 2 ANALYSIS:
+### CLASSIC SKUNK WORKS ANALYSIS:
 
-- All colors are light/mid tones
-- Works because of some unchanged black text
-- Has mid-color backgrounds that work with white/black sidebar text
+- **Philosophy**: Emotionally neutral, selectively informational, intelligent decision palette
+- **Not corporate**: Avoids IBM blue and other corporate associations
+- **Technical focus**: High contrast, readability, precision over decoration
+- **Skunk works aesthetic**: Professional but not stuffy, serious but not corporate
 
-### PALETTE 4 ANALYSIS:
+### COLOR ROLES:
 
-- Good contrast balance
-- Darker elements provide good text contrast
-- Green/purple combination works well
+- **Primary (#2c3e50)**: Dark slate - headers, navigation (authoritative)
+- **Secondary (#e8edf2)**: Medium gray - card backgrounds (darker than before for contrast)
+- **Accent (#3498db)**: Technical blue - links, highlights (not corporate blue)
+- **Background (#ffffff)**: Pure white - main background (manufacturing drawing backdrop)
+- **Text (#2c3e50)**: Dark slate - main text (high contrast)
+- **Text-muted (#7f8c8d)**: Medium gray - secondary text
+- **Border (#bdc3c7)**: Light gray - borders
+
+### NIGHT MODE STRATEGY:
+
+- **Blueprint transformation**: White backdrop becomes midnight blue (#1e3a8a)
+- **Avoid blue overload**: Use slate grays for UI elements instead of more blue
+- **High contrast**: White text on dark backgrounds
+- **Consistent hierarchy**: Same information structure, different color values
 
 ### NEXT STEPS:
 
-1. Fix sidebar subcategory text contrast
-2. Refine palette 2 and 4 foreground/background pairings
-3. Add 2 new palettes based on learnings
-4. Ensure all text has proper contrast ratios
+1. ✅ Implement Classic Skunk Works palette
+2. ✅ Create blueprint night mode
+3. ✅ Ensure proper contrast ratios
+4. Ready for backdrop image integration

@@ -826,15 +826,15 @@ code {
   --sidebar-bg: #ffafbd; // Pink - light sidebar
 }
 
-// PALETTE 7: Blue/Orange Theme
+// CLASSIC SKUNK WORKS PALETTE
 [data-palette="7"] {
-  --primary-color: #32658a; // Dark Blue - headers
-  --secondary-color: #bbe1f8; // Light Blue - card backgrounds
-  --accent-color: #ffd4a7; // Light Orange - links, highlights
-  --background-color: #ffffff; // White - main background
-  --text-color: #a73f00; // Dark Orange - main text
-  --text-muted: #32658a; // Dark Blue - muted text
-  --border-color: #d3e0c4; // Light Green - borders
+  --primary-color: #2c3e50;    // Dark slate - headers, navigation
+  --secondary-color: #e8edf2;  // Medium gray - card backgrounds (darker than before)
+  --accent-color: #3498db;     // Technical blue - links, highlights
+  --background-color: #ffffff; // Pure white - main background (manufacturing drawing backdrop)
+  --text-color: #2c3e50;       // Dark slate - main text
+  --text-muted: #7f8c8d;       // Medium gray - secondary text
+  --border-color: #bdc3c7;     // Light gray - borders
 }
 
 // PALETTE 8: Licorice/Cream Theme
@@ -854,11 +854,11 @@ code {
 // =============================================================================
 
 [data-theme="dark"] {
-  // Dark mode overrides for all palettes
-  --background-color: #1e3a8a; // Midnight blue background
-  --text-color: #ffffff; // White text for better contrast
-  --text-muted: #bfdbfe; // Light blue muted text
-  --border-color: #3b82f6; // Blue borders
+  // SKUNK WORKS NIGHT MODE - Blueprint Transformation
+  --background-color: #1e3a8a; // Midnight blue background (blueprint backdrop)
+  --text-color: #ffffff; // White text for maximum contrast
+  --text-muted: #cbd5e1; // Light gray muted text (avoiding blue overload)
+  --border-color: #475569; // Slate gray borders (not blue)
 
   // Blueprint image transformation
   .technical-drawing {
@@ -867,13 +867,13 @@ code {
       brightness(0.9); /* Fine-tune brightness */
   }
 
-  // Adjust UI elements for dark mode
+  // Adjust UI elements for dark mode - avoid blue overload
   .post-card {
-    background-color: rgba(30, 58, 138, 0.9); // Semi-transparent midnight blue
+    background-color: rgba(44, 62, 80, 0.9); // Semi-transparent dark slate (not blue)
   }
 
   .ai-disclaimer {
-    background-color: rgba(30, 58, 138, 0.1); // Very light midnight blue
+    background-color: rgba(44, 62, 80, 0.1); // Very light dark slate (not blue)
   }
 }
 
