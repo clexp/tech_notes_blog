@@ -755,15 +755,14 @@ code {
 // =============================================================================
 
 :root {
-  // PALETTE 1: Thistle/Pink Theme (Default)
-  --primary-color: #98473e; // Chestnut - headers, sidebar
-  --secondary-color: #b49082; // Beaver - card backgrounds
-  --accent-color: #a37c40; // Copper - links, highlights
-  --background-color: #ffffff; // White - main background
-  --text-color: #07090f; // Rich Black - main text
-  --text-muted: #98473e; // Chestnut - muted text
-  --border-color: #d6c3c9; // Thistle - borders, dividers
-  --sidebar-bg: #d6c3c9; // Thistle - light sidebar
+  // CLASSIC SKUNK WORKS PALETTE (Default)
+  --primary-color: #2c3e50;    // Dark slate - headers, navigation
+  --secondary-color: #e8edf2;  // Medium gray - card backgrounds
+  --accent-color: #3498db;     // Technical blue - links, highlights
+  --background-color: #ffffff; // Pure white - main background
+  --text-color: #2c3e50;       // Dark slate - main text
+  --text-muted: #7f8c8d;       // Medium gray - secondary text
+  --border-color: #bdc3c7;     // Light gray - borders
 }
 
 // PALETTE 2: Blue Theme
