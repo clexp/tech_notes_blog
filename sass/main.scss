@@ -289,8 +289,8 @@
 
   .tag {
     display: inline-block;
-    background: lighten($primary-color, 45%);
-    color: $primary-color;
+    background: var(--accent-color);
+    color: white;
     padding: 0.125rem 0.375rem;
     border-radius: 12px;
     font-size: 0.75rem;
@@ -299,8 +299,8 @@
     transition: all 0.2s ease;
 
     &:hover {
-      background: lighten($primary-color, 35%);
-      color: darken($primary-color, 10%);
+      background: var(--primary-color);
+      color: white;
       transform: translateY(-1px);
     }
   }
@@ -336,7 +336,7 @@
 
 // Code block styling
 pre {
-  background: lighten($secondary-color, 45%);
+  background: rgba(0, 0, 0, 0.05);
   padding: $spacing-md;
   border-radius: 4px;
   overflow-x: auto;
@@ -348,7 +348,7 @@ pre {
 }
 
 code {
-  background: lighten($secondary-color, 45%);
+  background: rgba(0, 0, 0, 0.05);
   padding: 0.125rem 0.25rem;
   border-radius: 4px;
   font-size: 0.875rem;
@@ -364,8 +364,8 @@ code {
   top: 100%;
   left: 0;
   right: 0;
-  background: $background-color;
-  border: 1px solid lighten($secondary-color, 30%);
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
   border-top: none; // Connect to search box
   max-height: 300px;
   overflow-y: auto;
@@ -455,7 +455,7 @@ code {
   .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: $text-color;
+    color: var(--text-color);
     margin-bottom: 1rem;
 
     @include mobile {
@@ -535,7 +535,7 @@ code {
   align-items: center;
   margin-top: 3rem;
   padding: 1rem 0;
-  border-top: 1px solid $border-color;
+  border-top: 1px solid var(--border-color);
 
   .pagination-link {
     padding: 0.5rem 1rem;
@@ -756,13 +756,13 @@ code {
 
 :root {
   // CLASSIC SKUNK WORKS PALETTE (Default)
-  --primary-color: #2c3e50;    // Dark slate - headers, navigation
-  --secondary-color: #e8edf2;  // Medium gray - card backgrounds
-  --accent-color: #3498db;     // Technical blue - links, highlights
+  --primary-color: #2c3e50; // Dark slate - headers, navigation
+  --secondary-color: #e8edf2; // Medium gray - card backgrounds
+  --accent-color: #3498db; // Technical blue - links, highlights
   --background-color: #ffffff; // Pure white - main background
-  --text-color: #2c3e50;       // Dark slate - main text
-  --text-muted: #7f8c8d;       // Medium gray - secondary text
-  --border-color: #bdc3c7;     // Light gray - borders
+  --text-color: #2c3e50; // Dark slate - main text
+  --text-muted: #7f8c8d; // Medium gray - secondary text
+  --border-color: #bdc3c7; // Light gray - borders
 }
 
 // PALETTE 2: Blue Theme
@@ -827,13 +827,13 @@ code {
 
 // CLASSIC SKUNK WORKS PALETTE
 [data-palette="7"] {
-  --primary-color: #2c3e50;    // Dark slate - headers, navigation
-  --secondary-color: #e8edf2;  // Medium gray - card backgrounds (darker than before)
-  --accent-color: #3498db;     // Technical blue - links, highlights
+  --primary-color: #2c3e50; // Dark slate - headers, navigation
+  --secondary-color: #e8edf2; // Medium gray - card backgrounds (darker than before)
+  --accent-color: #3498db; // Technical blue - links, highlights
   --background-color: #ffffff; // Pure white - main background (manufacturing drawing backdrop)
-  --text-color: #2c3e50;       // Dark slate - main text
-  --text-muted: #7f8c8d;       // Medium gray - secondary text
-  --border-color: #bdc3c7;     // Light gray - borders
+  --text-color: #2c3e50; // Dark slate - main text
+  --text-muted: #7f8c8d; // Medium gray - secondary text
+  --border-color: #bdc3c7; // Light gray - borders
 }
 
 // PALETTE 8: Licorice/Cream Theme
@@ -854,8 +854,8 @@ code {
 
 [data-theme="dark"] {
   // SKUNK WORKS NIGHT MODE - Blueprint Transformation
-  --background-color: #1e3a8a; // Midnight blue background (blueprint backdrop)
-  --text-color: #ffffff; // White text for maximum contrast
+  --background-color: #1e3a8a; // Midnight blue background (blueprint backdrop) - DRIVES SCREEN BRIGHTNESS
+  --text-color: #ffffff; // White text for maximum contrast against dark background
   --text-muted: #cbd5e1; // Light gray muted text (avoiding blue overload)
   --border-color: #475569; // Slate gray borders (not blue)
 
@@ -866,13 +866,25 @@ code {
       brightness(0.9); /* Fine-tune brightness */
   }
 
-  // Adjust UI elements for dark mode - avoid blue overload
+  // Floating backgrounds - mid-tone with transparency to take on main background tone
+  .site-header {
+    background-color: rgba(44, 62, 80, 0.8); // Semi-transparent dark slate
+  }
+  
+  .site-footer {
+    background-color: rgba(44, 62, 80, 0.8); // Semi-transparent dark slate
+  }
+  
+  .sidebar {
+    background-color: rgba(44, 62, 80, 0.8); // Semi-transparent dark slate
+  }
+  
   .post-card {
-    background-color: rgba(44, 62, 80, 0.9); // Semi-transparent dark slate (not blue)
+    background-color: rgba(44, 62, 80, 0.7); // Semi-transparent dark slate
   }
 
   .ai-disclaimer {
-    background-color: rgba(44, 62, 80, 0.1); // Very light dark slate (not blue)
+    background-color: rgba(44, 62, 80, 0.1); // Very light dark slate
   }
 }
 
