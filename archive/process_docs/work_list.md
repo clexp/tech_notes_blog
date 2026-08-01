@@ -1,5 +1,14 @@
 # Work List
 
+## Workflow (Canonical)
+
+1. **Capture raw ideas** in `raw_blogs/` or `ChatGPT chats/` (not built).
+2. **Select one post** and convert to Zola format in `content/drafts/<slug>.md` with `draft = true`.
+3. **Preview** with `zola serve --drafts` and iterate on voice/structure.
+4. **Promote to publish** by moving to `content/<section>/<slug>.md` and removing `draft = true`.
+5. **Quality gate**: run `zola check`, then `zola build --config config.prod.toml`.
+6. **Commit + deploy** using the prod build script.
+
 ## Completed ✅
 
 ### Blog Infrastructure (2024-12-19)
@@ -38,7 +47,27 @@
 
 ## Current Priorities 🎯
 
-### Phase 1: Visual Enhancement (Next 1-2 weeks)
+### Phase 0: Structural Foundation (Now)
+
+- [ ] **Make prod builds use prod config** - update deploy scripts to `zola build --config config.prod.toml`
+- [ ] **Unify navigation shell** - single header/nav across all templates (including `tags.html`)
+- [ ] **Use `get_url()` everywhere** - remove hardcoded `/contact` and other absolute paths
+- [ ] **Set real Giscus IDs or disable comments** - no placeholders in production
+- [ ] **Consolidate config story** - pick one default dev config and document it
+- [ ] **Add basic CI** - `zola check` + `zola build --config config.prod.toml`
+- [ ] **Define taxonomies** - explicit `tags` and `categories` in config
+- [ ] **Drafts workflow** - enforce `content/drafts/` + `draft = true` in practice
+- [ ] **Decide draft storage** - move `raw_blogs/` and `ChatGPT chats/` outside repo or ignore them
+
+### Phase 1: Visual Enhancement (Later)
+
+#### Image Processing & Content Integration (2025-01-19)
+
+- [x] **Verify Zola image processing compatibility** - Confirmed existing shortcodes (image, responsive*image, gallery) work perfectly with Zola's resize_image function. All syntax in IMAGE_PROCESSING_GUIDE.md is correct and ready to use *(2025-01-19)\_
+- [x] **Assess color palette progress** - Current system uses single "Classic Skunk Works" palette with night mode blueprint transformation. Simplified from 8 palettes to 1 foundation palette with CSS variables for dynamic switching _(2025-01-19)_
+- [ ] **Create blueprint backdrop images** - Process 7-9 backdrop photos into dark blueprint versions for different pages
+- [x] **Format new raw_blogs** - Processed Fixing*Pihole_discord.md, Network_rebuild_1.md, Network_rebuild_2.md, and Network_rebuild_4.md with proper Zola frontmatter and structure *(2025-01-19)\_
+- [x] **Map blogs to networking section** - Moved 4 formatted blogs to content/networking/ folder with proper naming _(2025-01-19)_
 
 - [x] **site is live, edit to minimize security risks** - Enhanced 4 high-impact posts with professional polish, consistent sanitization, and authentic learning reflections while maintaining technical depth. Added RFC references, security considerations, and honest "What I Learned" sections. _(2025-07-16)_
 - [x] Fix left sidebar navigation to appear on all pages
@@ -59,6 +88,7 @@
 
 ### Phase 2: Content Enhancement (Next 2-4 weeks)
 
+- [ ] update new posts. format new posts ins '/raw_blogs'. Load them up to a static blog
 - [ ] **Add images to all posts** - Hero + thumbnail for remaining 20+ posts
 - [ ] **Create content images** - 2-3 inline images per post (diagrams, screenshots)
 - [ ] **Optimize existing content** - Update post descriptions and formatting
@@ -120,11 +150,11 @@
 
 ## Next Steps 🚀
 
-1. **Start with images** - Create the 10 default section images to improve visual appeal
-2. **Polish top content** - Add hero images to the 5 most important posts
-3. **Document the journey** - Continue adding Web Dev posts about building this site
-4. **Gather feedback** - Share with colleagues for input on priorities
-5. **Plan content calendar** - Decide on future topics and posting schedule
+1. **Fix prod build config** - stop shipping `base_url = "/"` artifacts
+2. **Unify the nav** - make every page share the same header
+3. **Lock the workflow** - one draft at a time, `content/drafts/` only
+4. **Add CI check** - fail fast when config or links break
+5. **Proof one post** - promote it to publish and deploy
 
 ---
 

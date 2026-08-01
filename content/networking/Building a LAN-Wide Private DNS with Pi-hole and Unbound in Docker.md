@@ -1,6 +1,7 @@
 +++
 title = "Building a LAN-Wide Private DNS with Pi-hole and Unbound in Docker"
 date = "2025-07-09"
+draft = true
 description = "This guide walks through the process of deploying a private, filtered, and locally cached DNS infrastructure using Pi-hole and Unbound, running in Docker on a central Ubuntu-based server (nas-server). The ..."
 tags = ['backup', 'containers', 'debugging', 'devops', 'dhcp', 'dns', 'docker', 'firewall', 'iptables', 'linux', 'nat', 'networking', 'security', 'storage', 'troubleshooting', 'tutorial', 'ubuntu', 'vlan']
 categories = ["technical"]

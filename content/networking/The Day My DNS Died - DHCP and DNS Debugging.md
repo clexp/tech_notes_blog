@@ -1,6 +1,7 @@
 +++
 title = "The Day My Dns Died   Dhcp And Dns Debugging"
 date = "2025-07-18"
+draft = true
 description = "_May 2025 — Somewhere between coffee and chaos._"
 tags = ['dhcp', 'dns', 'linux', 'networking', 'nixos', 'security', 'ssh']
 categories = ["technical"]

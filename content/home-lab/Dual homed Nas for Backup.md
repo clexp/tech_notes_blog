@@ -1,6 +1,7 @@
 +++
 title = "Dual Homed Nas For Backup"
 date = "2025-07-09"
+draft = true
 description = "Debugging DNS and NAT in a Multi-NIC Home Lab: A Case Study"
 tags = ['architecture', 'backup', 'bsd', 'containers', 'debugging', 'devops', 'dns', 'docker', 'firewall', 'freebsd', 'iptables', 'linux', 'nat', 'networking', 'security', 'storage', 'troubleshooting', 'ubuntu', 'unix', 'vlan']
 categories = ["technical"]

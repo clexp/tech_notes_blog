@@ -74,6 +74,11 @@
   z-index: 100;
   box-shadow: 0 2px 4px rgba($text-color, 0.1);
 
+  // Ensure proper spacing for content below sticky header
+  + * {
+    margin-top: $spacing-md;
+  }
+
   .nav {
     display: flex;
     justify-content: space-between;
@@ -185,14 +190,14 @@
     max-width: 100%;
     height: auto;
     border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba($text-color, 0.1);
   }
 
   blockquote {
-    border-left: 4px solid var(--primary-color);
+    border-left: 4px solid $primary-color;
     margin: $spacing-lg 0;
     padding: $spacing-md;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba($text-color, 0.05);
     border-radius: 0 4px 4px 0;
 
     p:last-child {
@@ -203,7 +208,7 @@
 
 // Footer styles
 .site-footer {
-  background-color: var(--primary-color);
+  background-color: $primary-color;
   padding: $spacing-lg 0;
   text-align: center;
   color: white;
@@ -214,7 +219,7 @@
     text-decoration: none;
 
     &:hover {
-      color: var(--accent-color);
+      color: $accent-color;
     }
   }
 

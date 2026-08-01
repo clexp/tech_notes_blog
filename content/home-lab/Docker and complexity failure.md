@@ -1,6 +1,7 @@
 +++
 title = "Docker and complexity failure"
 date = "2025-07-09"
+draft = true
 description = "Here's a blog post draft in Markdown, capturing the journey, tools used, findings, and reflections on using Docker to host Pi-hole while Tailscale and system DNS are in play:"
 tags = ['containers', 'debugging', 'devops', 'dhcp', 'dns', 'docker', 'firewall', 'iptables', 'linux', 'nat', 'networking', 'security', 'troubleshooting', 'ubuntu']
 categories = ["technical"]

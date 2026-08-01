@@ -30,14 +30,15 @@ A professional technical blog built with [Zola](https://www.getzola.org/) static
 - **JavaScript**: Vanilla JS for search functionality
 - **Elasticlunr.js**: Client-side search indexing
 - **HTML5/CSS3**: Modern web standards
-- **Python**: Content processing and conversion scripts
 
 ## 📁 Project Structure
 
 ```
 Tech_Blog/
-├── config.toml           # Zola configuration
-├── content/              # Markdown blog posts
+├── config.toml           # Zola configuration (dev default, base_url = "/")
+├── config.prod.toml      # Production override (base_url = https://blog.clexp.net)
+├── content/              # Markdown blog posts (the only folder Zola builds from)
+├── raw_blogs/            # Ingestion folder: plain-markdown source material, pre-front-matter
 ├── templates/            # Jinja2 templates
 ├── sass/                 # SASS stylesheets
 │   ├── _variables.scss   # Design tokens
@@ -45,8 +46,8 @@ Tech_Blog/
 │   ├── _layout.scss      # Layout components
 │   └── main.scss         # Main entry point
 ├── static/               # Static assets
-├── convert_blogs.py      # Content processing script
-└── public/               # Generated site (ignored)
+├── archive/              # Retired docs/scripts/media, kept for reference only
+└── public/               # Generated site (ignored, built by zola)
 ```
 
 ## 🚧 Development
@@ -54,63 +55,53 @@ Tech_Blog/
 ### Prerequisites
 
 - [Zola](https://www.getzola.org/documentation/getting-started/installation/) installed
-- Python 3.7+ (for content processing)
 
 ### Local Development
 
 ```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/tech-blog.git
-cd tech-blog
-
-# Serve locally with hot reload
+# Serve locally with hot reload (drafts hidden by default)
 zola serve
 
-# Build for production
-zola build
+# Preview drafts too
+zola serve --drafts
 
-# Clean build (removes public directory)
-rm -rf public && zola build
+# Build for production (only non-draft content, correct base_url)
+zola -c config.prod.toml build
 ```
+
+See [WORK_FLOW.md](./WORK_FLOW.md) for the full draft → production workflow,
+and how to tell a draft post from a published one.
 
 ### Content Management
 
+See [WORK_FLOW.md](./WORK_FLOW.md) for the full pipeline from `raw_blogs/` to a
+published post. Short version:
+
+1. Drop raw material in `raw_blogs/` (plain markdown, no front matter needed).
+2. Write the post in `content/<section>/<slug>.md` with `draft = true` in the
+   front matter while you work on it.
+3. Preview with `zola serve --drafts`.
+4. Remove `draft = true` when it's ready to publish.
+
+## 🌐 Deployment
+
+```
+Internet → OpenBSD VPS (relayd + TLS) → WireGuard → rtr04 → DNAT → MilkV nginx
+```
+
+Deployment is one command, run from either this repo or `~/MilkV`:
+
 ```bash
-# Convert raw blog posts to Zola format
-python3 convert_blogs.py
-
-# Add new post
-# 1. Create markdown file in content/
-# 2. Add front matter with title, date, tags
-# 3. Build and test locally
+~/MilkV/lab/deploy-blog.sh
 ```
 
-## 🌐 Deployment Infrastructure
+This builds `~/Tech_Blog` with `config.prod.toml` and rsyncs `public/` to the
+MilkV nginx docroot (`/var/www/blog`). The old `deploy.sh` in this repo targeted
+a retired FreeBSD jail host and has been archived to `archive/deploy.sh` — do
+not use it.
 
-This project showcases a complex, production-ready deployment pipeline:
-
-### Network Architecture
-
-```
-Internet → OpenBSD VPS → WireGuard Tunnel → FreeBSD Box → nginx Jail
-```
-
-### Components
-
-- **OpenBSD VPS**: Public-facing server with relayd load balancer
-- **WireGuard VPN**: Secure tunnel between VPS and home lab
-- **FreeBSD Host**: Home lab server with jail-based services
-- **nginx Jail**: Containerized web server for security isolation
-- **IPv6 Ready**: Full dual-stack IPv4/IPv6 support
-
-### Deployment Process
-
-1. **Local Build**: `zola build` generates static site
-2. **File Transfer**: `scp` to FreeBSD staging area
-3. **Jail Deployment**: Copy files to nginx jail with proper permissions
-4. **Service Management**: Restart nginx within jail
-5. **Load Balancer**: OpenBSD relayd with health checks
-6. **DNS**: AAAA records for IPv6 connectivity
+TLS termination, DNS, and the WireGuard/VLAN network path are owned by sibling
+projects (`~/OpenBSD_web`, `~/MilkV`) and are out of scope for this repo.
 
 ## 🎯 Key Learning Outcomes
 
@@ -164,8 +155,7 @@ This project demonstrates:
 ## 🔒 Security & Best Practices
 
 - **Static Site Security**: No server-side vulnerabilities
-- **Jail-based Deployment**: Containerized web server
-- **Firewall Configuration**: Proper network security
+- **Firewall Configuration**: pf on the OpenBSD VPS, DNAT-only path to MilkV
 - **Version Control**: Professional Git workflow
 - **Documentation**: Comprehensive project documentation
 

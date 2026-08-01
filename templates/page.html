@@ -15,6 +15,24 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Page Backdrop -->
+    {% set backdrop_images = [
+        "images/backdrops/IMG_9556.JPG",
+        "images/backdrops/IMG_9557.JPG", 
+        "images/backdrops/IMG_9558.JPG",
+        "images/backdrops/IMG_9559.JPG",
+        "images/backdrops/IMG_9560.JPG",
+        "images/backdrops/IMG_9561.JPG",
+        "images/backdrops/IMG_9562.JPG",
+        "images/backdrops/IMG_9563.JPG",
+        "images/backdrops/IMG_9564.JPG"
+    ] %}
+    {% set page_hash = page.permalink | default(value=config.base_url) | slugify %}
+    {% set hash_num = page_hash | length %}
+    {% set backdrop_index = hash_num % 9 %}
+    {% set selected_backdrop = backdrop_images[backdrop_index] %}
+    <div class="page-backdrop" style="background-image: url('{{ get_url(path=selected_backdrop) }}');"></div>
+    
     <header class="site-header">
         <div class="container">
             <nav class="nav">

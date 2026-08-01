@@ -1,6 +1,7 @@
 +++
 title = "Debugging Dockerized DNS"
 date = "2025-07-09"
+draft = true
 description = "This post documents a complex debugging session trying to expose a Dockerized Pi-hole DNS server running on Ubuntu 24.04, coexisting with Tailscale, systemd-resolved, and a firewall managed by iptable..."
 tags = ['backup', 'containers', 'debugging', 'devops', 'dns', 'docker', 'firewall', 'iptables', 'linux', 'nat', 'networking', 'security', 'ssh', 'storage', 'troubleshooting', 'tutorial', 'ubuntu']
 categories = ["technical"]

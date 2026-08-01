@@ -1,6 +1,7 @@
 +++
 title = "Automated Backup Shutdown"
 date = "2025-07-09"
+draft = true
 description = "In the quiet hum of my home lab, nestled between an Ubuntu main server (nas04) and a FreeBSD backup box (bub03), I decided to embrace full automation: nightly ZFS snapshots using sanoid and incrementa..."
 tags = ['architecture', 'backup', 'bsd', 'freebsd', 'linux', 'nat', 'networking', 'security', 'ssh', 'storage', 'tutorial', 'ubuntu', 'unix']
 categories = ["technical"]

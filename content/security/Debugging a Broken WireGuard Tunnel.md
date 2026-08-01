@@ -1,6 +1,7 @@
 +++
 title = "Debugging a Broken WireGuard Tunnel: A Journey Through Routers, Relays, and Routing Tables"
 date = "2025-07-09"
+draft = true
 description = "In a home lab far from the convenience of consumer plug-and-play, we had a plan: expose services running deep in a private lab network via a secure WireGuard tunnel to a public OpenBSD VPS. The goals ..."
 tags = ['architecture', 'bsd', 'cloud', 'debugging', 'dns', 'firewall', 'freebsd', 'hosting', 'linux', 'nat', 'networking', 'nginx', 'openbsd', 'security', 'troubleshooting', 'tunnel', 'tutorial', 'ubuntu', 'unix', 'vpn', 'vps', 'web-server', 'wireguard']
 categories = ["technical"]

@@ -1,6 +1,7 @@
 +++
 title = "LXC Samba container disappearance"
 date = "2025-07-09"
+draft = true
 description = "In our home lab, one trusty multifunction printer dutifully scans documents to a Samba share. That share feeds directly into Paperless-ngx, which processes and organizes them for easy, searchable arch..."
 tags = ['architecture', 'debugging', 'dhcp', 'file-sharing', 'networking', 'samba', 'troubleshooting', 'tutorial']
 categories = ["technical"]

@@ -1,6 +1,7 @@
 +++
 title = "Setting Up a Firewall on the Router"
 date = "2025-07-09"
+draft = true
 description = "This is a follow-up to [Part 1: Subnet Routing and DHCP](link-to-part-1), where we set up our Ubuntu Server (rtr02) as a home lab router with DHCP, NAT, and routing between two test subnets. Here, we ..."
 tags = ['architecture', 'bsd', 'debugging', 'dhcp', 'dns', 'firewall', 'freebsd', 'iptables', 'linux', 'nat', 'networking', 'nixos', 'security', 'troubleshooting', 'ubuntu', 'unix']
 categories = ["technical"]

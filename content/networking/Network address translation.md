@@ -1,6 +1,7 @@
 +++
 title = "Enabling NAT and Routing Between Networks on Ubuntu"
 date = "2025-07-09"
+draft = true
 description = "This post walks through how to enable routing and NAT on an Ubuntu Server (router) to allow two internal subnets (FreeBSD and NixOS machines) to access the wider internet via the main production LAN."
 tags = ['bsd', 'debugging', 'dhcp', 'dns', 'firewall', 'freebsd', 'iptables', 'linux', 'nat', 'networking', 'nixos', 'security', 'tunnel', 'tutorial', 'ubuntu', 'unix', 'vlan']
 categories = ["technical"]

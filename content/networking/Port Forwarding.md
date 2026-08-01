@@ -1,6 +1,7 @@
 +++
 title = "Port Forwarding"
 date = "2025-07-09"
+draft = true
 description = "When setting up my home lab, one of my goals was to be able to SSH into a FreeBSD test machine (tb02) on a private subnet, even though it’s not directly reachable from my main production network. To d..."
 tags = ['bsd', 'firewall', 'freebsd', 'iptables', 'linux', 'nat', 'networking', 'security', 'ssh', 'ubuntu', 'unix']
 categories = ["technical"]

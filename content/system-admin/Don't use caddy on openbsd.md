@@ -1,6 +1,7 @@
 +++
 title = "Don't use Caddy on OpenBSD"
 date = "2025-07-09"
+draft = true
 description = "Like many self-hosters and indie developers, I started my latest web project with a clear, modern goal: use [Caddy](https://caddyserver.com/) to serve a static site and a Django-powered book review ap..."
 tags = ['architecture', 'bsd', 'cloud', 'dns', 'hosting', 'nat', 'networking', 'openbsd', 'tutorial', 'unix', 'vpn', 'vps', 'wireguard']
 categories = ["technical"]

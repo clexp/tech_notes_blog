@@ -1,6 +1,7 @@
 +++
 title = "The Great Color Palette Journey: From Chaos to Harmony"
 date = "2025-08-02"
+draft = true
 description = "A deep dive into building a dynamic color palette system for a technical blog, exploring the challenges of contrast, accessibility, and the journey from 26+ colors to an elegant 5-color solution with day/night modes and blueprint aesthetics."
 tags = ["web-development", "css", "sass", "color-theory", "accessibility", "ui-design", "zola", "technical-writing"]
 categories = ["technical"]

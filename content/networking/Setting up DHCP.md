@@ -1,6 +1,7 @@
 +++
 title = "Setting Up DHCP"
 date = "2025-07-09"
+draft = true
 description = "tags: blog_post dhcp flash_cards Absolutely! Below is a blog-style narrative of your setup, including the _why_, the _pain_, and the final _working state_ — plus a complete set of 25 Anki flashcards b..."
 tags = ['bsd', 'debugging', 'dhcp', 'dns', 'firewall', 'freebsd', 'iptables', 'linux', 'nat', 'networking', 'nixos', 'security', 'tutorial', 'ubuntu', 'unix']
 categories = ["technical"]

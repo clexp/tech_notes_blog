@@ -16,6 +16,37 @@
 // 4. Add any page-specific styles here
 // =============================================================================
 
+// =============================================================================
+// BACKDROP IMAGE SYSTEM
+// =============================================================================
+
+// Page backdrop container
+.page-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.03; // Very subtle background
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.3s ease;
+
+  // Blueprint effect for night mode
+  [data-theme="dark"] & {
+    opacity: 0.08;
+    filter: invert(1) hue-rotate(180deg) saturate(0.3) brightness(0.8);
+  }
+}
+
+// Ensure content is above backdrop
+.site-main {
+  position: relative;
+  z-index: 1;
+}
+
 // Hero section styles
 .hero {
   text-align: center;
@@ -216,7 +247,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+    background: linear-gradient(rgba($text-color, 0.3), rgba($text-color, 0.5));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -226,7 +257,7 @@
       text-align: center;
       font-size: 2.5rem;
       margin: 0;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      text-shadow: 2px 2px 4px rgba($text-color, 0.8);
 
       @include mobile {
         font-size: 2rem;
@@ -236,16 +267,16 @@
 }
 
 .post-card {
-  background: var(--secondary-color);
-  border: 1px solid var(--border-color);
+  background: $secondary-color;
+  border: 1px solid $border-color;
   border-radius: 8px;
   padding: $spacing-lg;
   transition: all 0.2s ease;
 
   // SASS nesting - & refers to parent selector
   &:hover {
-    border-color: var(--primary-color);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: $primary-color;
+    box-shadow: 0 4px 12px rgba($text-color, 0.1);
     transform: translateY(-2px);
   }
 
@@ -256,17 +287,17 @@
     margin: 0 0 $spacing-md 0;
 
     a {
-      color: var(--text-color);
+      color: $text-color;
       text-decoration: none;
 
       &:hover {
-        color: var(--primary-color);
+        color: $primary-color;
       }
     }
   }
 
   .post-excerpt {
-    color: var(--text-color);
+    color: $text-color;
     margin: 0 0 $spacing-md 0;
     line-height: $line-height;
   }
@@ -289,7 +320,7 @@
 
   .tag {
     display: inline-block;
-    background: var(--accent-color);
+    background: $accent-color;
     color: white;
     padding: 0.125rem 0.375rem;
     border-radius: 12px;
@@ -299,19 +330,19 @@
     transition: all 0.2s ease;
 
     &:hover {
-      background: var(--primary-color);
+      background: $primary-color;
       color: white;
       transform: translateY(-1px);
     }
   }
 
   .read-more {
-    color: var(--primary-color);
+    color: $primary-color;
     text-decoration: none;
     font-weight: 500;
 
     &:hover {
-      color: var(--primary-color);
+      color: $primary-color;
       text-decoration: underline;
     }
   }
@@ -320,23 +351,23 @@
 // Category and tag cards with light color fill
 .category-card,
 .tag-card {
-  background: var(--secondary-color);
-  border: 1px solid var(--border-color);
+  background: $secondary-color;
+  border: 1px solid $border-color;
   border-radius: 8px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba($text-color, 0.1);
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba($text-color, 0.15);
   }
 }
 
 // Code block styling
 pre {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba($text-color, 0.05);
   padding: $spacing-md;
   border-radius: 4px;
   overflow-x: auto;
@@ -348,7 +379,7 @@ pre {
 }
 
 code {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba($text-color, 0.05);
   padding: 0.125rem 0.25rem;
   border-radius: 4px;
   font-size: 0.875rem;
@@ -364,8 +395,8 @@ code {
   top: 100%;
   left: 0;
   right: 0;
-  background: var(--background-color);
-  border: 1px solid var(--border-color);
+  background: $background-color;
+  border: 1px solid $border-color;
   border-top: none; // Connect to search box
   max-height: 300px;
   overflow-y: auto;
@@ -455,7 +486,7 @@ code {
   .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--text-color);
+    color: $text-color;
     margin-bottom: 1rem;
 
     @include mobile {
@@ -465,7 +496,7 @@ code {
 
   .section-description {
     font-size: 1.1rem;
-    color: var(--text-muted);
+    color: $text-muted;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
@@ -477,14 +508,14 @@ code {
   margin-bottom: 3rem;
 
   h2 {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--border-color);
+    color: $primary-color;
+    border-bottom: 2px solid $border-color;
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
   }
 
   h3 {
-    color: var(--text-color);
+    color: $text-color;
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
@@ -497,7 +528,7 @@ code {
       margin-bottom: 0.5rem;
 
       strong {
-        color: var(--primary-color);
+        color: $primary-color;
       }
     }
   }
@@ -507,9 +538,9 @@ code {
 .posts-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--text-color);
+  color: $text-color;
   margin-bottom: 2rem;
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 2px solid $border-color;
   padding-bottom: 0.5rem;
 }
 
@@ -521,10 +552,10 @@ code {
 
 .no-posts {
   text-align: center;
-  color: var(--text-muted);
+  color: $text-muted;
   font-style: italic;
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba($text-color, 0.05);
   border-radius: 8px;
 }
 
@@ -535,24 +566,24 @@ code {
   align-items: center;
   margin-top: 3rem;
   padding: 1rem 0;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid $border-color;
 
   .pagination-link {
     padding: 0.5rem 1rem;
-    background: var(--primary-color);
+    background: $primary-color;
     color: white;
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.2s ease;
 
     &:hover {
-      background: var(--primary-color);
+      background: $primary-color;
     }
   }
 
   .pagination-info {
     font-size: 0.9rem;
-    color: var(--text-muted);
+    color: $text-muted;
   }
 
   @include mobile {
@@ -583,11 +614,15 @@ code {
   padding: 1.5rem;
   height: fit-content;
   position: sticky;
-  top: 2rem;
+  top: calc(4rem + 2rem); // Account for header height + spacing
+  max-height: calc(100vh - 6rem); // Prevent sidebar from being too tall
+  overflow-y: auto; // Allow scrolling within sidebar if needed
 
   @include mobile {
     position: static;
     padding: 1rem;
+    max-height: none;
+    overflow-y: visible;
   }
 }
 
@@ -751,142 +786,28 @@ code {
 }
 
 // =============================================================================
-// CSS VARIABLES FOR PALETTE SWITCHING
+// CSS VARIABLES REMOVED - CONVERTING TO PURE SASS SYSTEM
 // =============================================================================
 
-:root {
-  // CLASSIC SKUNK WORKS PALETTE (Default)
-  --primary-color: #2c3e50; // Dark slate - headers, navigation
-  --secondary-color: #e8edf2; // Medium gray - card backgrounds
-  --accent-color: #3498db; // Technical blue - links, highlights
-  --background-color: #ffffff; // Pure white - main background
-  --text-color: #2c3e50; // Dark slate - main text
-  --text-muted: #7f8c8d; // Medium gray - secondary text
-  --border-color: #bdc3c7; // Light gray - borders
-}
+// Note: All CSS variables removed in favor of SASS variables
+// This will break theming temporarily but provides cleaner foundation
 
-// PALETTE 2: Blue Theme
-[data-palette="2"] {
-  --primary-color: #94778b; // Mount Batten - headers, sidebar
-  --secondary-color: #82c09a; // Cambridge Blue - card backgrounds
-  --accent-color: #82d4bb; // Tiffany Blue - links, highlights
-  --background-color: #ffffff; // White - main background
-  --text-color: #829298; // Cadet Grey - main text
-  --text-muted: #94778b; // Mount Batten - muted text
-  --border-color: #82ac9f; // Cambridge Blue Dark - borders
-  --sidebar-bg: #82c09a; // Cambridge Blue - light sidebar
-}
-
-// PALETTE 3: Mint/Lavender Theme
-[data-palette="3"] {
-  --primary-color: #4a051c; // Chocolate Cosmos - headers, sidebar
-  --secondary-color: #d0fef5; // Mint Green - card backgrounds
-  --accent-color: #52ffb8; // Aquamarine - links, highlights
-  --background-color: #ffffff; // White - main background
-  --text-color: #4a051c; // Chocolate Cosmos - main text
-  --text-muted: #830a48; // Marray - muted text
-  --border-color: #fab2ea; // Lavender Pink - borders
-  --sidebar-bg: #d0fef5; // Mint Green - light sidebar
-}
-
-// PALETTE 4: Green/Purple Theme
-[data-palette="4"] {
-  --primary-color: #501537; // Tyrian Purple - headers, sidebar
-  --secondary-color: #d4e79e; // Mindaro - card backgrounds
-  --accent-color: #b8c480; // Olivene - links, highlights
-  --background-color: #ffffff; // White - main background
-  --text-color: #3c1b43; // Dark Purple - main text
-  --text-muted: #922d50; // Magenta - muted text
-  --border-color: #b8c480; // Olivene - borders
-  --sidebar-bg: #d4e79e; // Mindaro - light sidebar
-}
-
-// PALETTE 5: Pink/Light Theme
-[data-palette="5"] {
-  --primary-color: #e4b4c2; // Orchid Pink - headers, sidebar
-  --secondary-color: #ddfdfe; // Light Cyan - card backgrounds
-  --accent-color: #ffb8d1; // Lavender Pink - links, highlights
-  --background-color: #ffffff; // White - main background
-  --text-color: #07090f; // Rich Black - main text
-  --text-muted: #e4b4c2; // Orchid Pink - muted text
-  --border-color: #e7cee3; // Cecil - borders
-  --sidebar-bg: #e0e1e9; // Ghost White - light sidebar
-}
-
-// PALETTE 6: Vibrant Theme (Review 2)
-[data-palette="6"] {
-  --primary-color: #8f2c55; // Magenta - headers, sidebar
-  --secondary-color: #ffafbd; // Pink - card backgrounds
-  --accent-color: #ffbc42; // Yellow - links, highlights
-  --background-color: #ffffff; // White - main background
-  --text-color: #005b59; // Green - main text
-  --text-muted: #8f2c55; // Magenta - muted text
-  --border-color: #73d2de; // Cyan - borders
-  --sidebar-bg: #ffafbd; // Pink - light sidebar
-}
-
-// CLASSIC SKUNK WORKS PALETTE
-[data-palette="7"] {
-  --primary-color: #2c3e50; // Dark slate - headers, navigation
-  --secondary-color: #e8edf2; // Medium gray - card backgrounds (darker than before)
-  --accent-color: #3498db; // Technical blue - links, highlights
-  --background-color: #ffffff; // Pure white - main background (manufacturing drawing backdrop)
-  --text-color: #2c3e50; // Dark slate - main text
-  --text-muted: #7f8c8d; // Medium gray - secondary text
-  --border-color: #bdc3c7; // Light gray - borders
-}
-
-// PALETTE 8: Licorice/Cream Theme
-[data-palette="8"] {
-  --primary-color: #1c110a; // Licorice - headers, sidebar
-  --secondary-color: #e4d6a7; // Cream - card backgrounds
-  --accent-color: #e9b44c; // Orange - links, highlights
-  --background-color: #ffffff; // White - main background
-  --text-color: #941f00; // Maroon - main text
-  --text-muted: #1c110a; // Licorice - muted text
-  --border-color: #91c6ca; // Light Blue - borders
-  --sidebar-bg: #e4d6a7; // Cream - light sidebar
-}
+// ALL PALETTE SWITCHING REMOVED
+// Moving to pure SASS variable system for cleaner color management
 
 // =============================================================================
 // NIGHT MODE - Blueprint Transformation
 // =============================================================================
 
+// DARK MODE WILL BE REDESIGNED WITH SASS MIXINS
+// Temporarily disabled during conversion to pure SASS system
+/*
 [data-theme="dark"] {
-  // SKUNK WORKS NIGHT MODE - Blueprint Transformation
-  --background-color: #1e3a8a; // Midnight blue background (blueprint backdrop) - DRIVES SCREEN BRIGHTNESS
-  --text-color: #ffffff; // White text for maximum contrast against dark background
-  --text-muted: #cbd5e1; // Light gray muted text (avoiding blue overload)
-  --border-color: #475569; // Slate gray borders (not blue)
+  // Will be redesigned as SASS variables with mixins
+*/
 
-  // Blueprint image transformation
-  .technical-drawing {
-    filter: invert(1) /* Flip black/white */ hue-rotate(210deg)
-      /* Shift to blue spectrum */ saturate(0.8) /* Adjust saturation */
-      brightness(0.9); /* Fine-tune brightness */
-  }
-
-  // Floating backgrounds - mid-tone with transparency to take on main background tone
-  .site-header {
-    background-color: rgba(44, 62, 80, 0.8); // Semi-transparent dark slate
-  }
-  
-  .site-footer {
-    background-color: rgba(44, 62, 80, 0.8); // Semi-transparent dark slate
-  }
-  
-  .sidebar {
-    background-color: rgba(44, 62, 80, 0.8); // Semi-transparent dark slate
-  }
-  
-  .post-card {
-    background-color: rgba(44, 62, 80, 0.7); // Semi-transparent dark slate
-  }
-
-  .ai-disclaimer {
-    background-color: rgba(44, 62, 80, 0.1); // Very light dark slate
-  }
-}
+// Dark mode styling temporarily removed during SASS conversion
+// Will be rebuilt with proper SASS variables and mixins
 
 // =============================================================================
 // PALETTE SWITCHER
@@ -921,7 +842,10 @@ code {
 
   &.active {
     border-color: var(--primary-color);
-    background: rgba(44, 62, 80, 0.1); // Using the actual color value for rgba
+    background: rgba(
+      $primary-color,
+      0.1
+    ); // Using the actual color value for rgba
     color: var(--primary-color);
   }
 }
@@ -949,7 +873,7 @@ code {
 
   &.active {
     border-color: var(--accent-color);
-    background: rgba(44, 62, 80, 0.1);
+    background: rgba($primary-color, 0.1);
     color: var(--accent-color);
   }
 }
@@ -958,14 +882,14 @@ code {
 // DYNAMIC COLOR OVERRIDES
 // =============================================================================
 
-// Override SASS variables with CSS variables for dynamic switching
+// Dynamic color overrides converted to SASS
 body {
-  color: var(--text-color);
-  background-color: var(--background-color);
+  color: $text-color;
+  background-color: $background-color;
 }
 
 .site-header {
-  background-color: var(--primary-color);
+  background-color: $primary-color;
   color: white;
 }
 
@@ -973,18 +897,18 @@ body {
   color: white;
 
   &:hover {
-    color: var(--accent-color);
+    color: $accent-color;
   }
 }
 
 // Main content area - ensure good contrast
 .content {
-  color: var(--text-color);
-  background-color: var(--background-color);
+  color: $text-color;
+  background-color: $background-color;
 }
 
 .page-content {
-  color: var(--text-color);
+  color: $text-color;
 }
 
 h1,
@@ -993,38 +917,38 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--text-color);
+  color: $text-color;
 }
 
 p,
 li,
 blockquote {
-  color: var(--text-color);
+  color: $text-color;
 }
 
 a {
-  color: var(--accent-color);
+  color: $accent-color;
 
   &:hover {
-    color: var(--primary-color);
+    color: $primary-color;
   }
 }
 
 // Sidebar with same background as navbar
 .sidebar {
-  background-color: var(--primary-color);
+  background-color: $primary-color;
   color: white;
 
   .sidebar-group-toggle {
     color: white;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(white, 0.1);
 
     &:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(white, 0.2);
     }
 
     &.collapsed {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(white, 0.05);
     }
   }
 
@@ -1033,8 +957,8 @@ a {
 
     &:hover {
       color: white;
-      background: rgba(255, 255, 255, 0.1);
-      border-left-color: var(--accent-color);
+      background: rgba(white, 0.1);
+      border-left-color: $accent-color;
     }
   }
 
@@ -1044,21 +968,21 @@ a {
 }
 
 .btn-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+  background-color: $primary-color;
+  border-color: $primary-color;
 
   &:hover {
-    background-color: #1a252f; // Darkened version of primary color
+    background-color: darken($primary-color, 10%);
   }
 }
 
 .ai-disclaimer {
-  background: rgba(44, 62, 80, 0.05); // Using the actual color value for rgba
-  border-left-color: var(--primary-color);
-  color: var(--text-muted);
+  background: rgba($primary-color, 0.05);
+  border-left-color: $primary-color;
+  color: $text-muted;
 
   strong {
-    color: var(--text-color);
+    color: $text-color;
   }
 }
 
@@ -1108,7 +1032,7 @@ a {
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba($text-color, 0.1);
   }
 }
 
@@ -1212,7 +1136,7 @@ a {
   background: lighten($border-color, 3%);
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba($text-color, 0.1);
 }
 
 .form-group {
@@ -1296,7 +1220,7 @@ a {
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba($text-color, 0.1);
   }
 }
 

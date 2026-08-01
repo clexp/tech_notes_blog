@@ -1,6 +1,7 @@
 +++
 title = "How I Built a VLAN-Aware Linux Router with DHCP, NAT, and a Touch of Fire"
 date = "2025-07-09"
+draft = true
 description = "A practical guide to building a professional-grade VLAN setup at home using Ubuntu Server, ISC DHCP, and iptables. Learn network segmentation, troubleshooting methodology, and real-world networking concepts."
 tags = ['bsd', 'debugging', 'dhcp', 'dns', 'firewall', 'freebsd', 'iptables', 'linux', 'nat', 'networking', 'nixos', 'security', 'troubleshooting', 'tutorial', 'ubuntu', 'unix', 'vlan']
 categories = ["technical"]

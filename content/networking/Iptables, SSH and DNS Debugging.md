@@ -1,6 +1,7 @@
 +++
 title = "Iptables, SSH and DNS Debugging"
 date = "2025-07-09"
+draft = true
 description = "It’s been a productive and occasionally nerve-wracking stretch in the lab. This latest chapter of the journey took us deep into the thickets of iptables, VLAN networking, and DNS server configuration ..."
 tags = ['dns', 'firewall', 'iptables', 'nat', 'networking', 'security', 'ssh', 'vlan']
 categories = ["technical"]

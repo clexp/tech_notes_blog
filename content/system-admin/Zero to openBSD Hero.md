@@ -1,6 +1,7 @@
 +++
 title = "Zero To OpenBSD VPS Hero"
 date = "2025-07-09"
+draft = true
 description = "In this post, we walk through the first stages of setting up a secure OpenBSD VPS — from purchase to shell prompt, from confusion to clarity. It's not just about typing commands; it’s about learning h..."
 tags = ['apache', 'architecture', 'bsd', 'cloud', 'dns', 'firewall', 'freebsd', 'hosting', 'nat', 'networking', 'nginx', 'openbsd', 'security', 'ssh', 'tunnel', 'unix', 'vpn', 'vps', 'web-server', 'wireguard']
 categories = ["technical"]

@@ -1,0 +1,51 @@
+The Seeed Odyssey X86 J4105 supports M.2 NVMe SSDs in both 2280 and 2242 sizes, and a fast NVMe drive delivers a significant performance boost for this board. For a focus on **reliability** and solid performance, the Micron Crucial P510 and Samsung 990 EVO Plus both have excellent reputations, 5-year warranties, and positive feedback for stability and endurance.[1][2][3]
+
+## Recommended NVMe SSDs
+
+### Micron Crucial P510
+- **PCIe Gen 5×4** interface, but also works in Gen 3/4 slots, so compatibility isn't an issue
+- Known for excellent performance, runs relatively cool, and comes with a **5-year warranty**
+- Affordable price point relative to performance and reliability
+- Capacity up to 2TB, but smaller sizes (500GB–1TB) are usually considered most reliable due to higher endurance per cell.
+
+### Samsung 990 EVO Plus
+- **PCIe Gen 5×2** (works in older slots at lower speeds)
+- Top-tier reliability, cool running, also with a **5-year warranty**
+- Samsung Magician software for drive management and diagnostics
+- Frequently recommended for mission-critical usage.
+
+### Additional Reliable Options
+- **SK hynix Gold P31**: Known for stability and power efficiency in the PCIe Gen 3 segment.
+- **Crucial P5 Plus**: Well balanced for reliability and cost, with several years of high user and reviewer marks.
+
+## Price and Sizing Guidance
+
+- For the best balance of **reliability** and reasonable price, choose a 500GB to 1TB drive unless a larger size is absolutely needed. Smaller drives typically have even higher endurance and generate less heat.
+- Aim for a drive with a 5-year warranty and a good user reputation for reliability, rather than the absolute fastest (which may cost more and add little practical benefit for this platform).
+
+## Compatibility Notes
+
+- The Odyssey X86 J4105 accepts M.2 NVMe SSDs in 2242 and 2280 sizes; either form factor will work.[1]
+- Any of the above recommendations are compatible—just verify the physical length (2280 is the most common and widely available).[1]
+
+## Table: Reliable NVMe SSDs for Odyssey X86 J4105
+
+| Model                | Interface   | Warranty | Key Strengths                          |
+|----------------------|-------------|----------|----------------------------------------|
+| Crucial P510         | PCIe Gen 5  | 5 years  | Cool, affordable, very reliable |
+| Samsung 990 EVO Plus | PCIe Gen 5×2| 5 years  | Top reliability, Magician software |
+| SK hynix Gold P31    | PCIe Gen 3  | 5 years  | Endurance, efficiency           |
+| Crucial P5 Plus      | PCIe Gen 4  | 5 years  | Value, steady performance       |
+
+For a reliable and reasonably priced upgrade, the **Crucial P510** (500GB–1TB) or **Samsung 990 EVO Plus** are both excellent and compatible choices for the Odyssey X86 J4105.[3]
+
+[1](https://www.tomshardware.com/reviews/seeed-odyssey-x86j4105)
+[2](https://www.cnx-software.com/2020/07/19/odyssey-x86j4105-gemini-lake-arduino-sbc-review-with-windows-10-enterprise/)
+[3](https://dongknows.com/best-nvme-ssds/)
+[4](https://forum.seeedstudio.com/t/x86j4105-m-2-ssd-drives-compatibility/251519)
+[5](https://forum.digikey.com/t/odyssey-pcie-ssd/13865)
+[6](https://wiki.seeedstudio.com/ODYSSEY-X86-TrueNAS/)
+[7](https://www.cnx-software.com/2020/08/07/odyssey-blue-j4105-windows-linux-mini-pc-128gb-ssd-arduino-mcu/)
+[8](https://www.reddit.com/r/homelab/comments/ojo9xc/seeed_odyssey_x86j4105_windows_server_nic_drivers/)
+[9](https://www.youtube.com/watch?v=8jeZj_IEZfc)
+[10](https://botland.store/accessories-for-odyssey/18791-pcie-30x2-m2-ngff-key-b-to-sata-30-6gb-s-converter-2-ports-jmb585-for-odyssey-x86j4105-seeedstudio-103990565-5904422369002.html)

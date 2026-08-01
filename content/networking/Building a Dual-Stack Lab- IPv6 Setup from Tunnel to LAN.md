@@ -1,6 +1,7 @@
 +++
 title = "Building a Dual Stack Lab: IPv6 Setup from Tunnel to LAN"
 date = "2025-07-09"
+draft = true
 description = "_By clexp, documenting a real home lab deployment_"
 tags = ['bsd', 'debugging', 'dhcp', 'dns', 'firewall', 'freebsd', 'iptables', 'linux', 'nat', 'networking', 'nixos', 'security', 'tunnel', 'tutorial', 'ubuntu', 'unix', 'vlan']
 categories = ["technical"]

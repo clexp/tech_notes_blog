@@ -1,6 +1,7 @@
 +++
 title = "Tailscale for Remote Access of LAN Websites"
 date = "2025-07-09"
+draft = true
 description = "Title: From Tailscale to Printer: A Journey Through Subnet Routing on Ubuntu"
 tags = ['containers', 'debugging', 'devops', 'docker', 'firewall', 'linux', 'networking', 'security', 'ssh', 'ubuntu', 'vlan']
 categories = ["technical"]

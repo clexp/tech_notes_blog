@@ -1,6 +1,7 @@
 +++
 title = "Scanning To LXC Samba Containers"
 date = "2025-07-09"
+draft = true
 description = "In the quiet hum of a home lab, a printer stood alone. It could print. It could fax. It could even scan. But could it scan directly to a shared network folder and trigger automated document processing..."
 tags = ['architecture', 'containers', 'debugging', 'devops', 'dhcp', 'dns', 'docker', 'file-sharing', 'firewall', 'iptables', 'linux', 'networking', 'samba', 'security', 'ssh', 'troubleshooting', 'ubuntu']
 categories = ["technical"]

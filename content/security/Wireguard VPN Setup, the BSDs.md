@@ -1,6 +1,7 @@
 +++
 title = "Wireguard VPN Setup, The BSDs"
 date = "2025-07-09"
+draft = true
 description = "Like many good stories, this one begins with a humble goal: to tunnel some traffic. In this case, I was trying to securely route web traffic from a VPS running OpenBSD (hosted at OpenBSD Amsterdam) to..."
 tags = ['bsd', 'cloud', 'debugging', 'firewall', 'freebsd', 'hosting', 'nat', 'networking', 'openbsd', 'security', 'troubleshooting', 'tunnel', 'tutorial', 'unix', 'vpn', 'vps', 'wireguard']
 categories = ["technical"]

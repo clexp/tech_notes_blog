@@ -1,6 +1,7 @@
 +++
 title = "Ubuntu, FreeBSD and NixOS"
 date = "2025-07-09"
+draft = true
 description = "This guide walks through the process of creating and verifying a routed network lab using Ubuntu (with Netplan), FreeBSD, and NixOS. We'll configure interfaces, default routes, and routing between two..."
 tags = ['bsd', 'dhcp', 'dns', 'firewall', 'freebsd', 'linux', 'nat', 'networking', 'nixos', 'security', 'tutorial', 'ubuntu', 'unix', 'vlan']
 categories = ["technical"]

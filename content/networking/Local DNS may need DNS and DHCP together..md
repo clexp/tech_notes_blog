@@ -1,6 +1,7 @@
 +++
 title = "Local DNS may need DNS and DHCP together."
 date = "2025-07-09"
+draft = true
 description = "There are days when your network hums along quietly like a well-trained dog. Then there are days when it turns into a misbehaving circus. This was one of the latter."
 tags = ['containers', 'devops', 'dhcp', 'dns', 'docker', 'firewall', 'iptables', 'linux', 'nat', 'networking', 'nixos', 'security']
 categories = ["technical"]
