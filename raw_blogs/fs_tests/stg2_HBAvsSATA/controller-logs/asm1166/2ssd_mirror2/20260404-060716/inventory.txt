@@ -1,0 +1,33 @@
+=== TIMESTAMP ===
+Sat  4 Apr 06:07:16 BST 2026
+
+=== HOST ===
+bub05
+Linux bub05 6.12.74+deb13+1-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.74-2 (2026-03-08) x86_64 GNU/Linux
+
+=== CONTROLLER LABEL ===
+asm1166
+
+=== SCENARIO ===
+2ssd_mirror2
+
+=== LSBLK ===
+NAME   TYPE   SIZE MODEL                     SERIAL           TRAN   MOUNTPOINTS
+sda    disk 223.6G KINGSTON SA400S37240G     50026B7380D79F30 sata   
+├─sda1 part   976M                                                   /boot/efi
+├─sda2 part  18.4G                                                   /
+├─sda3 part   7.7G                                                   [SWAP]
+└─sda4 part 196.6G                                                   /home
+sdb    disk 465.8G Samsung SSD 860 EVO 500GB S3Z2NB1K910954L  sata   
+├─sdb1 part 465.8G                                                   
+└─sdb9 part     8M                                                   
+sdc    disk 465.8G Samsung SSD 870 EVO 500GB S7EWNL0X514734N  sata   
+├─sdc1 part 465.8G                                                   
+└─sdc9 part     8M                                                   
+
+=== SELECTED DISKS ===
+/dev/disk/by-id/ata-Samsung_SSD_860_EVO_500GB_S3Z2NB1K910954L
+/dev/disk/by-id/ata-Samsung_SSD_870_EVO_500GB_S7EWNL0X514734N
+
+=== POOL COMMAND ===
+zpool create -f ctrlpool mirror /dev/disk/by-id/ata-Samsung_SSD_860_EVO_500GB_S3Z2NB1K910954L /dev/disk/by-id/ata-Samsung_SSD_870_EVO_500GB_S7EWNL0X514734N 

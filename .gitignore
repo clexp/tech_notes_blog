@@ -2,10 +2,6 @@
 learning_files/
 server_files/
 
-# Unrelated nested project with its own git repo (see WORK_FLOW.md /
-# archive/off_topic for context) - not part of this repo's history
-archive/off_topic/fs_tests/
-
 # Zola build output
 public/
 

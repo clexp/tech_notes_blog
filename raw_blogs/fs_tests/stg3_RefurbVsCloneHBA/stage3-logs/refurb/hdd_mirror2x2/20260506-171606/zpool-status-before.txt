@@ -1,0 +1,14 @@
+  pool: stage3pool
+ state: ONLINE
+config:
+
+	NAME                                 STATE     READ WRITE CKSUM
+	stage3pool                           ONLINE       0     0     0
+	  mirror-0                           ONLINE       0     0     0
+	    ata-ST4000VN008-2DR166_ZM41ATFP  ONLINE       0     0     0
+	    ata-ST4000VN008-2DR166_ZDHA5A7S  ONLINE       0     0     0
+	  mirror-1                           ONLINE       0     0     0
+	    ata-ST4000VN008-2DR166_ZDHA5GF5  ONLINE       0     0     0
+	    ata-ST4000VN008-2DR166_ZGY7WERC  ONLINE       0     0     0
+
+errors: No known data errors

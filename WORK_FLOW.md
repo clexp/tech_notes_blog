@@ -82,6 +82,13 @@ To turn raw material into a post: copy it into `content/<section>/<slug>.md`, ad
 TOML front matter block (`title`, `date`, `description`, `tags`, `categories`,
 `draft = true`), rewrite it in your own voice, then remove `draft = true` when done.
 
+## Notable raw material
+
+`raw_blogs/fs_tests/` is source material for a planned series on ZFS pool
+architecture and HBA/disk benchmarking (fio results, SMART logs, test plans
+across three stages: ARC/pool architecture, HBA vs SATA, and refurb vs clone
+HBA comparisons). Treat each `stgN_*` folder as one post's worth of raw data.
+
 ## Current state (2026-08-01)
 
 Every post in `content/` is currently marked `draft = true`. Most of this blog's

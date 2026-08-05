@@ -1,0 +1,20 @@
+-[0000:00]-+-00.0  Intel Corporation 12th Gen Core Processor Host Bridge
+           +-01.0-[01]----00.0  Broadcom / LSI SAS2308 PCI-Express Fusion-MPT SAS-2
+           +-02.0  Intel Corporation Alder Lake-S GT1 [UHD Graphics 730]
+           +-06.0-[02]----00.0  Samsung Electronics Co Ltd NVMe SSD Controller S4LV008[Pascal]
+           +-14.0  Intel Corporation Raptor Lake USB 3.2 Gen 2x2 (20 Gb/s) XHCI Host Controller
+           +-14.2  Intel Corporation Raptor Lake-S PCH Shared SRAM
+           +-15.0  Intel Corporation Raptor Lake Serial IO I2C Host Controller #0
+           +-15.1  Intel Corporation Raptor Lake Serial IO I2C Host Controller #1
+           +-15.2  Intel Corporation Raptor Lake Serial IO I2C Host Controller #2
+           +-15.3  Intel Corporation Device 7a4f
+           +-16.0  Intel Corporation Raptor Lake CSME HECI #1
+           +-17.0  Intel Corporation Raptor Lake SATA AHCI Controller
+           +-19.0  Intel Corporation Device 7a7c
+           +-19.1  Intel Corporation Device 7a7d
+           +-1c.0-[03]--
+           +-1c.2-[04]----00.0  Realtek Semiconductor Co., Ltd. RTL8111/8168/8211/8411 PCI Express Gigabit Ethernet Controller
+           +-1f.0  Intel Corporation Device 7a06
+           +-1f.3  Intel Corporation Raptor Lake High Definition Audio Controller
+           +-1f.4  Intel Corporation Raptor Lake-S PCH SMBus Controller
+           \-1f.5  Intel Corporation Raptor Lake SPI (flash) Controller

@@ -1,0 +1,100 @@
+Great, we now have a Stage 3 runner script in:
+
+- `stg3_RefurbVsCloneHBA/stage3_hba_compare.sh`
+
+It is executable, syntax-checked, and follows your Stage 2 structure (inventory + SMART + fio JSON + zpool/zfs snapshots + logs), with **detached run support**.
+
+### On your chain / port question
+For fair HBA comparison:
+
+- **Do not mix SSD+HDD in the same benchmark run** (it muddies results).
+- Run separate scenarios: HDD-only and SSD-only.
+- Keep wiring consistent between cards.
+- If possible, spread active drives across both internal sockets in the same pattern for both cards (so both links are exercised equally).
+
+So: **separate by medium, balanced physically, identical between cards**.
+
+### Script capabilities
+- Scenarios:
+  - `hdd_mirror2x2`
+  - `hdd_raidz1_4`
+  - `ssd_mirror3` (3-way mirror on all three SSDs — max write fan-out vs mirror_2)
+  - `ssd_raidz1_3` (parity stripe on all three SSDs)
+- Card labels:
+  - `refurb`
+  - `clone`
+- Detached mode:
+  - `--detach` uses `nohup`, survives SSH exit
+- Logging:
+  - all run output in timestamped folder under `stage3-logs/<card>/<scenario>/<timestamp>/`
+
+### Important before first run
+Edit the disk IDs in the script:
+
+- `HDD1..HDD4`
+- `SSD1..SSD3`
+
+They are currently placeholders (`REPLACE_*`), by design.
+
+### Combined chain saturation (optional)
+
+`stage3_hba_combined_stress.sh` builds **two pools at once** (HDD 2×mirror + SSD 3-way mirror) and runs matching **`fio` phases in parallel** on both datasets. Logs **`thermal.log`** (Linux thermal zones + `sensors` if installed). Output: `stage3-logs-combined/<card>/<timestamp>/`. Run **after** separate HDD and SSD suites if you want clean attribution plus one **squeeze** datapoint before swapping cards.
+
+### Example commands
+- Foreground:
+  - `./stage3_hba_compare.sh --card refurb --scenario hdd_mirror2x2`
+- Detached:
+  - `./stage3_hba_compare.sh --card refurb --scenario ssd_raidz1_3 --detach`
+- Custom runtime:
+  - `./stage3_hba_compare.sh --card clone --scenario hdd_raidz1_4 --runtime-sec 120 --detach`
+
+### tmux option
+If you prefer tmux over nohup, run it inside tmux exactly as above (without `--detach`), and detach session with `Ctrl-b d`.
+
+---
+
+Next direct step (to keep momentum): I can help you fill the exact `/dev/disk/by-id/...` values from your host output and produce the **4-command run order** for refurb vs clone so execution is mechanical and distraction-free.
+
+
+===
+
+
+Correct — this is a **destructive-risk situation** right now.
+
+Since those IronWolf and SSDs already carry ZFS/vdev metadata, I hardened `stg3_RefurbVsCloneHBA/stage3_hba_compare.sh` so it now:
+
+- refuses destructive execution unless you pass `--allow-destroy`
+- supports `--preflight-only` to gather inventory/checks only
+- fails early if selected disks appear in active pool status
+- includes your current by-id device names for:
+  - 4x IronWolf
+  - Samsung 860 + 870
+- leaves `SSD3` as placeholder until your Crucial serial is known
+
+## What to run first (safe)
+
+```bash
+./stage3_hba_compare.sh --card refurb --scenario hdd_mirror2x2 --preflight-only
+```
+
+Then same for SSD scenario:
+
+```bash
+./stage3_hba_compare.sh --card refurb --scenario ssd_mirror3 --preflight-only
+```
+
+This does **not** wipe anything.
+
+## Only when you’re ready to wipe selected test disks
+
+```bash
+./stage3_hba_compare.sh --card refurb --scenario hdd_mirror2x2 --allow-destroy --detach
+```
+
+## Your immediate next action
+Update this one line with the Crucial by-id path:
+
+- `SSD3="/dev/disk/by-id/ata-REPLACE_CRUCIAL_MX500_SERIAL"`
+
+Socratic check (important): do you want Stage 3 to run on **dedicated sacrificial disks only**, or are we intentionally reusing live pool members after backup?  
+If it’s live members, I strongly recommend we pause and define a rollback/recovery checklist before first destructive run.

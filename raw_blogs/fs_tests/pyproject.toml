@@ -1,0 +1,17 @@
+[project]
+name = "fs_tests"
+version = "0.1.0"
+description = "Workspace-wide utilities for fs_tests"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib",
+    "pandas",
+    "numpy",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+package = false

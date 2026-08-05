@@ -1,0 +1,48 @@
+=== TIMESTAMP ===
+Wed May  6 04:58:43 PM BST 2026
+
+=== HOST ===
+hs01
+Linux hs01 6.14.8-2-pve #1 SMP PREEMPT_DYNAMIC PMX 6.14.8-2 (2025-07-22T10:04Z) x86_64 GNU/Linux
+
+=== CARD LABEL ===
+refurb
+
+=== SCENARIO ===
+ssd_mirror3
+
+=== LSBLK ===
+NAME        TYPE   SIZE MODEL                     SERIAL          TRAN   MOUNTPOINTS
+sda         disk   3.6T ST4000VN008-2DR166        ZGY7WERC        sas    
+├─sda1      part   3.6T                                                  
+└─sda9      part     8M                                                  
+sdb         disk   3.6T ST4000VN008-2DR166        ZM41ATFP        sas    
+├─sdb1      part   3.6T                                                  
+└─sdb9      part     8M                                                  
+sdc         disk   3.6T ST4000VN008-2DR166        ZDHA5GF5        sas    
+├─sdc1      part   3.6T                                                  
+└─sdc9      part     8M                                                  
+sdd         disk   3.6T ST4000VN008-2DR166        ZDHA5A7S        sas    
+├─sdd1      part   3.6T                                                  
+└─sdd9      part     8M                                                  
+sde         disk 465.8G Samsung SSD 860 EVO 500GB S3Z2NB1K910954L sas    
+├─sde1      part 465.8G                                                  
+└─sde9      part     8M                                                  
+sdf         disk 465.8G CT500MX500SSD1            2239E66B6612    sas    
+├─sdf1      part 465.8G                                                  
+└─sdf9      part     8M                                                  
+sdg         disk 465.8G Samsung SSD 870 EVO 500GB S7EWNL0X514734N sas    
+├─sdg1      part 465.8G                                                  
+└─sdg9      part     8M                                                  
+nvme0n1     disk 931.5G Samsung SSD 990 PRO 1TB   S7HDNJ0Y831361K nvme   
+├─nvme0n1p1 part  1007K                                           nvme   
+├─nvme0n1p2 part     1G                                           nvme   
+└─nvme0n1p3 part 930.5G                                           nvme   
+
+=== SELECTED DISKS ===
+/dev/disk/by-id/ata-Samsung_SSD_860_EVO_500GB_S3Z2NB1K910954L
+/dev/disk/by-id/ata-Samsung_SSD_870_EVO_500GB_S7EWNL0X514734N
+/dev/disk/by-id/ata-CT500MX500SSD1_2239E66B6612
+
+=== POOL COMMAND ===
+zpool create -f stage3pool mirror /dev/disk/by-id/ata-Samsung_SSD_860_EVO_500GB_S3Z2NB1K910954L /dev/disk/by-id/ata-Samsung_SSD_870_EVO_500GB_S7EWNL0X514734N /dev/disk/by-id/ata-CT500MX500SSD1_2239E66B6612 

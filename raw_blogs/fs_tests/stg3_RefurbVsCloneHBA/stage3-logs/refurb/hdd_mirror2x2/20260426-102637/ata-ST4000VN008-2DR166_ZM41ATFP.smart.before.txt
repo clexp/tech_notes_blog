@@ -1,0 +1,4 @@
+smartctl 7.4 2024-10-15 r5620 [x86_64-linux-6.14.8-2-pve] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+Smartctl open device: /dev/disk/by-id/ata-ST4000VN008-2DR166_ZM41ATFP failed: Permission denied

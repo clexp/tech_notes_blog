@@ -1,0 +1,206 @@
+smartctl 7.4 2023-08-01 r5530 [x86_64-linux-6.12.74+deb13+1-amd64] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Hitachi/HGST Travelstar 5K750
+Device Model:     Hitachi HTS547550A9E384
+Serial Number:    J2160051E1A4ZD
+LU WWN Device Id: 5 000cca 63cdcc985
+Firmware Version: JE3OA60A
+User Capacity:    500,107,862,016 bytes [500 GB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    5400 rpm
+Form Factor:      2.5 inches
+Device is:        In smartctl database 7.3/5528
+ATA Version is:   ATA8-ACS T13/1699-D revision 6
+SATA Version is:  SATA 2.6, 3.0 Gb/s
+Local Time is:    Sat Apr  4 05:15:22 2026 BST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(   45) seconds.
+Offline data collection
+capabilities: 			 (0x5b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 ( 143) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x000b   100   100   062    Pre-fail  Always       -       0
+  2 Throughput_Performance  0x0005   100   100   040    Pre-fail  Offline      -       0
+  3 Spin_Up_Time            0x0007   185   185   033    Pre-fail  Always       -       1
+  4 Start_Stop_Count        0x0012   098   098   000    Old_age   Always       -       3283
+  5 Reallocated_Sector_Ct   0x0033   100   100   005    Pre-fail  Always       -       0
+  7 Seek_Error_Rate         0x000b   100   100   067    Pre-fail  Always       -       0
+  8 Seek_Time_Performance   0x0005   100   100   040    Pre-fail  Offline      -       0
+  9 Power_On_Hours          0x0012   053   053   000    Old_age   Always       -       20660
+ 10 Spin_Retry_Count        0x0013   100   100   060    Pre-fail  Always       -       0
+ 12 Power_Cycle_Count       0x0032   099   099   000    Old_age   Always       -       2605
+191 G-Sense_Error_Rate      0x000a   100   100   000    Old_age   Always       -       0
+192 Power-Off_Retract_Count 0x0032   100   100   000    Old_age   Always       -       193
+193 Load_Cycle_Count        0x0012   001   001   000    Old_age   Always       -       1313163
+194 Temperature_Celsius     0x0002   230   230   000    Old_age   Always       -       26 (Min/Max 6/44)
+196 Reallocated_Event_Count 0x0032   100   100   000    Old_age   Always       -       0
+197 Current_Pending_Sector  0x0022   100   100   000    Old_age   Always       -       0
+198 Offline_Uncorrectable   0x0008   100   100   000    Old_age   Offline      -       0
+199 UDMA_CRC_Error_Count    0x000a   200   200   000    Old_age   Always       -       1131
+223 Load_Retry_Count        0x000a   100   100   000    Old_age   Always       -       0
+
+SMART Error Log Version: 1
+ATA Error Count: 1207 (device log contains only the most recent five errors)
+	CR = Command Register [HEX]
+	FR = Features Register [HEX]
+	SC = Sector Count Register [HEX]
+	SN = Sector Number Register [HEX]
+	CL = Cylinder Low Register [HEX]
+	CH = Cylinder High Register [HEX]
+	DH = Device/Head Register [HEX]
+	DC = Device Command Register [HEX]
+	ER = Error register [HEX]
+	ST = Status register [HEX]
+Powered_Up_Time is measured from power on, and printed as
+DDd+hh:mm:SS.sss where DD=days, hh=hours, mm=minutes,
+SS=sec, and sss=millisec. It "wraps" after 49.710 days.
+
+Error 1207 occurred at disk power-on lifetime: 19502 hours (812 days + 14 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 21 df 5c 38 0a  Error: ICRC, ABRT at LBA = 0x0a385cdf = 171465951
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  60 00 70 00 5c 38 40 00      00:00:40.087  READ FPDMA QUEUED
+  60 01 68 ff 0b 00 40 00      00:00:40.086  READ FPDMA QUEUED
+  60 01 60 fe 0b 00 40 00      00:00:40.086  READ FPDMA QUEUED
+  60 01 58 fd 0b 00 40 00      00:00:40.086  READ FPDMA QUEUED
+  60 01 50 fc 0b 00 40 00      00:00:40.086  READ FPDMA QUEUED
+
+Error 1206 occurred at disk power-on lifetime: 19502 hours (812 days + 14 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 89 77 0b 00 00  Error: ICRC, ABRT at LBA = 0x00000b77 = 2935
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  60 f8 a8 08 0a 00 40 00      00:00:39.633  READ FPDMA QUEUED
+  60 f8 a0 08 09 00 40 00      00:00:39.631  READ FPDMA QUEUED
+  60 78 98 88 08 00 40 00      00:00:39.631  READ FPDMA QUEUED
+  60 30 90 48 08 00 40 00      00:00:39.631  READ FPDMA QUEUED
+  60 10 88 28 08 00 40 00      00:00:39.631  READ FPDMA QUEUED
+
+Error 1205 occurred at disk power-on lifetime: 19502 hours (812 days + 14 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 e9 17 01 00 00  Error: ICRC, ABRT at LBA = 0x00000117 = 279
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  60 f8 58 08 01 00 40 00      00:00:37.994  READ FPDMA QUEUED
+  60 78 50 88 00 00 40 00      00:00:37.994  READ FPDMA QUEUED
+  60 30 48 48 00 00 40 00      00:00:37.994  READ FPDMA QUEUED
+  60 10 40 28 00 00 40 00      00:00:37.994  READ FPDMA QUEUED
+  60 08 38 10 00 00 40 00      00:00:37.994  READ FPDMA QUEUED
+
+Error 1204 occurred at disk power-on lifetime: 19502 hours (812 days + 14 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 59 a7 08 00 00  Error: ICRC, ABRT at LBA = 0x000008a7 = 2215
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  60 f8 30 08 09 00 40 00      00:00:34.692  READ FPDMA QUEUED
+  60 78 28 88 08 00 40 00      00:00:34.692  READ FPDMA QUEUED
+  60 30 20 48 08 00 40 00      00:00:34.692  READ FPDMA QUEUED
+  60 10 18 28 08 00 40 00      00:00:34.692  READ FPDMA QUEUED
+  60 08 10 10 08 00 40 00      00:00:34.692  READ FPDMA QUEUED
+
+Error 1203 occurred at disk power-on lifetime: 19502 hours (812 days + 14 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 01 21 00 00 00  Error: ICRC, ABRT 1 sectors at LBA = 0x00000021 = 33
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 20 02 00 00 e0 00      00:00:14.190  READ DMA EXT
+  25 00 01 01 00 00 e0 00      00:00:14.189  READ DMA EXT
+  25 00 01 00 00 00 e0 00      00:00:14.188  READ DMA EXT
+  25 00 01 00 00 00 e0 00      00:00:14.147  READ DMA EXT
+  ef 03 45 00 00 00 e0 00      00:00:07.555  SET FEATURES [Set transfer mode]
+
+SMART Self-test log structure revision number 1
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Extended offline    Completed without error       00%     19976         -
+# 2  Extended offline    Completed without error       00%     19964         -
+# 3  Short offline       Completed without error       00%     19961         -
+# 4  Short offline       Completed without error       00%     19960         -
+# 5  Short offline       Completed without error       00%     19960         -
+# 6  Short offline       Completed without error       00%     19960         -
+# 7  Extended offline    Completed without error       00%      7652         -
+# 8  Short offline       Completed without error       00%      7649         -
+# 9  Extended offline    Aborted by host               90%      7649         -
+#10  Extended offline    Completed without error       00%      4101         -
+#11  Short offline       Completed without error       00%      4098         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+The above only provides legacy SMART information - try 'smartctl -x' for more
+

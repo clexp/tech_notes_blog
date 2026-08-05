@@ -1,0 +1,49 @@
+=== TIMESTAMP ===
+Sat  4 Apr 04:54:00 BST 2026
+
+=== HOST ===
+bub05
+Linux bub05 6.12.74+deb13+1-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.74-2 (2026-03-08) x86_64 GNU/Linux
+
+=== CONTROLLER LABEL ===
+asm1166
+
+=== SCENARIO ===
+6hdd_mirror3x2
+
+=== LSBLK ===
+NAME   TYPE   SIZE MODEL                   SERIAL           TRAN   MOUNTPOINTS
+sda    disk 223.6G KINGSTON SA400S37240G   50026B7380D79F30 sata   
+├─sda1 part   976M                                                 /boot/efi
+├─sda2 part  18.4G                                                 /
+├─sda3 part   7.7G                                                 [SWAP]
+└─sda4 part 196.6G                                                 /home
+sdb    disk 465.8G ST500DM002-1BD142       W3TQ01LD         sata   
+├─sdb1 part 465.8G                                                 
+└─sdb9 part     8M                                                 
+sdc    disk 465.8G ST500DM002-1BD142       W3TQFS8T         sata   
+├─sdc1 part 465.8G                                                 
+└─sdc9 part     8M                                                 
+sdd    disk 465.8G ST3500312CS             5VVRKGAV         sata   
+├─sdd1 part 465.8G                                                 
+└─sdd9 part     8M                                                 
+sde    disk 465.8G ST3500418AS             Z2ACPF1Z         sata   
+├─sde1 part 465.8G                                                 
+└─sde9 part     8M                                                 
+sdf    disk 465.8G ST500DM002-1BD142       Z2AFGE69         sata   
+├─sdf1 part 465.8G                                                 
+└─sdf9 part     8M                                                 
+sdg    disk 465.8G Hitachi HTS547550A9E384 J2160051E1A4ZD   sata   
+├─sdg1 part 465.8G                                                 
+└─sdg9 part     8M                                                 
+
+=== SELECTED DISKS ===
+/dev/disk/by-id/ata-Hitachi_HTS547550A9E384_J2160051E1A4ZD
+/dev/disk/by-id/ata-ST3500312CS_5VVRKGAV
+/dev/disk/by-id/ata-ST3500418AS_Z2ACPF1Z
+/dev/disk/by-id/ata-ST500DM002-1BD142_Z2AFGE69
+/dev/disk/by-id/ata-ST500DM002-1BD142_W3TQFS8T
+/dev/disk/by-id/ata-ST500DM002-1BD142_W3TQ01LD
+
+=== POOL COMMAND ===
+zpool create -f ctrlpool mirror /dev/disk/by-id/ata-Hitachi_HTS547550A9E384_J2160051E1A4ZD /dev/disk/by-id/ata-ST3500312CS_5VVRKGAV mirror /dev/disk/by-id/ata-ST3500418AS_Z2ACPF1Z /dev/disk/by-id/ata-ST500DM002-1BD142_Z2AFGE69 mirror /dev/disk/by-id/ata-ST500DM002-1BD142_W3TQFS8T /dev/disk/by-id/ata-ST500DM002-1BD142_W3TQ01LD 

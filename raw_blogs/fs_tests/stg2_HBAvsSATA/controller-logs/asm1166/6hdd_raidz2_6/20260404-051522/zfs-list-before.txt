@@ -1,0 +1,3 @@
+NAME            USED  AVAIL  REFER  MOUNTPOINT
+ctrlpool       1007K  1.75T   192K  /ctrlpool
+ctrlpool/test   192K  1.75T   192K  /ctrlpool/test

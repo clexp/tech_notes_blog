@@ -1,0 +1,49 @@
+=== TIMESTAMP ===
+Mon May  4 07:50:46 PM BST 2026
+
+=== HOST ===
+hs01
+Linux hs01 6.14.8-2-pve #1 SMP PREEMPT_DYNAMIC PMX 6.14.8-2 (2025-07-22T10:04Z) x86_64 GNU/Linux
+
+=== CARD LABEL ===
+clone
+
+=== SCENARIO ===
+hdd_raidz1_4
+
+=== LSBLK ===
+NAME        TYPE   SIZE MODEL                     SERIAL          TRAN   MOUNTPOINTS
+sda         disk 465.8G Samsung SSD 870 EVO 500GB S7EWNL0X514734N sas    
+├─sda1      part 465.8G                                                  
+└─sda9      part     8M                                                  
+sdb         disk 465.8G Samsung SSD 860 EVO 500GB S3Z2NB1K910954L sas    
+├─sdb1      part 465.8G                                                  
+└─sdb9      part     8M                                                  
+sdc         disk 465.8G CT500MX500SSD1            2239E66B6612    sas    
+├─sdc1      part 465.8G                                                  
+└─sdc9      part     8M                                                  
+sdd         disk   3.6T ST4000VN008-2DR166        ZDHA5GF5        sas    
+├─sdd1      part   3.6T                                                  
+└─sdd9      part     8M                                                  
+sde         disk   3.6T ST4000VN008-2DR166        ZM41ATFP        sas    
+├─sde1      part   3.6T                                                  
+└─sde9      part     8M                                                  
+sdf         disk   3.6T ST4000VN008-2DR166        ZDHA5A7S        sas    
+├─sdf1      part   3.6T                                                  
+└─sdf9      part     8M                                                  
+sdg         disk   3.6T ST4000VN008-2DR166        ZGY7WERC        sas    
+├─sdg1      part   3.6T                                                  
+└─sdg9      part     8M                                                  
+nvme0n1     disk 931.5G Samsung SSD 990 PRO 1TB   S7HDNJ0Y831361K nvme   
+├─nvme0n1p1 part  1007K                                           nvme   
+├─nvme0n1p2 part     1G                                           nvme   
+└─nvme0n1p3 part 930.5G                                           nvme   
+
+=== SELECTED DISKS ===
+/dev/disk/by-id/ata-ST4000VN008-2DR166_ZM41ATFP
+/dev/disk/by-id/ata-ST4000VN008-2DR166_ZDHA5A7S
+/dev/disk/by-id/ata-ST4000VN008-2DR166_ZDHA5GF5
+/dev/disk/by-id/ata-ST4000VN008-2DR166_ZGY7WERC
+
+=== POOL COMMAND ===
+zpool create -f stage3pool raidz1 /dev/disk/by-id/ata-ST4000VN008-2DR166_ZM41ATFP /dev/disk/by-id/ata-ST4000VN008-2DR166_ZDHA5A7S /dev/disk/by-id/ata-ST4000VN008-2DR166_ZDHA5GF5 /dev/disk/by-id/ata-ST4000VN008-2DR166_ZGY7WERC 

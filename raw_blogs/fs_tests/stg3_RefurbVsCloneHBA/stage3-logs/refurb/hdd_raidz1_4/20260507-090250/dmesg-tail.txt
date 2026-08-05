@@ -1,0 +1,300 @@
+[   13.074538]  end_device-0:6: add: handle(0x000f), sas_addr(0x4433221107000000)
+[   13.074755] sd 0:0:0:0: Attached scsi generic sg0 type 0
+[   13.074759] sd 0:0:0:0: Power-on or device reset occurred
+[   13.074881] sd 0:0:1:0: Attached scsi generic sg1 type 0
+[   13.074914] sd 0:0:1:0: Power-on or device reset occurred
+[   13.074942] sd 0:0:2:0: Attached scsi generic sg2 type 0
+[   13.074992] sd 0:0:2:0: Power-on or device reset occurred
+[   13.075012] sd 0:0:3:0: Attached scsi generic sg3 type 0
+[   13.075030] sd 0:0:3:0: Power-on or device reset occurred
+[   13.075068] sd 0:0:4:0: Attached scsi generic sg4 type 0
+[   13.075093] sd 0:0:4:0: Power-on or device reset occurred
+[   13.075112] sd 0:0:5:0: Attached scsi generic sg5 type 0
+[   13.075162] sd 0:0:5:0: Power-on or device reset occurred
+[   13.075165] sd 0:0:6:0: Attached scsi generic sg6 type 0
+[   13.075211] sd 0:0:6:0: Power-on or device reset occurred
+[   13.075457] sd 0:0:6:0: [sdg] 976773168 512-byte logical blocks: (500 GB/466 GiB)
+[   13.075963] sd 0:0:5:0: [sdf] 976773168 512-byte logical blocks: (500 GB/466 GiB)
+[   13.075967] sd 0:0:5:0: [sdf] 4096-byte physical blocks
+[   13.076325] sd 0:0:6:0: [sdg] Write Protect is off
+[   13.076327] sd 0:0:6:0: [sdg] Mode Sense: 7f 00 10 08
+[   13.076718] sd 0:0:6:0: [sdg] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[   13.076808] sd 0:0:4:0: [sde] 976773168 512-byte logical blocks: (500 GB/466 GiB)
+[   13.077112] sd 0:0:5:0: [sdf] Write Protect is off
+[   13.077117] sd 0:0:5:0: [sdf] Mode Sense: 7f 00 10 08
+[   13.077358] sd 0:0:5:0: [sdf] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[   13.077894] sd 0:0:4:0: [sde] Write Protect is off
+[   13.077896] sd 0:0:4:0: [sde] Mode Sense: 7f 00 10 08
+[   13.078422] sd 0:0:4:0: [sde] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[   13.086053] sd 0:0:0:0: [sda] 7814037168 512-byte logical blocks: (4.00 TB/3.64 TiB)
+[   13.086066] sd 0:0:0:0: [sda] 4096-byte physical blocks
+[   13.087067] sd 0:0:1:0: [sdb] 7814037168 512-byte logical blocks: (4.00 TB/3.64 TiB)
+[   13.087081] sd 0:0:1:0: [sdb] 4096-byte physical blocks
+[   13.087483] sd 0:0:3:0: [sdd] 7814037168 512-byte logical blocks: (4.00 TB/3.64 TiB)
+[   13.087496] sd 0:0:3:0: [sdd] 4096-byte physical blocks
+[   13.092973] sd 0:0:2:0: [sdc] 7814037168 512-byte logical blocks: (4.00 TB/3.64 TiB)
+[   13.092984] sd 0:0:2:0: [sdc] 4096-byte physical blocks
+[   13.095938]  sdg: sdg1 sdg9
+[   13.095973] sd 0:0:6:0: [sdg] Attached SCSI disk
+[   13.104395]  sde: sde1 sde9
+[   13.104488] sd 0:0:4:0: [sde] Attached SCSI disk
+[   13.123135] sd 0:0:0:0: [sda] Write Protect is off
+[   13.123154] sd 0:0:0:0: [sda] Mode Sense: 7f 00 10 08
+[   13.124482] sd 0:0:1:0: [sdb] Write Protect is off
+[   13.124490] sd 0:0:1:0: [sdb] Mode Sense: 7f 00 10 08
+[   13.125063] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[   13.125997] sd 0:0:2:0: [sdc] Write Protect is off
+[   13.126016] sd 0:0:2:0: [sdc] Mode Sense: 7f 00 10 08
+[   13.126179] sd 0:0:1:0: [sdb] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[   13.126633] sd 0:0:3:0: [sdd] Write Protect is off
+[   13.126637] sd 0:0:3:0: [sdd] Mode Sense: 7f 00 10 08
+[   13.128072] sd 0:0:2:0: [sdc] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[   13.128413] sd 0:0:3:0: [sdd] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[   13.195718]  sdf: sdf1 sdf9
+[   13.196013] sd 0:0:5:0: [sdf] Attached SCSI disk
+[   13.230230]  sdc: sdc1 sdc9
+[   13.230456] sd 0:0:2:0: [sdc] Attached SCSI disk
+[   13.237534]  sdd: sdd1 sdd9
+[   13.237765] sd 0:0:3:0: [sdd] Attached SCSI disk
+[   13.238653]  sdb: sdb1 sdb9
+[   13.238747] sd 0:0:1:0: [sdb] Attached SCSI disk
+[   13.239113]  sda: sda1 sda9
+[   13.239197] sd 0:0:0:0: [sda] Attached SCSI disk
+[   13.240372] r8169 0000:04:00.0 enp4s0: renamed from eth0
+[   13.240646] nvme 0000:02:00.0: platform quirk: setting simple suspend
+[   13.240806] nvme nvme0: pci function 0000:02:00.0
+[   13.245483] hid: raw HID events driver (C) Jiri Kosina
+[   13.246370] nvme nvme0: D3 entry latency set to 10 seconds
+[   13.248334] nvme nvme0: 12/0/0 default/read/poll queues
+[   13.250012]  nvme0n1: p1 p2 p3
+[   13.252512] usbcore: registered new interface driver usbhid
+[   13.252516] usbhid: USB HID core driver
+[   13.253821] hid-generic 0003:048D:5702.0001: hiddev0,hidraw0: USB HID v1.12 Device [ITE Tech. Inc. ITE Device] on usb-0000:00:14.0-11/input0
+[   14.027045] raid6: avx2x4   gen() 40760 MB/s
+[   14.044045] raid6: avx2x2   gen() 45301 MB/s
+[   14.061045] raid6: avx2x1   gen() 43472 MB/s
+[   14.061047] raid6: using algorithm avx2x2 gen() 45301 MB/s
+[   14.078045] raid6: .... xor() 29009 MB/s, rmw enabled
+[   14.078047] raid6: using avx2x2 recovery algorithm
+[   14.078482] xor: automatically using best checksumming function   avx       
+[   14.124284] Btrfs loaded, zoned=yes, fsverity=yes
+[   14.181784] spl: loading out-of-tree module taints kernel.
+[   14.201827] zfs: module license 'CDDL' taints kernel.
+[   14.201833] Disabling lock debugging due to kernel taint
+[   14.201849] zfs: module license taints kernel.
+[   15.169743] ZFS: Loaded module v2.3.3-pve1, ZFS pool version 5000, ZFS filesystem version 5
+[   15.752214] systemd[1]: Inserted module 'autofs4'
+[   15.777155] systemd[1]: systemd 257.7-1 running in system mode (+PAM +AUDIT +SELINUX +APPARMOR +IMA +IPE +SMACK +SECCOMP +GCRYPT -GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETUP +LIBCRYPTSETUP_PLUGINS +LIBFDISK +PCRE2 +PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD +BPF_FRAMEWORK +BTF -XKBCOMMON -UTMP +SYSVINIT +LIBARCHIVE)
+[   15.777172] systemd[1]: Detected architecture x86-64.
+[   15.778189] systemd[1]: Hostname set to <hs01>.
+[   15.816975] systemd[1]: bpf-restrict-fs: BPF LSM hook not enabled in the kernel, BPF LSM not supported.
+[   15.888643] systemd[1]: Queued start job for default target graphical.target.
+[   15.901119] systemd[1]: Created slice system-getty.slice - Slice /system/getty.
+[   15.901387] systemd[1]: Created slice system-modprobe.slice - Slice /system/modprobe.
+[   15.901643] systemd[1]: Created slice system-xfs_scrub.slice - xfs_scrub background service slice.
+[   15.901796] systemd[1]: Created slice user.slice - User and Session Slice.
+[   15.901843] systemd[1]: Started systemd-ask-password-console.path - Dispatch Password Requests to Console Directory Watch.
+[   15.901869] systemd[1]: Started systemd-ask-password-wall.path - Forward Password Requests to Wall Directory Watch.
+[   15.901969] systemd[1]: Set up automount proc-sys-fs-binfmt_misc.automount - Arbitrary Executable File Formats File System Automount Point.
+[   15.901989] systemd[1]: Reached target ceph-fuse.target - ceph target allowing to start/stop all ceph-fuse@.service instances at once.
+[   15.902005] systemd[1]: Reached target ceph.target - ceph target allowing to start/stop all ceph*@.service instances at once.
+[   15.902036] systemd[1]: Reached target paths.target - Path Units.
+[   15.902063] systemd[1]: Reached target slices.target - Slice Units.
+[   15.902082] systemd[1]: Reached target swap.target - Swaps.
+[   15.902157] systemd[1]: Listening on dm-event.socket - Device-mapper event daemon FIFOs.
+[   15.902206] systemd[1]: Listening on lvm2-lvmpolld.socket - LVM2 poll daemon socket.
+[   15.904005] systemd[1]: Listening on rpcbind.socket - RPCbind Server Activation Socket.
+[   15.904510] systemd[1]: Listening on systemd-creds.socket - Credential Encryption/Decryption.
+[   15.904565] systemd[1]: Listening on systemd-initctl.socket - initctl Compatibility Named Pipe.
+[   15.904616] systemd[1]: Listening on systemd-journald-dev-log.socket - Journal Socket (/dev/log).
+[   15.904661] systemd[1]: Listening on systemd-journald.socket - Journal Sockets.
+[   15.904704] systemd[1]: systemd-pcrextend.socket - TPM PCR Measurements was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[   15.904715] systemd[1]: systemd-pcrlock.socket - Make TPM PCR Policy was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[   15.904749] systemd[1]: Listening on systemd-udevd-control.socket - udev Control Socket.
+[   15.904782] systemd[1]: Listening on systemd-udevd-kernel.socket - udev Kernel Socket.
+[   15.905634] systemd[1]: Mounting dev-hugepages.mount - Huge Pages File System...
+[   15.905988] systemd[1]: Mounting dev-mqueue.mount - POSIX Message Queue File System...
+[   15.906027] systemd[1]: run-lock.mount: Directory /run/lock to mount over is not empty, mounting anyway.
+[   15.906389] systemd[1]: Mounting run-lock.mount - Legacy Locks Directory /run/lock...
+[   15.906761] systemd[1]: Mounting sys-kernel-debug.mount - Kernel Debug File System...
+[   15.907107] systemd[1]: Mounting sys-kernel-tracing.mount - Kernel Trace File System...
+[   15.907560] systemd[1]: Mounting tmp.mount - Temporary Directory /tmp...
+[   15.907616] systemd[1]: auth-rpcgss-module.service - Kernel Module supporting RPCSEC_GSS was skipped because of an unmet condition check (ConditionPathExists=/etc/krb5.keytab).
+[   15.908470] systemd[1]: Starting keyboard-setup.service - Set the console keyboard layout...
+[   15.909114] systemd[1]: Starting kmod-static-nodes.service - Create List of Static Device Nodes...
+[   15.909725] systemd[1]: Starting lvm2-monitor.service - Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+[   15.910314] systemd[1]: Starting modprobe@configfs.service - Load Kernel Module configfs...
+[   15.910876] systemd[1]: Starting modprobe@drm.service - Load Kernel Module drm...
+[   15.911471] systemd[1]: Starting modprobe@efi_pstore.service - Load Kernel Module efi_pstore...
+[   15.912081] systemd[1]: Starting modprobe@fuse.service - Load Kernel Module fuse...
+[   15.912279] systemd[1]: systemd-hibernate-clear.service - Clear Stale Hibernate Storage Info was skipped because of an unmet condition check (ConditionPathExists=/sys/firmware/efi/efivars/HibernateLocation-8cf2644b-4b0b-428f-9387-6d876050dc67).
+[   15.913177] systemd[1]: Starting systemd-journald.service - Journal Service...
+[   15.913946] systemd[1]: Starting systemd-modules-load.service - Load Kernel Modules...
+[   15.913997] systemd[1]: systemd-pcrmachine.service - TPM PCR Machine ID Measurement was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[   15.914576] systemd[1]: Starting systemd-remount-fs.service - Remount Root and Kernel File Systems...
+[   15.914634] systemd[1]: systemd-tpm2-setup-early.service - Early TPM SRK Setup was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[   15.915218] systemd[1]: Starting systemd-udev-load-credentials.service - Load udev Rules from Credentials...
+[   15.915827] systemd[1]: Starting systemd-udev-trigger.service - Coldplug All udev Devices...
+[   15.916861] pstore: Using crash dump compression: deflate
+[   15.917003] systemd[1]: Mounted dev-hugepages.mount - Huge Pages File System.
+[   15.917124] systemd[1]: Mounted dev-mqueue.mount - POSIX Message Queue File System.
+[   15.917190] systemd[1]: Mounted run-lock.mount - Legacy Locks Directory /run/lock.
+[   15.917251] systemd[1]: Mounted sys-kernel-debug.mount - Kernel Debug File System.
+[   15.917330] systemd[1]: Mounted sys-kernel-tracing.mount - Kernel Trace File System.
+[   15.917389] systemd[1]: Mounted tmp.mount - Temporary Directory /tmp.
+[   15.917591] systemd[1]: Finished keyboard-setup.service - Set the console keyboard layout.
+[   15.917849] systemd[1]: Finished kmod-static-nodes.service - Create List of Static Device Nodes.
+[   15.918011] systemd[1]: modprobe@configfs.service: Deactivated successfully.
+[   15.918091] systemd[1]: Finished modprobe@configfs.service - Load Kernel Module configfs.
+[   15.918255] systemd[1]: modprobe@drm.service: Deactivated successfully.
+[   15.918361] systemd[1]: Finished modprobe@drm.service - Load Kernel Module drm.
+[   15.918487] systemd[1]: modprobe@fuse.service: Deactivated successfully.
+[   15.918551] systemd[1]: Finished modprobe@fuse.service - Load Kernel Module fuse.
+[   15.919148] systemd[1]: Mounting sys-fs-fuse-connections.mount - FUSE Control File System...
+[   15.919613] systemd[1]: Mounting sys-kernel-config.mount - Kernel Configuration File System...
+[   15.920264] systemd[1]: Starting systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully...
+[   15.920877] systemd[1]: Finished systemd-remount-fs.service - Remount Root and Kernel File Systems.
+[   15.921374] systemd[1]: systemd-hwdb-update.service - Rebuild Hardware Database was skipped because of an unmet condition check (ConditionNeedsUpdate=/etc).
+[   15.922014] systemd[1]: Starting systemd-random-seed.service - Load/Save OS Random Seed...
+[   15.922102] systemd[1]: systemd-tpm2-setup.service - TPM SRK Setup was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[   15.923567] systemd[1]: Finished systemd-udev-load-credentials.service - Load udev Rules from Credentials.
+[   15.923884] systemd[1]: Mounted sys-kernel-config.mount - Kernel Configuration File System.
+[   15.924673] pstore: Registered efi_pstore as persistent store backend
+[   15.924939] systemd[1]: modprobe@efi_pstore.service: Deactivated successfully.
+[   15.925030] systemd[1]: Finished modprobe@efi_pstore.service - Load Kernel Module efi_pstore.
+[   15.925125] systemd[1]: systemd-pstore.service - Platform Persistent Storage Archival was skipped because of an unmet condition check (ConditionDirectoryNotEmpty=/sys/fs/pstore).
+[   15.926503] systemd[1]: Mounted sys-fs-fuse-connections.mount - FUSE Control File System.
+[   15.927626] systemd-journald[609]: Collecting audit messages is disabled.
+[   15.933844] systemd[1]: Finished systemd-modules-load.service - Load Kernel Modules.
+[   15.934445] systemd[1]: Starting systemd-sysctl.service - Apply Kernel Variables...
+[   15.934629] systemd[1]: Finished systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully.
+[   15.934707] systemd[1]: systemd-sysusers.service - Create System Users was skipped because no trigger condition checks were met.
+[   15.935201] systemd[1]: Starting systemd-tmpfiles-setup-dev.service - Create Static Device Nodes in /dev...
+[   15.935418] systemd[1]: Finished systemd-random-seed.service - Load/Save OS Random Seed.
+[   15.949033] systemd[1]: Finished systemd-tmpfiles-setup-dev.service - Create Static Device Nodes in /dev.
+[   15.949910] systemd[1]: Starting systemd-udevd.service - Rule-based Manager for Device Events and Files...
+[   15.950983] systemd[1]: Finished systemd-sysctl.service - Apply Kernel Variables.
+[   15.958662] systemd[1]: Started systemd-journald.service - Journal Service.
+[   15.970443] systemd-journald[609]: Received client request to flush runtime journal.
+[   16.038866] input: Intel HID events as /devices/platform/INTC1070:00/input/input3
+[   16.040531] intel-hid INTC1070:00: failed to enable HID power button
+[   16.044696] parport_pc 00:01: reported by Plug and Play ACPI
+[   16.044785] parport0: PC-style at 0x378, irq 5 [PCSPP,TRISTATE,EPP]
+[   16.048615] intel_pmc_core INT33A1:00:  initialized
+[   16.077262] input: PC Speaker as /devices/platform/pcspkr/input/input4
+[   16.077273] mei_me 0000:00:16.0: enabling device (0000 -> 0002)
+[   16.080229] ee1004 0-0051: 512 byte EE1004-compliant SPD EEPROM, read-only
+[   16.081988] ee1004 0-0053: 512 byte EE1004-compliant SPD EEPROM, read-only
+[   16.098796] RAPL PMU: API unit is 2^-32 Joules, 3 fixed counters, 655360 ms ovfl timer
+[   16.098803] RAPL PMU: hw unit of domain pp0-core 2^-14 Joules
+[   16.098806] RAPL PMU: hw unit of domain package 2^-14 Joules
+[   16.098808] RAPL PMU: hw unit of domain pp1-gpu 2^-14 Joules
+[   16.101487] spi-nor spi0.0: supply vcc not found, using dummy regulator
+[   16.101520] cryptd: max_cpu_qlen set to 1000
+[   16.104379] AES CTR mode by8 optimization enabled
+[   16.105893] Creating 1 MTD partitions on "0000:00:1f.5":
+[   16.105899] 0x000000000000-0x000001000000 : "BIOS"
+[   16.120679] snd_hda_intel 0000:00:1f.3: enabling device (0000 -> 0002)
+[   16.147818] ppdev: user-space parallel port driver
+[   16.337786] i915 0000:00:02.0: [drm] Found alderlake_s (device ID 4692) integrated display version 12.00 stepping C0
+[   16.338895] i915 0000:00:02.0: vgaarb: deactivate vga console
+[   16.338956] i915 0000:00:02.0: [drm] Using Transparent Hugepages
+[   16.339672] i915 0000:00:02.0: vgaarb: VGA decodes changed: olddecodes=io+mem,decodes=io+mem:owns=io+mem
+[   16.341194] i915 0000:00:02.0: [drm] Finished loading DMC firmware i915/adls_dmc_ver2_01.bin (v2.1)
+[   16.347188] i915 0000:00:02.0: [drm] GT0: GuC firmware i915/tgl_guc_70.bin version 70.44.1
+[   16.347195] i915 0000:00:02.0: [drm] GT0: HuC firmware i915/tgl_huc.bin version 7.9.3
+[   16.349081] intel_tcc_cooling: TCC Offset locked
+[   16.361049] i915 0000:00:02.0: [drm] GT0: HuC: authenticated for all workloads
+[   16.361055] i915 0000:00:02.0: [drm] GT0: GUC: submission disabled
+[   16.361057] i915 0000:00:02.0: [drm] GT0: GUC: SLPC disabled
+[   16.361760] mei_pxp 0000:00:16.0-fbf6fcf1-96cf-4e2e-a6a6-1bab8cbe36b1: bound 0000:00:02.0 (ops i915_pxp_tee_component_ops [i915])
+[   16.361861] i915 0000:00:02.0: [drm] Protected Xe Path (PXP) protected content support initialized
+[   16.361865] mei_hdcp 0000:00:16.0-b638ab7e-94e2-4ea2-a552-d1c54b627f04: bound 0000:00:02.0 (ops i915_hdcp_ops [i915])
+[   16.364473] [drm] Initialized i915 1.6.0 for 0000:00:02.0 on minor 0
+[   16.365364] ACPI: video: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+[   16.365737] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/LNXVIDEO:00/input/input5
+[   16.389596] intel_rapl_msr: PL4 support detected.
+[   16.389620] intel_rapl_common: Found RAPL domain package
+[   16.389624] intel_rapl_common: Found RAPL domain core
+[   16.389626] intel_rapl_common: Found RAPL domain uncore
+[   16.425052] i915 0000:00:02.0: [drm] Cannot find any crtc or sizes
+[   16.425098] snd_hda_intel 0000:00:1f.3: bound 0000:00:02.0 (ops i915_audio_component_bind_ops [i915])
+[   16.455094] i915 0000:00:02.0: [drm] Cannot find any crtc or sizes
+[   16.573473] snd_hda_codec_realtek hdaudioC0D0: autoconfig for ALC897: line_outs=1 (0x14/0x0/0x0/0x0/0x0) type:line
+[   16.573479] snd_hda_codec_realtek hdaudioC0D0:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[   16.573481] snd_hda_codec_realtek hdaudioC0D0:    hp_outs=1 (0x1b/0x0/0x0/0x0/0x0)
+[   16.573483] snd_hda_codec_realtek hdaudioC0D0:    mono: mono_out=0x0
+[   16.573484] snd_hda_codec_realtek hdaudioC0D0:    dig-out=0x11/0x0
+[   16.573485] snd_hda_codec_realtek hdaudioC0D0:    inputs:
+[   16.573486] snd_hda_codec_realtek hdaudioC0D0:      Rear Mic=0x18
+[   16.573488] snd_hda_codec_realtek hdaudioC0D0:      Front Mic=0x19
+[   16.573489] snd_hda_codec_realtek hdaudioC0D0:      Line=0x1a
+[   16.607386] input: HDA Intel PCH Rear Mic as /devices/pci0000:00/0000:00:1f.3/sound/card0/input6
+[   16.607411] input: HDA Intel PCH Front Mic as /devices/pci0000:00/0000:00:1f.3/sound/card0/input7
+[   16.607431] input: HDA Intel PCH Line as /devices/pci0000:00/0000:00:1f.3/sound/card0/input8
+[   16.607450] input: HDA Intel PCH Line Out as /devices/pci0000:00/0000:00:1f.3/sound/card0/input9
+[   16.607468] input: HDA Intel PCH Front Headphone as /devices/pci0000:00/0000:00:1f.3/sound/card0/input10
+[   16.607488] input: HDA Intel PCH HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1f.3/sound/card0/input11
+[   16.607506] input: HDA Intel PCH HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:1f.3/sound/card0/input12
+[   16.607526] input: HDA Intel PCH HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:1f.3/sound/card0/input13
+[   16.607545] input: HDA Intel PCH HDMI/DP,pcm=9 as /devices/pci0000:00/0000:00:1f.3/sound/card0/input14
+[   16.700295] audit: type=1400 audit(1778082508.506:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="1password" pid=1428 comm="apparmor_parser"
+[   16.700315] audit: type=1400 audit(1778082508.506:3): apparmor="STATUS" operation="profile_load" profile="unconfined" name="cam" pid=1437 comm="apparmor_parser"
+[   16.700335] audit: type=1400 audit(1778082508.506:4): apparmor="STATUS" operation="profile_load" profile="unconfined" name="balena-etcher" pid=1433 comm="apparmor_parser"
+[   16.700359] audit: type=1400 audit(1778082508.506:5): apparmor="STATUS" operation="profile_load" profile="unconfined" name="ch-run" pid=1439 comm="apparmor_parser"
+[   16.700378] audit: type=1400 audit(1778082508.506:6): apparmor="STATUS" operation="profile_load" profile="unconfined" name="ch-checkns" pid=1438 comm="apparmor_parser"
+[   16.700401] audit: type=1400 audit(1778082508.506:7): apparmor="STATUS" operation="profile_load" profile="unconfined" name=4D6F6E676F444220436F6D70617373 pid=1430 comm="apparmor_parser"
+[   16.700423] audit: type=1400 audit(1778082508.506:8): apparmor="STATUS" operation="profile_load" profile="unconfined" name="QtWebEngineProcess" pid=1431 comm="apparmor_parser"
+[   16.700443] audit: type=1400 audit(1778082508.506:9): apparmor="STATUS" operation="profile_load" profile="unconfined" name="buildah" pid=1435 comm="apparmor_parser"
+[   16.700575] audit: type=1400 audit(1778082508.506:10): apparmor="STATUS" operation="profile_load" profile="unconfined" name="Discord" pid=1429 comm="apparmor_parser"
+[   16.700627] audit: type=1400 audit(1778082508.506:11): apparmor="STATUS" operation="profile_load" profile="unconfined" name="brave" pid=1434 comm="apparmor_parser"
+[   16.958323] softdog: initialized. soft_noboot=0 soft_margin=60 sec soft_panic=0 (nowayout=0)
+[   16.958331] softdog:              soft_reboot_cmd=<not set> soft_active_on_boot=0
+[   16.960360] RPC: Registered named UNIX socket transport module.
+[   16.960365] RPC: Registered udp transport module.
+[   16.960367] RPC: Registered tcp transport module.
+[   16.960369] RPC: Registered tcp-with-tls transport module.
+[   16.960371] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[   17.144706] vmbr0: port 1(enp4s0) entered blocking state
+[   17.144712] vmbr0: port 1(enp4s0) entered disabled state
+[   17.144724] r8169 0000:04:00.0 enp4s0: entered allmulticast mode
+[   17.144759] r8169 0000:04:00.0 enp4s0: entered promiscuous mode
+[   17.168079] Generic FE-GE Realtek PHY r8169-0-400:00: attached PHY driver (mii_bus:phy_addr=r8169-0-400:00, irq=MAC)
+[   17.289320] r8169 0000:04:00.0 enp4s0: Link is Down
+[   17.290824] vmbr0: port 1(enp4s0) entered blocking state
+[   17.290829] vmbr0: port 1(enp4s0) entered forwarding state
+[   17.768920] nvme nvme0: using unchecked data buffer
+[   18.170261] vmbr0: port 1(enp4s0) entered disabled state
+[   20.994908] r8169 0000:04:00.0 enp4s0: Link is Up - 1Gbps/Full - flow control off
+[   20.994923] vmbr0: port 1(enp4s0) entered blocking state
+[   20.994926] vmbr0: port 1(enp4s0) entered forwarding state
+[  631.411503]  sde: sde1 sde9
+[  631.429070]  sdg: sdg1 sdg9
+[  631.445472]  sdf: sdf1 sdf9
+[  631.500423]  sde: sde1 sde9
+[  631.669204]  sdg: sdg1 sdg9
+[  631.831299]  sdf: sdf1 sdf9
+[ 1675.122853]  sdb: sdb1 sdb9
+[ 1675.179627]  sdd: sdd1 sdd9
+[ 1675.235760]  sdc: sdc1 sdc9
+[ 1675.296066]  sda: sda1 sda9
+[ 1675.679291]  sdb: sdb1 sdb9
+[ 1676.132808]  sdd: sdd1 sdd9
+[ 1676.514355]  sdc: sdc1 sdc9
+[ 1677.054965]  sda: sda1 sda9
+[ 5094.050929]  sdb: sdb1 sdb9
+[ 5094.203369]  sdd: sdd1 sdd9
+[ 5094.325148]  sdc: sdc1 sdc9
+[ 5094.490211]  sda: sda1 sda9
+[ 5094.885450]  sdb: sdb1 sdb9
+[ 5095.476158]  sdd: sdd1 sdd9
+[ 5095.953042]  sdc: sdc1 sdc9
+[ 5096.481107]  sda: sda1 sda9
+[58476.760126]  sdb: sdb1 sdb9
+[58476.896211]  sdd: sdd1 sdd9
+[58477.031306]  sdc: sdc1 sdc9
+[58477.183149]  sda: sda1 sda9
+[58477.615069]  sdb: sdb1 sdb9
+[58478.379212]  sdd: sdd1 sdd9
+[58478.928225]  sdc: sdc1 sdc9
+[58479.575438]  sda: sda1 sda9

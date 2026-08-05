@@ -1,0 +1,11 @@
+  pool: ctrlpool
+ state: ONLINE
+config:
+
+	NAME                                               STATE     READ WRITE CKSUM
+	ctrlpool                                           ONLINE       0     0     0
+	  mirror-0                                         ONLINE       0     0     0
+	    ata-Samsung_SSD_860_EVO_500GB_S3Z2NB1K910954L  ONLINE       0     0     0
+	    ata-Samsung_SSD_870_EVO_500GB_S7EWNL0X514734N  ONLINE       0     0     0
+
+errors: No known data errors

@@ -1,0 +1,8 @@
+## use these commands:
+./controller-bench.sh --controller lsi-import --scenario 6hdd_mirror3x2
+./controller-bench.sh --controller lsi-import --scenario 6hdd_raidz2_6
+./controller-bench.sh --controller lsi-import --scenario 2ssd_mirror2
+
+./controller-bench.sh --controller asm1166 --scenario 6hdd_mirror3x2
+./controller-bench.sh --controller asm1166 --scenario 6hdd_raidz2_6
+./controller-bench.sh --controller asm1166 --scenario 2ssd_mirror2

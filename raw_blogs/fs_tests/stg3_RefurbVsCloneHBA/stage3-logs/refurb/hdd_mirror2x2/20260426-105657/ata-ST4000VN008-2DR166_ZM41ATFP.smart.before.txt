@@ -1,0 +1,6 @@
+smartctl 7.4 2024-10-15 r5620 [x86_64-linux-6.14.8-2-pve] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+
+Probable ATA device behind a SAT layer
+Try an additional '-d ata' or '-d sat' argument.

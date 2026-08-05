@@ -1,0 +1,47 @@
+=== TIMESTAMP ===
+Wed  1 Apr 20:21:54 BST 2026
+
+=== HOST ===
+bub05
+Linux bub05 6.12.74+deb13+1-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.74-2 (2026-03-08) x86_64 GNU/Linux
+
+=== CONTROLLER LABEL ===
+lsi-import
+
+=== SCENARIO ===
+2ssd_mirror2
+
+=== LSBLK ===
+NAME   TYPE   SIZE MODEL                     SERIAL           TRAN   MOUNTPOINTS
+sda    disk 465.8G ST500DM002-1BD142         W3TQFS8T         sas    
+├─sda1 part 465.8G                                                   
+└─sda9 part     8M                                                   
+sdb    disk 465.8G ST3500312CS               5VVRKGAV         sas    
+├─sdb1 part 465.8G                                                   
+└─sdb9 part     8M                                                   
+sdc    disk 465.8G ST3500418AS               Z2ACPF1Z         sas    
+├─sdc1 part 465.8G                                                   
+└─sdc9 part     8M                                                   
+sdd    disk 465.8G ST500DM002-1BD142         W3TQ01LD         sas    
+├─sdd1 part 465.8G                                                   
+└─sdd9 part     8M                                                   
+sde    disk 465.8G Samsung SSD 860 EVO 500GB S3Z2NB1K910954L  sas    
+sdf    disk 465.8G Hitachi HTS547550A9E384   J2160051E1A4ZD   sas    
+├─sdf1 part 465.8G                                                   
+└─sdf9 part     8M                                                   
+sdg    disk 465.8G Samsung SSD 870 EVO 500GB S7EWNL0X514734N  sas    
+sdh    disk 465.8G ST500DM002-1BD142         Z2AFGE69         sas    
+├─sdh1 part 465.8G                                                   
+└─sdh9 part     8M                                                   
+sdi    disk 223.6G KINGSTON SA400S37240G     50026B7380D79F30 sata   
+├─sdi1 part   976M                                                   /boot/efi
+├─sdi2 part  18.4G                                                   /
+├─sdi3 part   7.7G                                                   [SWAP]
+└─sdi4 part 196.6G                                                   /home
+
+=== SELECTED DISKS ===
+/dev/disk/by-id/ata-Samsung_SSD_860_EVO_500GB_S3Z2NB1K910954L
+/dev/disk/by-id/ata-Samsung_SSD_870_EVO_500GB_S7EWNL0X514734N
+
+=== POOL COMMAND ===
+zpool create -f ctrlpool mirror /dev/disk/by-id/ata-Samsung_SSD_860_EVO_500GB_S3Z2NB1K910954L /dev/disk/by-id/ata-Samsung_SSD_870_EVO_500GB_S7EWNL0X514734N 

@@ -1,0 +1,2 @@
+./controller-bench.sh --controller lsi-import --scenario 6hdd
+./controller-bench.sh --controller asm1166 --scenario 4ssd

@@ -1,0 +1,47 @@
+timestamp=20260327-212025
+arch=mirror2_fast_slow
+host=hs01
+dataset=/benchpool/test
+testfile=/benchpool/test/fio-testfile
+fio_version=fio-3.39
+
+[zpool list]
+NAME        SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
+benchpool   464G   768K   464G        -         -     0%     0%  1.00x    ONLINE  -
+rpool       928G   502G   426G        -         -     3%    54%  1.00x    ONLINE  -
+
+[zpool status]
+  pool: benchpool
+ state: ONLINE
+config:
+
+	NAME                                STATE     READ WRITE CKSUM
+	benchpool                           ONLINE       0     0     0
+	  mirror-0                          ONLINE       0     0     0
+	    ata-ST3500312CS_5VVRKGAV        ONLINE       0     0     0
+	    ata-ST500DM002-1BD142_W3TQFS8T  ONLINE       0     0     0
+
+errors: No known data errors
+
+[zfs list]
+NAME                              USED  AVAIL  REFER  MOUNTPOINT
+benchpool                         552K   450G    96K  /benchpool
+benchpool/test                     96K   450G    96K  /benchpool/test
+rpool                             502G   397G   208K  /rpool
+rpool/ROOT                       1.68G   397G   192K  /rpool/ROOT
+rpool/ROOT/pve-1                 1.68G   397G  1.68G  /
+rpool/data                        192K   397G   192K  /rpool/data
+rpool/reflect                     501G   397G   256K  /rpool/reflect
+rpool/reflect/Chris               109G   397G  93.3G  /rpool/reflect/Chris
+rpool/reflect/Infra              60.8G   397G  60.7G  /rpool/reflect/Infra
+rpool/reflect/Infra/shrinktest    176K   397G  33.1G  /rpool/reflect/Infra/shrinktest
+rpool/reflect/Infra/test_backup  60.3M   397G  60.3M  /rpool/reflect/Infra/test_backup
+rpool/reflect/Movies             85.4G   397G  85.3G  /rpool/reflect/Movies
+rpool/reflect/Music              22.4G   397G  20.1G  /rpool/reflect/Music
+rpool/reflect/Pictures            183G   397G   183G  /rpool/reflect/Pictures
+rpool/reflect/Rowenna            4.04G   397G  4.01G  /rpool/reflect/Rowenna
+rpool/reflect/Shared             2.16G   397G  2.16G  /rpool/reflect/Shared
+rpool/reflect/Tim                 736K   397G   192K  /rpool/reflect/Tim
+rpool/reflect/Zoe                31.6G   397G  31.6G  /rpool/reflect/Zoe
+rpool/reflect/paperless          2.35G   397G  1.92G  /reflect/paperless
+rpool/var-lib-vz                  192K   397G   192K  /var/lib/vz

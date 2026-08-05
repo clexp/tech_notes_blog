@@ -1,0 +1,305 @@
+ZFS Baseline Data Collection - 20251130-2155
+=============================================
+
+[ZFS & Kernel Version]
+-----------------------
+Kernel: Linux hs01 6.14.8-2-pve #1 SMP PREEMPT_DYNAMIC PMX 6.14.8-2 (2025-07-22T10:04Z) x86_64 GNU/Linux
+
+filename:       /lib/modules/6.14.8-2-pve/zfs/zfs.ko
+version:        2.3.3-pve1
+srcversion:     DEB77C6F2B39DD65050F90A
+vermagic:       6.14.8-2-pve SMP preempt mod_unload modversions 
+
+[System Metrics]
+----------------
+CPU Info:
+CPU(s):                                  12
+On-line CPU(s) list:                     0-11
+Model name:                              12th Gen Intel(R) Core(TM) i5-12400
+Thread(s) per core:                      2
+Socket(s):                               1
+CPU(s) scaling MHz:                      44%
+NUMA node0 CPU(s):                       0-11
+
+fio version:
+fio not installed
+
+ARC Settings:
+c_min                           4    1044257536
+c_max                           4    3341811712
+size                            4    277794376
+compressed_size                 4    189679616
+uncompressed_size               4    564176896
+overhead_size                   4    64660992
+hdr_size                        4    1937456
+data_size                       4    198960128
+metadata_size                   4    55380480
+dbuf_size                       4    4782896
+dnode_size                      4    11586792
+bonus_size                      4    3637760
+anon_size                       4    135168
+mru_size                        4    165311488
+mru_ghost_size                  4    0
+mfu_size                        4    88893952
+mfu_ghost_size                  4    0
+uncached_size                   4    0
+l2_prefetch_asize               4    0
+l2_mru_asize                    4    0
+l2_mfu_asize                    4    0
+l2_bufc_data_asize              4    0
+l2_bufc_metadata_asize          4    0
+l2_size                         4    0
+l2_asize                        4    0
+l2_hdr_size                     4    0
+l2_log_blk_avg_asize            4    0
+l2_log_blk_asize                4    0
+l2_rebuild_size                 4    0
+l2_rebuild_asize                4    0
+arc_raw_size                    4    0
+abd_chunk_waste_size            4    1508864
+
+[HBA Controller Enumeration]
+-----------------------------
+01:00.0 Serial Attached SCSI controller [0107]: Broadcom / LSI SAS2308 PCI-Express Fusion-MPT SAS-2 [1000:0087] (rev 05)
+	Subsystem: Broadcom / LSI 9207-8e SAS2.1 HBA [1000:3040]
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx+
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+	Latency: 0, Cache Line Size: 64 bytes
+	Interrupt: pin A routed to IRQ 16
+	Region 0: I/O ports at 5000 [disabled] [size=256]
+	Region 1: Memory at 43040000 (64-bit, non-prefetchable) [size=64K]
+	Region 3: Memory at 43000000 (64-bit, non-prefetchable) [size=256K]
+	Expansion ROM at 42f00000 [disabled] [size=1M]
+	Capabilities: [50] Power Management version 3
+		Flags: PMEClk- DSI- D1+ D2+ AuxCurrent=0mA PME(D0-,D1-,D2-,D3hot-,D3cold-)
+		Status: D0 NoSoftRst+ PME-Enable- DSel=0 DScale=0 PME-
+	Capabilities: [68] Express (v2) Endpoint, IntMsgNum 0
+		DevCap:	MaxPayload 4096 bytes, PhantFunc 0, Latency L0s <64ns, L1 <1us
+			ExtTag+ AttnBtn- AttnInd- PwrInd- RBE+ FLReset+ SlotPowerLimit 0W TEE-IO-
+		DevCtl:	CorrErr+ NonFatalErr+ FatalErr+ UnsupReq+
+			RlxdOrd+ ExtTag+ PhantFunc- AuxPwr- NoSnoop+ FLReset-
+			MaxPayload 256 bytes, MaxReadReq 512 bytes
+		DevSta:	CorrErr+ NonFatalErr- FatalErr- UnsupReq+ AuxPwr- TransPend-
+		LnkCap:	Port #0, Speed 8GT/s, Width x8, ASPM L0s, Exit Latency L0s <64ns
+			ClockPM- Surprise- LLActRep- BwNot- ASPMOptComp+
+
+[HBA Kernel Driver Messages]
+-----------------------------
+[    0.021008] ACPI: SSDT 0x000000003519C000 002A81 (v02 SaSsdt SaSsdt   00003000 INTL 20200717)
+[    3.857472] ahci 0000:00:17.0: version 3.0
+[    3.863127] mpt3sas version 51.100.00.00 loaded
+[    3.863325] mpt3sas 0000:01:00.0: can't disable ASPM; OS doesn't have ASPM control
+[    3.863614] mpt3sas 0000:01:00.0: enabling device (0000 -> 0002)
+[    3.865502] mpt2sas_cm0: 64 BIT PCI BUS DMA ADDRESSING SUPPORTED, total mem (32633048 kB)
+[    3.867826] ahci 0000:00:17.0: AHCI vers 0001.0301, 32 command slots, 6 Gbps, SATA mode
+[    3.868076] ahci 0000:00:17.0: 4/4 ports implemented (port mask 0xf0)
+[    3.868455] ahci 0000:00:17.0: flags: 64bit ncq sntf led clo only pio slum part ems deso sadm sds 
+[    3.876096] scsi host1: ahci
+[    3.876509] scsi host2: ahci
+[    3.876654] scsi host3: ahci
+[    3.876781] scsi host4: ahci
+[    3.876921] scsi host5: ahci
+[    3.877083] scsi host6: ahci
+[    3.877264] scsi host7: ahci
+[    3.877420] scsi host8: ahci
+[    3.877528] ata1: DUMMY
+[    3.877595] ata2: DUMMY
+[    3.877658] ata3: DUMMY
+[    3.877719] ata4: DUMMY
+[    3.877783] ata5: SATA max UDMA/133 abar m2048@0x4311d000 port 0x4311d300 irq 124 lpm-pol 3
+[    3.877906] ata6: SATA max UDMA/133 abar m2048@0x4311d000 port 0x4311d380 irq 124 lpm-pol 3
+[    3.878028] ata7: SATA max UDMA/133 abar m2048@0x4311d000 port 0x4311d400 irq 124 lpm-pol 3
+[    3.878199] ata8: SATA max UDMA/133 abar m2048@0x4311d000 port 0x4311d480 irq 124 lpm-pol 3
+[    3.919565] mpt2sas_cm0: CurrentHostPageSize is 0: Setting default host page size to 4k
+[    3.919750] mpt2sas_cm0: MSI-X vectors supported: 16
+[    3.919875] mpt2sas_cm0:  0 12 12
+[    3.920255] mpt2sas_cm0: High IOPs queues : disabled
+[    3.920406] mpt2sas0-msix0: PCI-MSI-X enabled: IRQ 140
+[    3.920554] mpt2sas0-msix1: PCI-MSI-X enabled: IRQ 141
+[    3.920701] mpt2sas0-msix2: PCI-MSI-X enabled: IRQ 142
+[    3.920848] mpt2sas0-msix3: PCI-MSI-X enabled: IRQ 143
+[    3.920995] mpt2sas0-msix4: PCI-MSI-X enabled: IRQ 144
+[    3.921146] mpt2sas0-msix5: PCI-MSI-X enabled: IRQ 145
+[    3.921292] mpt2sas0-msix6: PCI-MSI-X enabled: IRQ 146
+[    3.921438] mpt2sas0-msix7: PCI-MSI-X enabled: IRQ 147
+[    3.921583] mpt2sas0-msix8: PCI-MSI-X enabled: IRQ 148
+[    3.921725] mpt2sas0-msix9: PCI-MSI-X enabled: IRQ 149
+[    3.921862] mpt2sas0-msix10: PCI-MSI-X enabled: IRQ 150
+[    3.921998] mpt2sas0-msix11: PCI-MSI-X enabled: IRQ 151
+[    3.922049] mpt2sas_cm0: iomem(0x0000000043040000), mapped(0x0000000082c1b6bf), size(65536)
+[    3.922187] mpt2sas_cm0: ioport(0x0000000000005000), size(256)
+[    3.976570] mpt2sas_cm0: CurrentHostPageSize is 0: Setting default host page size to 4k
+[    4.004065] mpt2sas_cm0: scatter gather: sge_in_main_msg(1), sge_per_chain(9), sge_per_io(128), chains_per_io(15)
+[    4.004712] mpt2sas_cm0: request pool(0x00000000152eac5b) - dma(0x119a00000): depth(10368), frame_size(128), pool_size(1296 kB)
+[    4.008794] mpt2sas_cm0: sense pool(0x000000006d23e315) - dma(0x11b600000): depth(10107), element_size(96), pool_size (947 kB)
+[    4.009174] mpt2sas_cm0: reply pool(0x0000000039c7c257) - dma(0x11b800000): depth(10432), frame_size(128), pool_size(1304 kB)
+[    4.009377] mpt2sas_cm0: config page(0x0000000069d5208f) - dma(0x11afe1000): size(512)
+[    4.009492] mpt2sas_cm0: Allocated physical memory: size(24491 kB)
+[    4.009550] mpt2sas_cm0: Current Controller Queue Depth(10104),Max Controller Queue Depth(10240)
+[    4.009668] mpt2sas_cm0: Scatter Gather Elements per IO(128)
+[    4.053943] mpt2sas_cm0: LSISAS2308: FWVersion(20.00.06.00), ChipRevision(0x05)
+[    4.054099] mpt2sas_cm0: Protocol=(Initiator,Target), Capabilities=(TLR,EEDP,Snapshot Buffer,Diag Trace Buffer,Task Set Full,NCQ)
+[    4.054476] scsi host0: Fusion MPT SAS Host
+[    4.055596] mpt2sas_cm0: sending port enable !!
+[    4.185684] ata5: SATA link down (SStatus 4 SControl 300)
+[    4.185871] ata8: SATA link up 1.5 Gbps (SStatus 113 SControl 300)
+[    4.186009] ata6: SATA link down (SStatus 4 SControl 300)
+[    4.186145] ata7: SATA link down (SStatus 4 SControl 300)
+[    4.187099] ata8.00: ATA-8: ST3500312CS, SC13, max UDMA/133
+[    4.187194] ata8.00: 976773168 sectors, multi 16: LBA48 NCQ (depth 32)
+[    4.188713] ata8.00: configured for UDMA/133
+[    5.642428] mpt2sas_cm0: hba_port entry: 000000003043ce67, port: 255 is added to hba_port list
+[    5.643821] mpt2sas_cm0: host_add: handle(0x0001), sas_addr(0x500605b009bc3d00), phys(8)
+[    5.644525] mpt2sas_cm0: handle(0x9) sas_address(0x4433221100000000) port_type(0x1)
+[    5.645086] mpt2sas_cm0: handle(0xa) sas_address(0x4433221103000000) port_type(0x1)
+[    5.893717] mpt2sas_cm0: handle(0xb) sas_address(0x4433221104000000) port_type(0x1)
+[    5.894537] mpt2sas_cm0: handle(0xc) sas_address(0x4433221105000000) port_type(0x1)
+[    5.895366] mpt2sas_cm0: handle(0xd) sas_address(0x4433221106000000) port_type(0x1)
+[    5.896170] mpt2sas_cm0: handle(0xe) sas_address(0x4433221107000000) port_type(0x1)
+[   11.767148] mpt2sas_cm0: port enable: SUCCESS
+[   11.893446] scsi 0:0:0:0: SATA: handle(0x000a), sas_addr(0x4433221103000000), phy(3), device_name(0x0000000000000000)
+[   11.909895]  end_device-0:0: add: handle(0x000a), sas_addr(0x4433221103000000)
+[   12.143316] scsi 0:0:1:0: SATA: handle(0x0009), sas_addr(0x4433221100000000), phy(0), device_name(0x0000000000000000)
+[   12.163710]  end_device-0:1: add: handle(0x0009), sas_addr(0x4433221100000000)
+[   12.393329] scsi 0:0:2:0: SATA: handle(0x000b), sas_addr(0x4433221104000000), phy(4), device_name(0x0000000000000000)
+[   12.413864]  end_device-0:2: add: handle(0x000b), sas_addr(0x4433221104000000)
+[   12.643506] scsi 0:0:3:0: SATA: handle(0x000c), sas_addr(0x4433221105000000), phy(5), device_name(0x0000000000000000)
+[   12.668143]  end_device-0:3: add: handle(0x000c), sas_addr(0x4433221105000000)
+[   12.893660] scsi 0:0:4:0: SATA: handle(0x000d), sas_addr(0x4433221106000000), phy(6), device_name(0x0000000000000000)
+[   12.917429]  end_device-0:4: add: handle(0x000d), sas_addr(0x4433221106000000)
+[   13.143508] scsi 0:0:5:0: SATA: handle(0x000e), sas_addr(0x4433221107000000), phy(7), device_name(0x0000000000000000)
+[   13.167183]  end_device-0:5: add: handle(0x000e), sas_addr(0x4433221107000000)
+[29641.262059] mpt3sas 0000:01:00.0: invalid VPD tag 0x00 (size 0) at offset 0; assume missing optional EEPROM
+
+[Disk Inventory]
+----------------
+NAME        MODEL                     SIZE TYPE SERIAL          TRAN   MOUNTPOINTS
+sda         Hitachi HTS547550A9E384 465.8G disk J2160051E1A4ZD  sas    
+sdb         ST3500312CS             465.8G disk 5VVRKGAV        sas    
+sdc         ST3500418AS             465.8G disk Z2ACPF1Z        sas    
+sdd         ST500DM002-1BD142       465.8G disk Z2AFGE69        sas    
+sde         ST500DM002-1BD142       465.8G disk W3TQFS8T        sas    
+sdf         ST500DM002-1BD142       465.8G disk W3TQ01LD        sas    
+sdg         ST3500312CS             465.8G disk 9VVK872A        sata   
+nvme0n1     Samsung SSD 990 PRO 1TB 931.5G disk S7HDNJ0Y831361K nvme   
+├─nvme0n1p1                          1007K part                 nvme   
+├─nvme0n1p2                             1G part                 nvme   
+└─nvme0n1p3                         930.5G part                 nvme   
+
+[SMART Key Metrics]
+--------------------
+=== SMART for /dev/sda ===
+Model: Hitachi HTS547550A9E384 
+Serial: J2160051E1A4ZD
+SATA Version: SATA Version is:  SATA 2.6, 3.0 Gb/s
+Overall SMART Status: SMART overall-health self-assessment test result: PASSED
+Last Self-Test: Self-test execution status:      (   0)	The previous self-test routine completed
+Read Error Rate: 0
+Reallocated Sectors: 0
+Power-On Hours: 20051
+Power Cycle Count: 2587
+Pending Sectors: 0
+Offline Uncorrectable: 0
+UDMA CRC Errors: 1131
+
+=== SMART for /dev/sdb ===
+Model: ST3500312CS  
+Serial: 5VVRKGAV
+SATA Version: SATA Version is:  SATA 2.6, 3.0 Gb/s (current: 3.0 Gb/s)
+Overall SMART Status: SMART overall-health self-assessment test result: PASSED
+Last Self-Test: Self-test execution status:      (   0)	The previous self-test routine completed
+Read Error Rate: 26994172
+Reallocated Sectors: 0
+Power-On Hours: 37282
+Power Cycle Count: 181
+Pending Sectors: 0
+Offline Uncorrectable: 0
+UDMA CRC Errors: 0
+
+=== SMART for /dev/sdc ===
+Model: ST3500418AS  
+Serial: Z2ACPF1Z
+SATA Version: SATA Version is:  SATA 2.6, 3.0 Gb/s
+Overall SMART Status: SMART overall-health self-assessment test result: PASSED
+Last Self-Test: Self-test execution status:      (   0)	The previous self-test routine completed
+Read Error Rate: 80283923
+Reallocated Sectors: 0
+Power-On Hours: 11648
+Power Cycle Count: 8753
+Pending Sectors: 0
+Offline Uncorrectable: 0
+UDMA CRC Errors: 0
+
+=== SMART for /dev/sdd ===
+Model: ST500DM002-1BD142  
+Serial: Z2AFGE69
+SATA Version: SATA Version is:  SATA 3.0, 6.0 Gb/s (current: 6.0 Gb/s)
+Overall SMART Status: SMART overall-health self-assessment test result: PASSED
+Last Self-Test: Self-test execution status:      (   0)	The previous self-test routine completed
+Read Error Rate: 122650968
+Reallocated Sectors: 0
+Power-On Hours: 53643
+Power Cycle Count: 687
+Pending Sectors: 0
+Offline Uncorrectable: 0
+UDMA CRC Errors: 0
+
+=== SMART for /dev/sde ===
+Model: ST500DM002-1BD142  
+Serial: W3TQFS8T
+SATA Version: SATA Version is:  SATA 3.0, 6.0 Gb/s (current: 6.0 Gb/s)
+Overall SMART Status: SMART overall-health self-assessment test result: PASSED
+Last Self-Test: Self-test execution status:      (   0)	The previous self-test routine completed
+Read Error Rate: 175389824
+Reallocated Sectors: 0
+Power-On Hours: 6624
+Power Cycle Count: 964
+Pending Sectors: 0
+Offline Uncorrectable: 0
+UDMA CRC Errors: 0
+
+=== SMART for /dev/sdf ===
+Model: ST500DM002-1BD142  
+Serial: W3TQ01LD
+SATA Version: SATA Version is:  SATA 3.0, 6.0 Gb/s (current: 6.0 Gb/s)
+Overall SMART Status: SMART overall-health self-assessment test result: PASSED
+Last Self-Test: Self-test execution status:      (   0)	The previous self-test routine completed
+Read Error Rate: 92252328
+Reallocated Sectors: 0
+Power-On Hours: 15114
+Power Cycle Count: 14166
+Pending Sectors: 0
+Offline Uncorrectable: 0
+UDMA CRC Errors: 0
+
+=== SMART for /dev/sdg ===
+Model: ST3500312CS  
+Serial: 9VVK872A
+SATA Version: SATA Version is:  SATA 2.6, 1.5 Gb/s (current: 1.5 Gb/s)
+Overall SMART Status: SMART overall-health self-assessment test result: PASSED
+Last Self-Test: Self-test execution status:      (   0)	The previous self-test routine completed
+Read Error Rate: 244095088
+Reallocated Sectors: 0
+Power-On Hours: 150
+Power Cycle Count: 266
+Pending Sectors: 0
+Offline Uncorrectable: 0
+UDMA CRC Errors: 0
+
+
+[Linux SATA Link Speeds]
+-------------------------
+sda:
+
+sdb:
+
+sdc:
+
+sdd:
+
+sde:
+
+sdf:
+
+sdg:
+

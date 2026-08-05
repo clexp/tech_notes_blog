@@ -1,0 +1,1 @@
+“We verified the backup with an identical recursive ZFS migration snapshot on the target pool, and an empty diff between sorted file inventories of Pictures (path + size) on source and backup.”

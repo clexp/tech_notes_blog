@@ -1,0 +1,87 @@
+ZFS Test Disk SMART Summary - Sun Nov 30 02:09:05 PM GMT 2025
+==========================================
+
+Collecting SMART data for /dev/sda...
+------------------------------------------
+Model: Hitachi HTS547550A9E384 
+Serial: J2160051E1A4ZD
+SATA Version: SATA Version is:  SATA 2.6, 3.0 Gb/s
+Overall SMART Status: SMART overall-health self-assessment test result: PASSED
+Last Self-Test: Self-test execution status:      (   0)	The previous self-test routine completed
+Reallocated Sectors: 0
+Power-On Hours: 20043
+Power Cycle Count: 2587
+Pending Sectors: 0
+
+Collecting SMART data for /dev/sdb...
+------------------------------------------
+Model: ST3500312CS  
+Serial: 5VVRKGAV
+SATA Version: SATA Version is:  SATA 2.6, 3.0 Gb/s (current: 3.0 Gb/s)
+Overall SMART Status: SMART overall-health self-assessment test result: PASSED
+Last Self-Test: Self-test execution status:      (   0)	The previous self-test routine completed
+Reallocated Sectors: 0
+Power-On Hours: 37274
+Power Cycle Count: 181
+Pending Sectors: 0
+
+Collecting SMART data for /dev/sdc...
+------------------------------------------
+Model: ST3500418AS  
+Serial: Z2ACPF1Z
+SATA Version: SATA Version is:  SATA 2.6, 3.0 Gb/s
+Overall SMART Status: SMART overall-health self-assessment test result: PASSED
+Last Self-Test: Self-test execution status:      (   0)	The previous self-test routine completed
+Reallocated Sectors: 0
+Power-On Hours: 11640
+Power Cycle Count: 8753
+Pending Sectors: 0
+
+Collecting SMART data for /dev/sdd...
+------------------------------------------
+Model: ST500DM002-1BD142  
+Serial: Z2AFGE69
+SATA Version: SATA Version is:  SATA 3.0, 6.0 Gb/s (current: 6.0 Gb/s)
+Overall SMART Status: SMART overall-health self-assessment test result: PASSED
+Last Self-Test: Self-test execution status:      (   0)	The previous self-test routine completed
+Reallocated Sectors: 0
+Power-On Hours: 53635
+Power Cycle Count: 687
+Pending Sectors: 0
+
+Collecting SMART data for /dev/sde...
+------------------------------------------
+Model: ST500DM002-1BD142  
+Serial: W3TQFS8T
+SATA Version: SATA Version is:  SATA 3.0, 6.0 Gb/s (current: 6.0 Gb/s)
+Overall SMART Status: SMART overall-health self-assessment test result: PASSED
+Last Self-Test: Self-test execution status:      (   0)	The previous self-test routine completed
+Reallocated Sectors: 0
+Power-On Hours: 6617
+Power Cycle Count: 964
+Pending Sectors: 0
+
+Collecting SMART data for /dev/sdf...
+------------------------------------------
+Model: ST500DM002-1BD142  
+Serial: W3TQ01LD
+SATA Version: SATA Version is:  SATA 3.0, 6.0 Gb/s (current: 6.0 Gb/s)
+Overall SMART Status: SMART overall-health self-assessment test result: PASSED
+Last Self-Test: Self-test execution status:      (   0)	The previous self-test routine completed
+Reallocated Sectors: 0
+Power-On Hours: 15106
+Power Cycle Count: 14166
+Pending Sectors: 0
+
+Collecting SMART data for /dev/sdg...
+------------------------------------------
+Model: ST3500312CS  
+Serial: 9VVK872A
+SATA Version: SATA Version is:  SATA 2.6, 1.5 Gb/s (current: 1.5 Gb/s)
+Overall SMART Status: SMART overall-health self-assessment test result: PASSED
+Last Self-Test: Self-test execution status:      (   0)	The previous self-test routine completed
+Reallocated Sectors: 0
+Power-On Hours: 142
+Power Cycle Count: 266
+Pending Sectors: 0
+
